@@ -1,0 +1,245 @@
+{
+  "$schema": "https://design-tokens.github.io/community-group/format/",
+  "meta": {
+    "name": "Rachel Pham Portfolio Design System",
+    "version": "1.0.0",
+    "description": "Design tokens for Rachel Pham's portfolio website",
+    "author": "Rachel Pham"
+  },
+  "colors": {
+    "light": {
+      "bg": {
+        "page": "#f9f9fb",
+        "surface": "#ffffff",
+        "footer": "#fbfbfd",
+        "elevated": "#ffffff",
+        "overlay": "rgba(255,255,255,0.7)"
+      },
+      "text": {
+        "primary": "#1d1d1f",
+        "secondary": "#86868b",
+        "tertiary": "#424245",
+        "muted": "#6e6e73",
+        "subtle": "rgba(26,28,29,0.4)",
+        "inverse": "#ffffff"
+      },
+      "accent": {
+        "blue": "#0058bc",
+        "action": "#007aff",
+        "success": "#22c55e",
+        "successBg": "#4ade80"
+      },
+      "border": {
+        "default": "rgba(210,210,215,0.3)",
+        "subtle": "rgba(210,210,215,0.5)",
+        "nav": "rgba(0,0,0,0.04)",
+        "divider": "rgba(0,0,0,0.1)",
+        "strong": "rgba(193,198,215,0.1)"
+      },
+      "nav": {
+        "bg": "rgba(255,255,255,0.9)",
+        "icon": "#1d1d1f"
+      }
+    },
+    "dark": {
+      "bg": {
+        "page": "#0d0d0f",
+        "surface": "#1c1c1e",
+        "footer": "#111113",
+        "elevated": "#2c2c2e",
+        "overlay": "rgba(30,30,30,0.7)"
+      },
+      "text": {
+        "primary": "#f5f5f7",
+        "secondary": "#a1a1a6",
+        "tertiary": "#d1d1d6",
+        "muted": "#86868b",
+        "subtle": "rgba(245,245,247,0.4)",
+        "inverse": "#000000"
+      },
+      "accent": {
+        "blue": "#4da3ff",
+        "action": "#4da3ff",
+        "success": "#22c55e",
+        "successBg": "#4ade80"
+      },
+      "border": {
+        "default": "rgba(255,255,255,0.08)",
+        "subtle": "rgba(255,255,255,0.1)",
+        "nav": "rgba(255,255,255,0.06)",
+        "divider": "rgba(255,255,255,0.1)",
+        "strong": "rgba(255,255,255,0.06)"
+      },
+      "nav": {
+        "bg": "rgba(30,30,30,0.92)",
+        "icon": "#f5f5f7"
+      }
+    }
+  },
+  "typography": {
+    "fontFamilies": {
+      "primary": "Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+      "display": "Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+      "logo": "Rubik Glitch, cursive"
+    },
+    "fontSizes": {
+      "xs": "11px",
+      "sm": "12px",
+      "base": "13px",
+      "md": "14px",
+      "lg": "15px",
+      "xl": "16px",
+      "2xl": "17px",
+      "3xl": "18px",
+      "4xl": "20px",
+      "5xl": "24px",
+      "6xl": "28px",
+      "7xl": "36px",
+      "8xl": "48px",
+      "9xl": "54px",
+      "10xl": "64px",
+      "11xl": "72px",
+      "12xl": "80px",
+      "hero": "96px"
+    },
+    "fontWeights": {
+      "regular": 400,
+      "medium": 500,
+      "semibold": 600,
+      "bold": 700
+    },
+    "lineHeights": {
+      "tight": "1.1",
+      "snug": "1.2",
+      "normal": "1.5",
+      "relaxed": "1.6",
+      "loose": "1.8"
+    },
+    "letterSpacing": {
+      "tight": "-0.03em",
+      "snug": "-0.02em",
+      "normal": "0",
+      "wide": "0.05em",
+      "wider": "0.08em",
+      "widest": "0.1em",
+      "tracking-caps": "0.1em"
+    }
+  },
+  "spacing": {
+    "0": "0px",
+    "1": "4px",
+    "2": "8px",
+    "3": "12px",
+    "4": "16px",
+    "5": "20px",
+    "6": "24px",
+    "7": "28px",
+    "8": "32px",
+    "9": "36px",
+    "10": "40px",
+    "12": "48px",
+    "14": "56px",
+    "16": "64px",
+    "20": "80px",
+    "24": "96px",
+    "32": "128px",
+    "40": "160px",
+    "48": "192px"
+  },
+  "borderRadius": {
+    "sm": "8px",
+    "md": "12px",
+    "lg": "16px",
+    "xl": "24px",
+    "2xl": "32px",
+    "3xl": "40px",
+    "4xl": "56px",
+    "full": "9999px"
+  },
+  "shadows": {
+    "sm": "0px 1px 2px rgba(0,0,0,0.05)",
+    "md": "0px 4px 12px rgba(0,0,0,0.08)",
+    "lg": "0px 10px 30px rgba(0,0,0,0.08), 0px 4px 12px rgba(0,0,0,0.04)",
+    "xl": "0px 20px 50px rgba(0,0,0,0.1), 0px 10px 30px rgba(0,0,0,0.05)",
+    "2xl": "0px 50px 100px -20px rgba(0,0,0,0.08), 0px 30px 60px -30px rgba(0,0,0,0.1)",
+    "nav": "0px 1px 2px rgba(0,0,0,0.05)",
+    "contact-card": "0px 50px 100px -20px rgba(0,0,0,0.08), 0px 30px 60px -30px rgba(0,0,0,0.1)"
+  },
+  "breakpoints": {
+    "sm": "640px",
+    "md": "768px",
+    "lg": "1024px",
+    "xl": "1280px",
+    "2xl": "1536px"
+  },
+  "components": {
+    "button": {
+      "primary": {
+        "bg": "#000000",
+        "text": "#ffffff",
+        "hoverBg": "#1d1d1f",
+        "radius": "9999px",
+        "paddingX": "24px",
+        "paddingY": "12px",
+        "fontSize": "14px",
+        "fontWeight": 600
+      },
+      "secondary": {
+        "bg": "rgba(0,0,0,0.05)",
+        "text": "#1d1d1f",
+        "hoverBg": "rgba(0,0,0,0.08)",
+        "radius": "9999px",
+        "paddingX": "20px",
+        "paddingY": "10px",
+        "fontSize": "13px",
+        "fontWeight": 500
+      }
+    },
+    "card": {
+      "default": {
+        "bg": "#ffffff",
+        "border": "rgba(0,0,0,0.06)",
+        "radius": "24px",
+        "shadow": "0px 1px 2px rgba(0,0,0,0.05)",
+        "padding": "24px"
+      },
+      "project": {
+        "bg": "#1a1a1a",
+        "border": "rgba(255,255,255,0.08)",
+        "radius": "24px",
+        "shadow": "0px 20px 50px rgba(0,0,0,0.15)",
+        "padding": "24px"
+      },
+      "featured": {
+        "bg": "#1a1a1a",
+        "radius": "32px",
+        "shadow": "0px 20px 50px rgba(0,0,0,0.15)"
+      }
+    },
+    "nav": {
+      "height": "48px",
+      "bg": "rgba(255,255,255,0.9)",
+      "backdropBlur": "6px",
+      "border": "rgba(0,0,0,0.04)",
+      "radius": "9999px",
+      "shadow": "0px 1px 2px rgba(0,0,0,0.05)",
+      "paddingX": "25px"
+    },
+    "badge": {
+      "availability": {
+        "bg": "rgba(255,255,255,0.5)",
+        "border": "rgba(193,198,215,0.2)",
+        "radius": "9999px",
+        "fontSize": "12px"
+      },
+      "label": {
+        "bg": "#f5f5f7",
+        "border": "rgba(0,0,0,0.04)",
+        "radius": "9999px",
+        "fontSize": "12px",
+        "fontWeight": 700,
+        "letterSpacing": "0.1em"
+      }
+    }
+  }
+}
