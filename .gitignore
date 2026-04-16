@@ -42,3 +42,4 @@ next-env.d.ts
 
 # Large local GLBs for About (symlink or copy into public/models/about)
 /public/models/about/*.glb
+.env*.local
