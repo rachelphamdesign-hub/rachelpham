@@ -293,7 +293,10 @@ export const About3DStage = forwardRef<About3DStageHandle, About3DStageProps>(
     { basePose, overlayPose, onFadeComplete, className, embedded, hideFooterHint },
     ref,
   ) {
-    const [canRender3D] = useState(() => typeof window !== "undefined" && supportsWebGL());
+    const [canRender3D, setCanRender3D] = useState(false);
+    useEffect(() => {
+      setCanRender3D(supportsWebGL());
+    }, []);
     const [autoRotate, setAutoRotate] = useState(true);
     const [targetDistance, setTargetDistance] = useState(INITIAL_TARGET_DISTANCE);
     const characterRootRef = useRef<THREE.Group | null>(null);
