@@ -1,11 +1,12 @@
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { ScrollReveal } from "@/components/ScrollReveal";
 
 const socialLinks = [
   {
     platform: "LinkedIn",
     handle: "Nhi (Rachel) Pham",
-    href: "https://www.linkedin.com/in/nhipham96/",
+    href: "https://www.linkedin.com/in/nhiphamdesign/",
   },
   {
     platform: "Dribbble",
@@ -45,7 +46,7 @@ export default function ContactPage() {
         />
 
         {/* macOS Window Card */}
-        <div className="relative z-10 w-full max-w-[896px]">
+        <ScrollReveal variant="media" className="relative z-10 w-full max-w-[896px]">
           {/* Card wrapper */}
           <div
             className="contact-card relative rounded-[39px] overflow-hidden border transition-colors"
@@ -85,107 +86,115 @@ export default function ContactPage() {
             {/* Window content */}
             <div className="p-16 sm:p-20 flex flex-col gap-12">
               {/* Availability badge */}
-              <div
-                className="self-start flex items-center gap-3 px-[17px] py-[7px] rounded-full border shadow-[0px_1px_2px_rgba(0,0,0,0.05)]"
-                style={{
-                  background: "var(--bg-page)",
-                  borderColor: "var(--border-default)",
-                }}
-              >
-                <span className="relative flex h-2 w-2">
-                  <span className="absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75 animate-pulse" />
-                  <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500" />
-                </span>
-                <span
-                  className="text-[12px] tracking-[-0.3px]"
-                  style={{ color: "var(--text-muted)" }}
-                >
-                  Available for Job
-                </span>
-              </div>
-
-              {/* Heading */}
-              <div className="flex flex-col gap-6">
-                <h1
-                  className="text-[64px] sm:text-[72px] font-normal leading-[1] tracking-[-0.05em]"
-                  style={{ color: "var(--text-primary)" }}
-                >
-                  Let&apos;s connect.
-                </h1>
-                <p
-                  className="text-[20px] leading-[1.4]"
-                  style={{ color: "var(--text-tertiary)" }}
-                >
-                  Whether you have a project in mind or just want to
-                  <br className="hidden sm:block" />
-                  say hi, my inbox is always open.
-                </p>
-              </div>
-
-              {/* Email CTA */}
-              <div className="flex flex-col gap-2">
-                <p
-                  className="text-[16px] tracking-[3.2px] uppercase"
-                  style={{ color: "var(--text-subtle)" }}
-                >
-                  Direct Email
-                </p>
-                <a
-                  href="mailto:rachelphamdesign@gmail.com"
-                  className="text-[28px] sm:text-[36px] font-medium underline leading-[1.1] transition-opacity hover:opacity-70"
+              <ScrollReveal className="self-start">
+                <div
+                  className="inline-flex items-center gap-3 px-[17px] py-[7px] rounded-full border shadow-[0px_1px_2px_rgba(0,0,0,0.05)]"
                   style={{
-                    color: "var(--accent-blue)",
-                    textDecorationColor: "rgba(0,88,188,0.2)",
+                    background: "var(--bg-page)",
+                    borderColor: "var(--border-default)",
                   }}
                 >
-                  rachelphamdesign@gmail.com
-                </a>
-              </div>
+                  <span className="relative flex h-2 w-2">
+                    <span className="absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75 animate-pulse" />
+                    <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500" />
+                  </span>
+                  <span
+                    className="text-[12px] tracking-[-0.3px]"
+                    style={{ color: "var(--text-muted)" }}
+                  >
+                    Available for Job
+                  </span>
+                </div>
+              </ScrollReveal>
+
+              {/* Heading */}
+              <ScrollReveal delay={0.1}>
+                <div className="flex flex-col gap-6">
+                  <h1
+                    className="text-[64px] sm:text-[72px] font-normal leading-[1] tracking-[-0.05em]"
+                    style={{ color: "var(--text-primary)" }}
+                  >
+                    Let&apos;s connect.
+                  </h1>
+                  <p
+                    className="text-[20px] leading-[1.4]"
+                    style={{ color: "var(--text-tertiary)" }}
+                  >
+                    Whether you have a project in mind or just want to
+                    <br className="hidden sm:block" />
+                    say hi, my inbox is always open.
+                  </p>
+                </div>
+              </ScrollReveal>
+
+              {/* Email CTA */}
+              <ScrollReveal delay={0.2}>
+                <div className="flex flex-col gap-2">
+                  <p
+                    className="text-[16px] tracking-[3.2px] uppercase"
+                    style={{ color: "var(--text-subtle)" }}
+                  >
+                    Direct Email
+                  </p>
+                  <a
+                    href="mailto:rachelphamdesign@gmail.com"
+                    className="text-[28px] sm:text-[36px] font-medium underline leading-[1.1] transition-opacity hover:opacity-70"
+                    style={{
+                      color: "var(--accent-blue)",
+                      textDecorationColor: "rgba(0,88,188,0.2)",
+                    }}
+                  >
+                    rachelphamdesign@gmail.com
+                  </a>
+                </div>
+              </ScrollReveal>
 
               {/* Social links grid */}
-              <div
-                className="grid grid-cols-2 sm:grid-cols-3 gap-8 pt-8 border-t"
-                style={{ borderColor: "var(--border-default)" }}
-              >
-                {socialLinks.map((link) => (
-                  <div key={link.platform} className="flex flex-col gap-4">
-                    <p
-                      className="text-[12px] tracking-[1.2px] uppercase"
-                      style={{ color: "var(--text-muted)" }}
-                    >
-                      {link.platform}
-                    </p>
-                    <a
-                      href={link.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center gap-2 text-[16px] transition-opacity hover:opacity-70 group"
-                      style={{ color: "var(--text-primary)" }}
-                    >
-                      {link.handle}
-                      <svg
-                        width="9"
-                        height="9"
-                        viewBox="0 0 9 9"
-                        fill="none"
-                        className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
-                        aria-hidden="true"
+              <ScrollReveal delay={0.3}>
+                <div
+                  className="grid grid-cols-2 sm:grid-cols-3 gap-8 pt-8 border-t"
+                  style={{ borderColor: "var(--border-default)" }}
+                >
+                  {socialLinks.map((link) => (
+                    <div key={link.platform} className="flex flex-col gap-4">
+                      <p
+                        className="text-[12px] tracking-[1.2px] uppercase"
+                        style={{ color: "var(--text-muted)" }}
                       >
-                        <path
-                          d="M1 8L8 1M8 1H3M8 1V6"
-                          stroke="currentColor"
-                          strokeWidth="1.5"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        />
-                      </svg>
-                    </a>
-                  </div>
-                ))}
-              </div>
+                        {link.platform}
+                      </p>
+                      <a
+                        href={link.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-2 text-[16px] transition-opacity hover:opacity-70 group"
+                        style={{ color: "var(--text-primary)" }}
+                      >
+                        {link.handle}
+                        <svg
+                          width="9"
+                          height="9"
+                          viewBox="0 0 9 9"
+                          fill="none"
+                          className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                          aria-hidden="true"
+                        >
+                          <path
+                            d="M1 8L8 1M8 1H3M8 1V6"
+                            stroke="currentColor"
+                            strokeWidth="1.5"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                          />
+                        </svg>
+                      </a>
+                    </div>
+                  ))}
+                </div>
+              </ScrollReveal>
             </div>
           </div>
-        </div>
+        </ScrollReveal>
       </main>
       <Footer />
     </>

@@ -21,6 +21,44 @@ import { TrackGuardKeyFeatures } from "@/components/work/TrackGuardKeyFeatures";
 import { TrackGuardHowItWorksSection } from "@/components/work/TrackGuardHowItWorksSection";
 import { TrackGuardStoryboardSection } from "@/components/work/TrackGuardStoryboardSection";
 import { TrackGuardLowFidelitySection } from "@/components/work/TrackGuardLowFidelitySection";
+import { TrackGuardHighFidelitySection } from "@/components/work/TrackGuardHighFidelitySection";
+import { TrackGuardDesignOutcomeSection } from "@/components/work/TrackGuardDesignOutcomeSection";
+import { SweetSunsetSocialPostSection } from "@/components/work/SweetSunsetSocialPostSection";
+import { SweetSunsetOverviewGoalSection } from "@/components/work/SweetSunsetOverviewGoalSection";
+import { SweetSunsetApronBrandSection } from "@/components/work/SweetSunsetApronBrandSection";
+import { SweetSunsetFoodCollageSection } from "@/components/work/SweetSunsetFoodCollageSection";
+import { SweetSunsetColorEvolutionSection } from "@/components/work/SweetSunsetColorEvolutionSection";
+import { SweetSunsetBusinessCardsSection } from "@/components/work/SweetSunsetBusinessCardsSection";
+import { SweetSunsetCoffeeSpreadSection } from "@/components/work/SweetSunsetCoffeeSpreadSection";
+import { SweetSunsetToteBagsSection } from "@/components/work/SweetSunsetToteBagsSection";
+import { SweetSunsetLogoPatternSection } from "@/components/work/SweetSunsetLogoPatternSection";
+import { SweetSunsetSloganBannerSection } from "@/components/work/SweetSunsetSloganBannerSection";
+import { SweetSunsetPackagingMockupSection } from "@/components/work/SweetSunsetPackagingMockupSection";
+import { SweetSunsetTwinPortraitSpreadSection } from "@/components/work/SweetSunsetTwinPortraitSpreadSection";
+import { SweetSunsetSocialCampaignSection } from "@/components/work/SweetSunsetSocialCampaignSection";
+import { SweetSunsetTikTokCardsSection } from "@/components/work/SweetSunsetTikTokCardsSection";
+import { IdeasToImpactRefinedHero } from "@/components/work/IdeasToImpactRefinedHero";
+import { IdeasToImpactOverviewSection } from "@/components/work/IdeasToImpactOverviewSection";
+import { IdeasToImpactSocialGraphicSection } from "@/components/work/IdeasToImpactSocialGraphicSection";
+import { IdeasToImpactTalkTheatersSection } from "@/components/work/IdeasToImpactTalkTheatersSection";
+import { IdeasToImpactRobotPhotoboothSection } from "@/components/work/IdeasToImpactRobotPhotoboothSection";
+import { IdeasToImpactAdditionalBrandApplicationsSection } from "@/components/work/IdeasToImpactAdditionalBrandApplicationsSection";
+import { IdeasToImpactAgendaSection } from "@/components/work/IdeasToImpactAgendaSection";
+import { IdeasToImpactSocialMediaDesignSection } from "@/components/work/IdeasToImpactSocialMediaDesignSection";
+import { FhirNorthRefinedHero } from "@/components/work/FhirNorthRefinedHero";
+import { FhirNorthOverviewSection } from "@/components/work/FhirNorthOverviewSection";
+import { FhirNorthMetricsSection } from "@/components/work/FhirNorthMetricsSection";
+import { FhirNorthWebsiteSection } from "@/components/work/FhirNorthWebsiteSection";
+import { FhirNorthEventSignageSection } from "@/components/work/FhirNorthEventSignageSection";
+import { FhirNorthSocialMediaDesignSection } from "@/components/work/FhirNorthSocialMediaDesignSection";
+import { FhirNorthEventGallerySection } from "@/components/work/FhirNorthEventGallerySection";
+import { VotCoffeeRefinedHero } from "@/components/work/VotCoffeeRefinedHero";
+import { VotCoffeeOverviewGoalSection } from "@/components/work/VotCoffeeOverviewGoalSection";
+import {
+  VotCoffeeLeadStrip,
+  VotCoffeeGalleryStrips,
+} from "@/components/work/VotCoffeeFullBleedSections";
+import { VotCoffeePackagingMockupSection } from "@/components/work/VotCoffeePackagingMockupSection";
 import { cashpayInsetX } from "@/lib/cashpaySpacing";
 import { getProject, projects } from "@/lib/projects";
 
@@ -47,6 +85,11 @@ export default async function WorkPage({ params }: Props) {
   const project = getProject(slug);
   const isCashpay = slug === "cashpay";
   const isTrackguard = slug === "trackguard";
+  const isAppliedResearch101 = slug === "applied-research-101";
+  const isSweetSunset = slug === "sweet-sunset";
+  const isIdeasToImpact = slug === "ideas-to-impact";
+  const isFhirNorth = slug === "fhir-north";
+  const isVotCoffee = slug === "vot-coffee";
   const cashpayProcessPreview = "https://www.figma.com/api/mcp/asset/8e4be111-0116-401d-b8b8-4d9ae97ffad5";
   const challengeIconFriction = "https://www.figma.com/api/mcp/asset/61fd4f3a-6836-473a-925b-1a65b21d2aa3";
   const challengeIconObjective = "https://www.figma.com/api/mcp/asset/8898d8f6-c8c5-458e-a546-d9261f6c9277";
@@ -65,19 +108,34 @@ export default async function WorkPage({ params }: Props) {
           className={`px-0 ${
             isCashpay
               ? "pt-28 pb-10 sm:pb-14"
-              : isTrackguard
+              : isTrackguard ||
+                  isSweetSunset ||
+                  isIdeasToImpact ||
+                  isFhirNorth ||
+                  isVotCoffee
                 ? "pt-32 pb-10 sm:pb-14"
                 : "pt-32 pb-0"
           }`}
           {...(isCashpay ? { "data-cashpay-debug-hero": "1" } : {})}
         >
+          {isVotCoffee ? (
+            <VotCoffeeRefinedHero project={project} />
+          ) : isFhirNorth ? (
+            <FhirNorthRefinedHero project={project} />
+          ) : isIdeasToImpact ? (
+            <IdeasToImpactRefinedHero project={project} />
+          ) : (
           <div className="max-w-[980px] mx-auto px-6">
             {/* Label + Title */}
-            <div className={`flex flex-col items-center text-center ${isCashpay ? "gap-6 mb-8 pt-4 sm:mb-10" : "gap-8 mb-12 pt-8"}`}>
+            <div
+              className={`flex flex-col items-center text-center ${
+                isCashpay ? "gap-6 mb-8 pt-4 sm:mb-10" : isSweetSunset ? "mb-12 gap-10 pt-8" : "gap-8 mb-12 pt-8"
+              }`}
+            >
               <div
                 className="flex items-center gap-2 px-[17px] py-[7px] rounded-full border shadow-[0px_1px_2px_rgba(0,0,0,0.05)]"
                 style={{
-                  background: isCashpay ? "var(--pill-badge-bg)" : "var(--bg-surface)",
+                  background: isCashpay || isSweetSunset ? "var(--pill-badge-bg)" : "var(--bg-surface)",
                   borderColor: "var(--border-nav)",
                 }}
               >
@@ -90,15 +148,19 @@ export default async function WorkPage({ params }: Props) {
                 </span>
               </div>
 
-              <div className={`${isCashpay ? "flex flex-col gap-2" : "flex flex-col gap-3"}`}>
+              <div className={`${isCashpay || isSweetSunset ? "flex flex-col gap-2" : "flex flex-col gap-3"}`}>
                 <h1
-                  className={`${isCashpay ? "text-[40px] sm:text-[54px] tracking-[-1.8px] leading-[1.1]" : "text-[40px] sm:text-[54px] tracking-[-0.03em] leading-[1.1]"} font-bold`}
+                  className={`${
+                    isCashpay || isSweetSunset
+                      ? "text-[40px] sm:text-[54px] tracking-[-1.8px] leading-[1.1]"
+                      : "text-[40px] sm:text-[54px] tracking-[-0.03em] leading-[1.1]"
+                  } font-bold`}
                   style={{ color: "var(--text-primary)" }}
                 >
                   {project.title}
                 </h1>
                 <p
-                  className={`${isCashpay ? "text-[18px] leading-[32px]" : "text-[18px] leading-[1.7]"}`}
+                  className={`${isCashpay || isSweetSunset ? "text-[18px] leading-[32px]" : "text-[18px] leading-[1.7]"}`}
                   style={{ color: "var(--text-secondary)" }}
                 >
                   {project.subtitle}
@@ -109,7 +171,10 @@ export default async function WorkPage({ params }: Props) {
             {/* Hero image / placeholder */}
             <div
               className={`relative overflow-hidden ${isCashpay ? "rounded-[56px]" : "rounded-[56px]"}`}
-              style={{ background: "var(--bg-surface)", boxShadow: "var(--shadow-hero-media)" }}
+              style={{
+                background: isAppliedResearch101 ? "var(--bg-page)" : "var(--bg-surface)",
+                boxShadow: "var(--shadow-hero-media)",
+              }}
             >
               {project.heroVideo && isCashpay ? (
                 <div className="relative w-full" style={{ paddingBottom: "47%" }}>
@@ -133,6 +198,33 @@ export default async function WorkPage({ params }: Props) {
                     muted
                     playsInline
                     preload="metadata"
+                  />
+                </div>
+              ) : project.heroImage && isSweetSunset ? (
+                <div className="relative h-[min(420px,58vw)] w-full overflow-hidden sm:h-[470px]">
+                  {/* Figma 337:24571 — mockup frame h 470, image h 142.24% top -12.66% */}
+                  {/* eslint-disable-next-line @next/next/no-img-element -- Figma-exact % crop */}
+                  <img
+                    src={project.heroImage}
+                    alt={`${project.title} — brand packaging and identity mockups`}
+                    className="pointer-events-none absolute left-0 w-full max-w-none select-none"
+                    style={{
+                      height: "142.24%",
+                      top: "-12.66%",
+                    }}
+                    draggable={false}
+                  />
+                </div>
+              ) : project.heroImage && isAppliedResearch101 ? (
+                <div className="flex w-full justify-center px-5 py-8 sm:px-8 sm:py-10 md:px-10 md:py-12">
+                  <Image
+                    src={project.heroImage}
+                    alt={`${project.title} — laptop mockup showing the course interface in Thinkific`}
+                    width={1024}
+                    height={608}
+                    className="h-auto w-full max-w-[min(100%,920px)] object-contain"
+                    priority
+                    sizes="(max-width: 768px) 100vw, 920px"
                   />
                 </div>
               ) : project.heroImage ? (
@@ -160,10 +252,12 @@ export default async function WorkPage({ params }: Props) {
               className={`${
                 isCashpay
                   ? "flex justify-center gap-8 pt-6 pb-2 sm:gap-14 sm:pt-8 sm:pb-3"
-                  : "flex flex-wrap justify-center gap-12 pt-10 pb-3 sm:pb-4"
+                  : isSweetSunset
+                    ? "flex flex-wrap justify-center gap-10 pt-10 pb-3 sm:gap-12 sm:pb-4 lg:gap-16 xl:gap-[80px]"
+                    : "flex flex-wrap justify-center gap-12 pt-10 pb-3 sm:pb-4"
               }`}
             >
-              <div className="flex flex-col gap-2">
+              <div className={`flex flex-col ${isSweetSunset ? "gap-[7px]" : "gap-2"}`}>
                 <p
                   className="text-[12px] font-bold tracking-[2px] uppercase"
                   style={{ color: "var(--text-primary)" }}
@@ -181,7 +275,7 @@ export default async function WorkPage({ params }: Props) {
                 ))}
               </div>
 
-              <div className="flex flex-col gap-2">
+              <div className={`flex flex-col ${isSweetSunset ? "gap-[7px]" : "gap-2"}`}>
                 <p
                   className="text-[12px] font-bold tracking-[2px] uppercase"
                   style={{ color: "var(--text-primary)" }}
@@ -193,7 +287,7 @@ export default async function WorkPage({ params }: Props) {
                 </p>
               </div>
 
-              <div className="flex flex-col gap-2">
+              <div className={`flex flex-col ${isSweetSunset ? "gap-[7px]" : "gap-2"}`}>
                 <p
                   className="text-[12px] font-bold tracking-[2px] uppercase"
                   style={{ color: "var(--text-primary)" }}
@@ -205,7 +299,7 @@ export default async function WorkPage({ params }: Props) {
                 </p>
               </div>
 
-              <div className="flex flex-col gap-2">
+              <div className={`flex flex-col ${isSweetSunset ? "gap-[7px]" : "gap-2"}`}>
                 <p
                   className="text-[12px] font-bold tracking-[2px] uppercase"
                   style={{ color: "var(--text-primary)" }}
@@ -220,7 +314,45 @@ export default async function WorkPage({ params }: Props) {
               </div>
             </div>
           </div>
+          )}
         </section>
+
+        {isVotCoffee ? <VotCoffeeLeadStrip /> : null}
+        {isVotCoffee ? (
+          <VotCoffeeOverviewGoalSection overview={project.overview} />
+        ) : null}
+        {isVotCoffee ? <VotCoffeePackagingMockupSection /> : null}
+        {isVotCoffee ? <VotCoffeeGalleryStrips /> : null}
+
+        {isFhirNorth ? <FhirNorthOverviewSection /> : null}
+        {isFhirNorth ? <FhirNorthMetricsSection /> : null}
+        {isFhirNorth ? <FhirNorthWebsiteSection /> : null}
+        {isFhirNorth ? <FhirNorthEventSignageSection /> : null}
+        {isFhirNorth ? <FhirNorthSocialMediaDesignSection /> : null}
+        {isFhirNorth ? <FhirNorthEventGallerySection /> : null}
+
+        {isIdeasToImpact ? <IdeasToImpactOverviewSection /> : null}
+        {isIdeasToImpact ? <IdeasToImpactSocialGraphicSection /> : null}
+        {isIdeasToImpact ? <IdeasToImpactTalkTheatersSection /> : null}
+        {isIdeasToImpact ? <IdeasToImpactRobotPhotoboothSection /> : null}
+        {isIdeasToImpact ? <IdeasToImpactAdditionalBrandApplicationsSection /> : null}
+        {isIdeasToImpact ? <IdeasToImpactAgendaSection /> : null}
+        {isIdeasToImpact ? <IdeasToImpactSocialMediaDesignSection /> : null}
+
+        {isSweetSunset ? <SweetSunsetSocialPostSection /> : null}
+        {isSweetSunset ? <SweetSunsetOverviewGoalSection /> : null}
+        {isSweetSunset ? <SweetSunsetApronBrandSection /> : null}
+        {isSweetSunset ? <SweetSunsetFoodCollageSection /> : null}
+        {isSweetSunset ? <SweetSunsetColorEvolutionSection /> : null}
+        {isSweetSunset ? <SweetSunsetBusinessCardsSection /> : null}
+        {isSweetSunset ? <SweetSunsetCoffeeSpreadSection /> : null}
+        {isSweetSunset ? <SweetSunsetToteBagsSection /> : null}
+        {isSweetSunset ? <SweetSunsetLogoPatternSection /> : null}
+        {isSweetSunset ? <SweetSunsetSloganBannerSection /> : null}
+        {isSweetSunset ? <SweetSunsetPackagingMockupSection /> : null}
+        {isSweetSunset ? <SweetSunsetTwinPortraitSpreadSection /> : null}
+        {isSweetSunset ? <SweetSunsetSocialCampaignSection /> : null}
+        {isSweetSunset ? <SweetSunsetTikTokCardsSection /> : null}
 
         {isTrackguard ? <TrackGuardProcessSection /> : null}
         {isTrackguard ? <TrackGuardIdentifyingSection /> : null}
@@ -233,12 +365,16 @@ export default async function WorkPage({ params }: Props) {
         {isTrackguard ? <TrackGuardHowItWorksSection /> : null}
         {isTrackguard ? <TrackGuardStoryboardSection /> : null}
         {isTrackguard ? <TrackGuardLowFidelitySection /> : null}
+        {isTrackguard ? <TrackGuardHighFidelitySection /> : null}
+        {isTrackguard ? <TrackGuardDesignOutcomeSection /> : null}
 
         {/* ── Content Sections ── */}
         {project.sections?.map((section, i) => (
           (() => {
             const isSocialExperience =
-              project.slug === "social-robots" && section.type === "text" && section.heading === "Experience & Impact";
+              (project.slug === "social-robots" || project.slug === "applied-research-101") &&
+              section.type === "text" &&
+              section.heading === "Experience & Impact";
             const cashpayVerticalPadding = (() => {
               if (i === 0) return "pt-0 sm:pt-1 pb-12 sm:pb-16";
               // Survey ends inside this section — avoid stacking section pb with next section pt.
@@ -309,7 +445,7 @@ export default async function WorkPage({ params }: Props) {
                   )}
                   {section.bodyHtml ? (
                     <div
-                      className={`${readableTextClass} text-[var(--text-secondary)] [&_a]:underline [&_a]:decoration-[var(--border-subtle)] [&_a]:underline-offset-[3px] [&_a]:transition-opacity hover:[&_a]:opacity-85 [&_strong]:font-semibold [&_strong]:text-[var(--text-primary)]`}
+                      className={`${readableTextClass} text-[var(--text-secondary)] [&_a]:text-[var(--text-primary)] [&_a]:underline [&_a]:decoration-[var(--border-subtle)] [&_a]:underline-offset-[3px] [&_a]:transition-opacity hover:[&_a]:opacity-85 [&_strong]:font-semibold [&_strong]:text-[var(--text-primary)]`}
                       dangerouslySetInnerHTML={{ __html: section.bodyHtml }}
                     />
                   ) : section.body && (
@@ -568,7 +704,14 @@ export default async function WorkPage({ params }: Props) {
         {/* ── Back to work ── */}
         {isCashpay ? <CashpaySectionSpacingDebug /> : null}
 
-        <section className="py-20 px-6 text-center">
+        <section
+          className="py-20 px-6 text-center"
+          style={
+            isIdeasToImpact || isFhirNorth || isVotCoffee
+              ? { background: "var(--bg-surface)" }
+              : undefined
+          }
+        >
           <Link
             href="/#work"
             className="inline-flex items-center gap-2 h-12 px-6 rounded-full font-medium text-[14px] border transition-colors hover:opacity-80"
@@ -591,7 +734,7 @@ export default async function WorkPage({ params }: Props) {
           </Link>
         </section>
       </main>
-      <Footer />
+      <Footer hideTopBorder={isIdeasToImpact || isFhirNorth || isVotCoffee} />
     </>
   );
 }

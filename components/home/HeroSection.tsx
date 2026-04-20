@@ -9,7 +9,7 @@ import { ScrollReveal } from "@/components/ScrollReveal";
  */
 export function HeroSection() {
   return (
-    <section className="px-6 pb-6 pt-[130px] sm:pb-10">
+    <section className="px-6 pb-24 pt-[130px] sm:pb-32 lg:pb-40">
       <div className="mx-auto w-full max-w-[1100px]">
         <div className="grid grid-cols-1 items-start gap-[30px] lg:grid-cols-[1fr_560px]">
           <div className="relative flex flex-col items-start">

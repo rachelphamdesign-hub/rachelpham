@@ -76,8 +76,8 @@ export function Header() {
         </div>
 
         {/* Let's talk CTA */}
-        <Link
-          href="/contact"
+        <a
+          href="mailto:rachelphamdesign@gmail.com"
           className="flex items-center gap-2 h-12 px-6 rounded-full font-semibold text-[14px] tracking-[-0.025em] transition-opacity hover:opacity-90 shrink-0"
           style={{
             background: "var(--btn-primary-bg)",
@@ -101,7 +101,7 @@ export function Header() {
               strokeLinejoin="round"
             />
           </svg>
-        </Link>
+        </a>
       </div>
     </header>
   );

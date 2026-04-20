@@ -205,41 +205,45 @@ export function FeaturedProject({
     );
   }
 
+  /** Events grid — full-bleed packaging photo (#595952 fallback), copy overlaid top-left (unchanged strings). */
   if (layout === "votPhoto") {
     return (
       <Link
         href={`/work/${slug}`}
         {...ch}
-        className={`${cardBase} relative overflow-hidden rounded-[24px] ${gridSizing}`}
-        style={surface}
+        className={`${cardBase} relative min-h-0 overflow-hidden rounded-[24px] ${gridSizing}`}
+        style={{
+          ...surface,
+          background: "#595952",
+          borderColor: "rgba(0, 0, 0, 0.12)",
+        }}
       >
-        <RevealMedia className="pointer-events-none absolute inset-0 relative">
+        <RevealMedia className="pointer-events-none absolute inset-0">
           <Image
             src={mediaSrc}
-            alt=""
+            alt={`${title} — kraft bag and takeaway packaging mockup`}
             fill
-            className="object-cover"
+            className="object-cover object-center"
             sizes="(min-width: 1024px) 400px, 100vw"
             unoptimized
           />
-          <div className="absolute inset-0 bg-black/50" aria-hidden />
+          {/* Keep label / title / subtitle legible over the photo */}
+          <div
+            className="absolute inset-0 bg-gradient-to-br from-black/50 via-black/15 to-transparent"
+            aria-hidden
+          />
         </RevealMedia>
         <RevealCopy
-          className="relative z-10 flex h-full min-h-0 flex-col justify-start gap-3 px-8 pb-8 pt-8 sm:px-9"
+          className="relative z-10 flex max-w-[min(100%,20rem)] flex-col items-start gap-2 px-8 pb-8 pt-8 text-left sm:gap-[10px] sm:px-9 sm:pb-9 sm:pt-9"
           delay={0.14}
         >
-          <div className="flex flex-col gap-2">
-            {meta}
-            <h3
-              className={`text-white ${titleShade} ${titleClass}`}
-            >
-              {title}
-            </h3>
-          </div>
-          <p
-            className={`${subtitleBase} max-w-[20rem] leading-[1.45] ${subtitleClass}`}
-            style={{ color: "var(--featured-track-desc)" }}
-          >
+          <p className="mb-0 text-[11px] font-semibold uppercase leading-4 tracking-[0.14em] text-white sm:text-[12px] sm:tracking-[1.2px]">
+            {label}
+          </p>
+          <h3 className={`text-white ${titleShade} ${titleClass}`}>
+            {title}
+          </h3>
+          <p className={`${subtitleBase} lowercase leading-[1.45] text-white ${subtitleClass}`}>
             {subtitle}
           </p>
         </RevealCopy>

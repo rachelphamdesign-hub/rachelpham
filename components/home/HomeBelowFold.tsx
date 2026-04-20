@@ -1,4 +1,6 @@
-import Link from "next/link";
+"use client";
+
+import { useEffect, useRef, useState } from "react";
 import { FeaturedProject } from "@/components/FeaturedProject";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { testimonials } from "@/lib/projects";
@@ -63,7 +65,7 @@ function FeaturedProjects() {
   ];
 
   return (
-    <section id="work" className="px-6 pb-[56px] pt-2 sm:pb-[72px] sm:pt-4 lg:pb-[88px]">
+    <section id="work" className="px-6 pb-[56px] pt-12 sm:pb-[72px] sm:pt-16 lg:pb-[88px] lg:pt-20">
       <div className="mx-auto w-full max-w-[1240px]">
         <div className="mb-10 flex flex-col items-center gap-4 sm:mb-12">
           <ScrollReveal>
@@ -178,8 +180,8 @@ function EventsSection() {
       layout: "votPhoto" as const,
       title: "Vot Coffee",
       subtitle: "a freelance project creating a fresh identity for a new coffee brand and shop.",
-      label: "2023 • Freelance 02",
-      image: "https://www.figma.com/api/mcp/asset/1ea3c486-6ed2-4b7e-a24c-eaf77754c120",
+      label: "2023 • FREELANCE 02",
+      image: "/media/vot-coffee-box-bag-mockup.png",
       mediaType: "image" as const,
       area: "lg:col-span-4 lg:col-start-9 lg:row-start-2",
       height: "min-h-[240px] h-[260px] lg:h-[260px]",
@@ -234,6 +236,24 @@ function EventsSection() {
 }
 
 function TestimonialsSection() {
+  const [activeCard, setActiveCard] = useState<number | null>(null);
+  const [hoveredCard, setHoveredCard] = useState<number | null>(null);
+  const desktopCardsRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    if (activeCard === null) return;
+
+    const onPointerDown = (event: PointerEvent) => {
+      const target = event.target as Node;
+      if (!desktopCardsRef.current?.contains(target)) {
+        setActiveCard(null);
+      }
+    };
+
+    document.addEventListener("pointerdown", onPointerDown);
+    return () => document.removeEventListener("pointerdown", onPointerDown);
+  }, [activeCard]);
+
   const cards = [
     { left: "7.4%", top: "10.6%", rotate: "-6deg", z: 20 },
     { left: "36.0%", top: "2.6%", rotate: "4deg", z: 30 },
@@ -269,24 +289,41 @@ function TestimonialsSection() {
           delay={0.08}
           className="relative mx-auto hidden h-[500px] w-full max-w-[1060px] lg:block"
         >
+          <div ref={desktopCardsRef} className="relative h-full w-full">
           {testimonials.map((t, i) => {
             const spec = cards[i] ?? cards[cards.length - 1];
             const isDark = t.color === "#000000" || t.color === "#8B85F9";
             const borderColor = isDark ? "rgba(255,255,255,0.1)" : "rgba(0,0,0,0.05)";
             const textColor = isDark ? "#ffffff" : "#18181B";
-            const starColor = isDark ? "#8B85F9" : "#7D77F2";
+            const starColor = t.color === "#8B85F9" ? "#FFFFFF" : isDark ? "#8B85F9" : "#7D77F2";
+            const isActive = activeCard === i;
+            const isDimmed = activeCard !== null && !isActive;
+            const isHovered = hoveredCard === i;
+            const liftY = isActive ? -12 : isHovered ? -8 : 0;
+            const scale = isActive ? 1.04 : 1;
 
             return (
               <article
                 key={`${t.name}-${i}`}
-                className="absolute flex h-[292px] w-[320px] flex-col rounded-[20px] px-8 pb-8 pt-8 shadow-[0_10px_40px_-15px_rgba(0,0,0,0.18)]"
+                className="absolute flex h-[292px] w-[320px] cursor-pointer flex-col rounded-[20px] px-8 pb-8 pt-8 transition-all duration-300 ease-out"
                 style={{
                   left: spec.left,
                   top: spec.top,
-                  transform: `rotate(${spec.rotate})`,
-                  zIndex: spec.z,
+                  transform: `rotate(${spec.rotate}) translateY(${liftY}px) scale(${scale})`,
+                  zIndex: isActive ? 200 : spec.z,
                   background: t.color,
                   border: t.color === "#FFFFFF" ? "1px solid #F4F4F5" : "none",
+                  opacity: isDimmed ? 0.55 : 1,
+                  filter: isDimmed ? "blur(1px)" : "none",
+                  boxShadow: isActive
+                    ? "0 28px 56px -24px rgba(0,0,0,0.42)"
+                    : "0 10px 40px -15px rgba(0,0,0,0.18)",
+                }}
+                onMouseEnter={() => setHoveredCard(i)}
+                onMouseLeave={() => setHoveredCard((current) => (current === i ? null : current))}
+                onClick={(event) => {
+                  event.stopPropagation();
+                  setActiveCard((current) => (current === i ? null : i));
                 }}
               >
                 <div className="mb-[22px] flex gap-[2px]">
@@ -313,6 +350,7 @@ function TestimonialsSection() {
               </article>
             );
           })}
+          </div>
         </ScrollReveal>
 
         <ScrollReveal delay={0.06} className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:hidden">
@@ -320,7 +358,7 @@ function TestimonialsSection() {
             const isDark = t.color === "#000000" || t.color === "#8B85F9";
             const textColor = isDark ? "#ffffff" : "#18181B";
             const borderColor = isDark ? "rgba(255,255,255,0.1)" : "rgba(0,0,0,0.05)";
-            const starColor = isDark ? "#8B85F9" : "#7D77F2";
+            const starColor = t.color === "#8B85F9" ? "#FFFFFF" : isDark ? "#8B85F9" : "#7D77F2";
 
             return (
               <article
@@ -366,8 +404,8 @@ function CTASection() {
           </h2>
         </ScrollReveal>
         <ScrollReveal delay={0.12}>
-          <Link
-            href="/contact"
+          <a
+            href="mailto:rachelphamdesign@gmail.com"
             className="inline-flex h-[32px] items-center gap-2 rounded-full px-[16px] text-[11px] font-semibold uppercase tracking-[0.08em] transition-opacity duration-500 hover:opacity-90"
             style={{
               background: "var(--btn-primary-bg)",
@@ -384,7 +422,7 @@ function CTASection() {
                 strokeLinejoin="round"
               />
             </svg>
-          </Link>
+          </a>
         </ScrollReveal>
       </div>
     </section>

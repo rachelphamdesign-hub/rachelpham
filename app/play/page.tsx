@@ -3,6 +3,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { ScrollReveal } from "@/components/ScrollReveal";
 
 type PlayCard = {
   nodeId: string;
@@ -11,11 +12,20 @@ type PlayCard = {
   video?: string;
   overlay?: "soft" | "dark";
   background?: string;
+  /** Landscape editorial spreads — wider snap card in the horizontal gallery */
+  variant?: "wide";
 };
 
 const PLAY_HEADER_SHELL = "mx-auto w-full max-w-[1160px] px-6";
 
 const playItems: PlayCard[] = [
+  {
+    nodeId: "local-akira-spread",
+    title: "Anime Magazine — Akira spread",
+    image: "/media/play-akira-magazine-spread.jpg",
+    overlay: "soft",
+    variant: "wide",
+  },
   { nodeId: "107:255", title: "BeatSync App", overlay: "soft", video: "/media/showreel-mobile-screens-remix-copy.mp4" },
   { nodeId: "107:396", title: "Uynique Studio", image: "https://www.figma.com/api/mcp/asset/b8f2cac7-de7a-4ac3-8a24-a14cd028d79b" },
   { nodeId: "107:297", title: "Sports News Website", image: "https://www.figma.com/api/mcp/asset/a7ca40d1-6ed7-4225-a95b-b8e79033391b" },
@@ -31,9 +41,7 @@ const playItems: PlayCard[] = [
   { nodeId: "150:668", title: "", image: "https://www.figma.com/api/mcp/asset/af506eda-6d34-4dbd-9cee-cd10c412ba50", overlay: "dark" },
   { nodeId: "141:468", title: "Icon Magazine", image: "https://www.figma.com/api/mcp/asset/b7c6241c-adfc-45ae-80ce-342aff4b7dea" },
   { nodeId: "150:504", title: "", image: "https://www.figma.com/api/mcp/asset/9c1153f3-368b-4e23-b4eb-5d29d649446f", overlay: "dark" },
-  { nodeId: "147:474", title: "", image: "https://www.figma.com/api/mcp/asset/2214bc56-cf27-4c29-9f93-33cb655176af", overlay: "dark" },
   { nodeId: "107:291", title: "City Housing Hamilton – Ad Campaign", image: "https://www.figma.com/api/mcp/asset/2c15e025-c2d2-4db6-84ff-b83bf27f8916" },
-  { nodeId: "141:456", title: "Anime Magazine", image: "https://www.figma.com/api/mcp/asset/2214bc56-cf27-4c29-9f93-33cb655176af" },
   { nodeId: "107:402", title: "541 Eatery & Exchange - Case For Support", image: "https://www.figma.com/api/mcp/asset/cd07e9bb-d915-4bdc-8394-4090b68a254c" },
   { nodeId: "107:261", title: "City Housing Hamilton – Annual Report 2024", image: "https://www.figma.com/api/mcp/asset/c197658e-7d34-4b73-8de9-072e382ffa36" },
   { nodeId: "150:492", title: "", image: "https://www.figma.com/api/mcp/asset/08d6bb01-88df-4f04-bd69-50074a1e9d83", overlay: "dark" },
@@ -53,14 +61,23 @@ function PlayCardFigure({ item }: { item: PlayCard }) {
       ? "linear-gradient(to top, rgba(0,0,0,0.92) 0%, rgba(0,0,0,0.52) 30%, rgba(0,0,0,0) 64%)"
       : "linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.4) 30%, rgba(0,0,0,0) 60%)";
 
+  const isWide = item.variant === "wide";
+  const shellMax = isWide
+    ? "max-w-[min(94vw,560px)] sm:max-w-[min(90vw,540px)] lg:max-w-[560px]"
+    : "max-w-[min(72vw,300px)] sm:max-w-[min(42vw,280px)] lg:max-w-[300px]";
+  const mediaMax = isWide
+    ? "max-h-[min(62dvh,440px)] max-w-[min(94vw,560px)] sm:max-w-[min(90vw,540px)] lg:max-w-[560px]"
+    : "max-h-[min(52dvh,520px)] max-w-[min(72vw,300px)] sm:max-w-[min(42vw,280px)] lg:max-w-[300px]";
 
   if (item.video) {
     return (
-      <div className="relative w-fit max-w-[min(72vw,300px)] overflow-hidden rounded-[21.615px] border border-[var(--border-default)] bg-[var(--card-bg)] sm:max-w-[min(42vw,280px)] lg:max-w-[300px]">
+      <div
+        className={`relative w-fit overflow-hidden rounded-[21.615px] border border-[var(--border-default)] bg-[var(--card-bg)] ${shellMax}`}
+      >
         <div className="flex items-center justify-center">
           <video
             src={item.video}
-            className="block h-auto max-h-[min(52dvh,520px)] w-auto max-w-[min(72vw,300px)] object-contain object-center sm:max-w-[min(42vw,280px)] lg:max-w-[300px]"
+            className={`block h-auto w-auto object-contain object-center ${mediaMax}`}
             autoPlay
             loop
             muted
@@ -82,14 +99,16 @@ function PlayCardFigure({ item }: { item: PlayCard }) {
 
   if (item.image) {
     return (
-      <div className="relative w-fit max-w-[min(72vw,300px)] overflow-hidden rounded-[21.615px] border border-[var(--border-default)] bg-[var(--card-bg)] sm:max-w-[min(42vw,280px)] lg:max-w-[300px]">
+      <div
+        className={`relative w-fit overflow-hidden rounded-[21.615px] border border-[var(--border-default)] bg-[var(--card-bg)] ${shellMax}`}
+      >
         <div className="flex items-center justify-center">
           {/* Remote Figma assets: intrinsic size keeps frames tight; object-contain avoids crop */}
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src={item.image}
             alt={item.title}
-            className="block h-auto max-h-[min(52dvh,520px)] w-auto max-w-[min(72vw,300px)] object-contain object-center sm:max-w-[min(42vw,280px)] lg:max-w-[300px]"
+            className={`block h-auto w-auto object-contain object-center ${mediaMax}`}
             loading="lazy"
             decoding="async"
           />
@@ -195,7 +214,8 @@ export default function PlayPage() {
         style={{ background: "var(--bg-page)" }}
       >
         <section className={`${PLAY_HEADER_SHELL} shrink-0 pb-4 pt-2 text-center sm:pb-6`}>
-          <div className="pb-4 sm:pb-5">
+          <ScrollReveal>
+            <div className="pb-4 sm:pb-5">
             <div
               className="inline-flex items-center gap-2 rounded-full border border-[var(--border-nav)] bg-[var(--pill-badge-bg)] px-[17px] py-[7px] shadow-[0px_1px_2px_rgba(0,0,0,0.05)] dark:border-white/10 dark:shadow-[0px_1px_2px_rgba(0,0,0,0.35)]"
             >
@@ -204,13 +224,18 @@ export default function PlayPage() {
                 Creative Fun 2026
               </span>
             </div>
-          </div>
-          <h1 className="mb-3 text-[44px] font-bold tracking-[-1.4px] text-[var(--text-primary)] sm:mb-4 sm:text-[56px] sm:tracking-[-1.92px] lg:text-[64px]">
+            </div>
+          </ScrollReveal>
+          <ScrollReveal delay={0.1}>
+            <h1 className="mb-3 text-[44px] font-bold tracking-[-1.4px] text-[var(--text-primary)] sm:mb-4 sm:text-[56px] sm:tracking-[-1.92px] lg:text-[64px]">
             Playground
-          </h1>
-          <p className="mx-auto max-w-[564px] text-[16px] leading-[1.6] tracking-[-0.45px] text-[var(--text-secondary)] sm:text-[18px] sm:leading-[29.25px] sm:tracking-[-0.54px]">
+            </h1>
+          </ScrollReveal>
+          <ScrollReveal delay={0.2}>
+            <p className="mx-auto max-w-[564px] text-[16px] leading-[1.6] tracking-[-0.45px] text-[var(--text-secondary)] sm:text-[18px] sm:leading-[29.25px] sm:tracking-[-0.54px]">
             Side projects that let me experiment, play, and explore new ideas.
-          </p>
+            </p>
+          </ScrollReveal>
         </section>
 
         {/* Horizontal gallery + drag hint cursor (desktop pointer only) */}
@@ -229,19 +254,21 @@ export default function PlayPage() {
               drag to view more
             </div>
           </div>
-          <div
-            className="flex min-h-0 flex-1 items-start gap-4 overflow-x-auto overflow-y-hidden overscroll-x-contain scroll-smooth px-6 pb-8 pt-2 [scrollbar-color:var(--border-default)_transparent] [scrollbar-width:thin] [scroll-padding-inline:1.5rem] snap-x snap-mandatory sm:gap-5 lg:gap-6"
-            style={{ paddingInlineEnd: "max(1.5rem, env(safe-area-inset-right))" }}
-          >
-            {playItems.map((item, i) => (
-              <article
-                key={`${item.nodeId}-${i}`}
-                className="flex shrink-0 snap-start snap-always flex-col items-stretch"
-              >
-                <PlayCardFigure item={item} />
-              </article>
-            ))}
-          </div>
+          <ScrollReveal variant="media" className="min-h-0 flex-1">
+            <div
+              className="flex min-h-0 flex-1 items-start gap-4 overflow-x-auto overflow-y-hidden overscroll-x-contain scroll-smooth px-6 pb-8 pt-2 [scrollbar-color:var(--border-default)_transparent] [scrollbar-width:thin] [scroll-padding-inline:1.5rem] snap-x snap-mandatory sm:gap-5 lg:gap-6"
+              style={{ paddingInlineEnd: "max(1.5rem, env(safe-area-inset-right))" }}
+            >
+              {playItems.map((item, i) => (
+                <article
+                  key={`${item.nodeId}-${i}`}
+                  className="flex shrink-0 snap-start snap-always flex-col items-stretch"
+                >
+                  <PlayCardFigure item={item} />
+                </article>
+              ))}
+            </div>
+          </ScrollReveal>
         </section>
       </main>
       <Footer />

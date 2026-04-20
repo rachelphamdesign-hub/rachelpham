@@ -4,6 +4,7 @@ import { useCallback, useRef, useState } from "react";
 import type { AboutPose } from "@/components/about/aboutModelUrls";
 import { About3DFigmaFrame } from "@/components/about/About3DFigmaFrame";
 import type { About3DStageHandle } from "@/components/about/About3DStage";
+import { ScrollReveal } from "@/components/ScrollReveal";
 
 const linkClass =
   "underline decoration-[var(--border-subtle)] decoration-[5%] underline-offset-[3px] transition-opacity hover:opacity-80";
@@ -38,19 +39,22 @@ export function AboutPageHero() {
     >
       <div className="mx-auto grid w-full max-w-[1240px] grid-cols-1 items-start gap-10 lg:grid-cols-[minmax(280px,420px)_minmax(0,1fr)] lg:items-stretch lg:gap-14 xl:grid-cols-[minmax(300px,460px)_minmax(0,1fr)] xl:gap-16">
         {/* Left — Figma 443:1562 */}
-        <div className="order-1 flex min-h-[420px] w-full min-w-0 flex-col self-stretch sm:min-h-[460px] lg:min-h-[520px]">
-          <About3DFigmaFrame
-            stageRef={stageRef}
-            displayedPose={displayedPose}
-            overlayPose={overlayPose}
-            onFadeComplete={handleFadeComplete}
-            onSelectPose={selectPose}
-          />
-        </div>
+        <ScrollReveal className="order-1" variant="media">
+          <div className="flex min-h-[420px] w-full min-w-0 flex-col self-stretch sm:min-h-[460px] lg:min-h-[520px]">
+            <About3DFigmaFrame
+              stageRef={stageRef}
+              displayedPose={displayedPose}
+              overlayPose={overlayPose}
+              onFadeComplete={handleFadeComplete}
+              onSelectPose={selectPose}
+            />
+          </div>
+        </ScrollReveal>
 
         {/* Right — Figma 443:1565, 1568, 1569, 1571, 1572, 1574, 1575 */}
         <div className="order-2 flex min-w-0 flex-col items-start gap-8 text-left lg:max-w-[min(720px,100%)] lg:justify-self-start xl:max-w-[min(760px,100%)]">
-          <div className="flex w-full flex-col gap-3 sm:gap-4">
+          <ScrollReveal delay={0.08} className="w-full">
+            <div className="flex w-full flex-col gap-3 sm:gap-4">
             <h1 className="w-full text-pretty text-[30px] font-semibold leading-tight tracking-[-0.02em] text-[var(--accent-blue)] sm:text-[32px] lg:text-[34px]">
               Hi there!{" "}
               <span role="img" aria-label="waving hand">
@@ -96,30 +100,35 @@ export function AboutPageHero() {
                 Websters Shape the Web Inc.
               </a>
             </p>
-          </div>
+            </div>
+          </ScrollReveal>
 
-          <div className="flex w-full flex-col gap-3 sm:gap-4">
-            <span className="text-[13px] font-semibold uppercase tracking-[0.08em] text-[var(--text-muted)]">
-              Growth
-            </span>
-            <p className="text-[15px] font-normal leading-[1.65] text-[var(--text-primary)] sm:text-[16px]">
-              I first got interested in UI/UX to see how design could make everyday experiences
-              easier and more enjoyable. Over time, it became about understanding people, what they
-              need, what frustrates them, and how to create solutions that feel simple, natural, and
-              useful.
-            </p>
-          </div>
+          <ScrollReveal delay={0.16} className="w-full">
+            <div className="flex w-full flex-col gap-3 sm:gap-4">
+              <span className="text-[13px] font-semibold uppercase tracking-[0.08em] text-[var(--text-muted)]">
+                Growth
+              </span>
+              <p className="text-[15px] font-normal leading-[1.65] text-[var(--text-primary)] sm:text-[16px]">
+                I first got interested in UI/UX to see how design could make everyday experiences
+                easier and more enjoyable. Over time, it became about understanding people, what they
+                need, what frustrates them, and how to create solutions that feel simple, natural, and
+                useful.
+              </p>
+            </div>
+          </ScrollReveal>
 
-          <div className="flex w-full flex-col gap-3 sm:gap-4">
-            <span className="text-[13px] font-semibold uppercase tracking-[0.08em] text-[var(--text-muted)]">
-              Goal
-            </span>
-            <p className="text-[15px] font-normal leading-[1.65] text-[var(--text-primary)] sm:text-[16px]">
-              I approach each project with a problem-solving mindset, balancing creativity with
-              usability. I believe thoughtful design can create comfort, clarity, and accessibility,
-              making sure what we build works for everyone.
-            </p>
-          </div>
+          <ScrollReveal delay={0.24} className="w-full">
+            <div className="flex w-full flex-col gap-3 sm:gap-4">
+              <span className="text-[13px] font-semibold uppercase tracking-[0.08em] text-[var(--text-muted)]">
+                Goal
+              </span>
+              <p className="text-[15px] font-normal leading-[1.65] text-[var(--text-primary)] sm:text-[16px]">
+                I approach each project with a problem-solving mindset, balancing creativity with
+                usability. I believe thoughtful design can create comfort, clarity, and accessibility,
+                making sure what we build works for everyone.
+              </p>
+            </div>
+          </ScrollReveal>
         </div>
       </div>
     </section>

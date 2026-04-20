@@ -294,9 +294,6 @@ export const About3DStage = forwardRef<About3DStageHandle, About3DStageProps>(
     ref,
   ) {
     const [canRender3D, setCanRender3D] = useState(false);
-    useEffect(() => {
-      setCanRender3D(supportsWebGL());
-    }, []);
     const [autoRotate, setAutoRotate] = useState(true);
     const [targetDistance, setTargetDistance] = useState(INITIAL_TARGET_DISTANCE);
     const characterRootRef = useRef<THREE.Group | null>(null);
@@ -305,6 +302,10 @@ export const About3DStage = forwardRef<About3DStageHandle, About3DStageProps>(
     useEffect(() => {
       onFadeCompleteRef.current = onFadeComplete;
     }, [onFadeComplete]);
+
+    useEffect(() => {
+      setCanRender3D(supportsWebGL());
+    }, []);
 
     useImperativeHandle(
       ref,

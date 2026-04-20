@@ -3,10 +3,6 @@
 import { useAnimation, useInView, useReducedMotion } from "framer-motion";
 import { useLayoutEffect, useMemo, useRef } from "react";
 import { APPLE_EASE, SCROLL_REVEAL_DURATION, SCROLL_VIEWPORT } from "@/lib/motionPresets";
-import {
-  ensureScrollDirectionListener,
-  getVerticalScrollDirection,
-} from "@/lib/scrollDirectionStore";
 
 type Variant = "text" | "media";
 
@@ -21,10 +17,7 @@ function initialForVariant(variant: Variant) {
   } as const;
 }
 
-/**
- * Scroll-triggered reveal (once) with entry offset from scroll direction:
- * scrolling down → enter from below (+y); scrolling up → enter from above (-y).
- */
+/** Scroll-triggered reveal (once) with gentle upward entry. */
 export function useDirectionalScrollReveal(options: {
   variant: Variant;
   delay?: number;
@@ -42,10 +35,6 @@ export function useDirectionalScrollReveal(options: {
   const initialHidden = useMemo(() => initialForVariant(variant), [variant]);
 
   useLayoutEffect(() => {
-    ensureScrollDirectionListener();
-  }, []);
-
-  useLayoutEffect(() => {
     if (!inView || played.current) return;
     played.current = true;
 
@@ -59,8 +48,7 @@ export function useDirectionalScrollReveal(options: {
       return;
     }
 
-    const fromY = getVerticalScrollDirection() === "down" ? 20 : -20;
-    controls.set({ opacity: 0, y: fromY, scale });
+    controls.set({ opacity: 0, y: 20, scale });
     void controls.start({
       opacity: 1,
       y: 0,

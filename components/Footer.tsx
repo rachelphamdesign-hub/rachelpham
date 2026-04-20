@@ -4,17 +4,22 @@ const navLinks = ["Work", "About", "Play", "Contact"];
 const socialLinks = [
   { label: "Dribbble", href: "https://dribbble.com/rachelphamdesign" },
   { label: "Behance", href: "https://www.behance.net/nhipham96" },
-  { label: "LinkedIn", href: "https://www.linkedin.com/in/nhipham96/" },
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/nhiphamdesign/" },
   { label: "GitHub", href: "https://github.com/rachelphamdesign-hub" },
 ];
 
-export function Footer() {
+type FooterProps = {
+  /** Omit the top border (e.g. case study pages where the last section is already white). */
+  hideTopBorder?: boolean;
+};
+
+export function Footer({ hideTopBorder }: FooterProps = {}) {
   return (
     <footer
-      className="w-full py-20 border-t transition-colors"
+      className={`w-full py-20 transition-colors ${hideTopBorder ? "" : "border-t"}`}
       style={{
         background: "var(--bg-footer)",
-        borderColor: "var(--border-default)",
+        ...(hideTopBorder ? {} : { borderColor: "var(--border-default)" }),
       }}
     >
       <div className="max-w-[1280px] mx-auto px-8">

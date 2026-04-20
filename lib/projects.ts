@@ -2,6 +2,8 @@ export interface ProjectMeta {
   slug: string;
   title: string;
   subtitle: string;
+  /** Optional hero tagline under the title (work page hero). Falls back to `subtitle`. */
+  heroSubtitle?: string;
   label: string;
   heroImage: string;
   heroVideo?: string;
@@ -9,6 +11,8 @@ export interface ProjectMeta {
   team: string;
   timeline: string;
   tools: string[];
+  /** Shown in hero metadata instead of Tools when set (e.g. “In-person”). */
+  platform?: string;
   overview: string;
   color?: string;
   sections?: ProjectSection[];
@@ -65,7 +69,7 @@ export const projects: ProjectMeta[] = [
     title: "Applied Research 101",
     subtitle: "Designing Visuals for AR 101 Courses for Students, Faculty & High School",
     label: "Project 2024",
-    heroImage: "https://www.figma.com/api/mcp/asset/37cdf1c9-b57d-4e36-a33e-35ff5408f0cb",
+    heroImage: "/media/applied-research-101-hero-laptop.png",
     role: ["Human Interface Design", "Interaction Design"],
     team: "Centre for Emerging Research Initiatives (CERI)",
     timeline: "6 months",
@@ -76,7 +80,8 @@ export const projects: ProjectMeta[] = [
       {
         type: "text",
         heading: "Experience & Impact",
-        body: "I made sure the course met AODA accessibility standards so everyone could participate fully. The redesign made learning easier and more engaging, helping course completion rates jump by 20% and keeping learners more motivated throughout.",
+        bodyHtml:
+          "I redesigned <a href=\"https://ideaworks.thinkific.com/\" target=\"_blank\" rel=\"noopener noreferrer\">Applied Research 101</a> with <strong>visuals</strong> and <strong>interactive elements</strong> tailored to <strong>students, faculty,</strong> and <strong>high school learners</strong>. Using <strong>HTML, CSS,</strong> and <strong>H5P in Thinkific</strong>, I transformed the course into an <strong>engaging, easy-to-navigate learning experience</strong> that makes <strong>complex research concepts clear</strong> and <strong>approachable</strong>. I worked closely with the <a href=\"https://ideaworks.mohawkcollege.ca/research-centre/centre-for-emerging-research-initiatives-ceri/\" target=\"_blank\" rel=\"noopener noreferrer\">CERI team</a> to understand <strong>applied research</strong> and how they wanted the <strong>course delivered</strong>, ensuring the <strong>design aligned with their goals</strong>.<br/><br/>I made sure the course met <strong>AODA accessibility standards</strong> so everyone could <strong>participate fully</strong>. The redesign made <strong>learning easier</strong> and <strong>more engaging</strong>, helping <strong>course completion rates jump by 20%</strong> and keeping learners <strong>more motivated</strong> throughout.<br/><br/><strong>Moving the course online made a real difference,</strong> it gave <strong>more people access</strong> to applied research, <strong>saved time</strong> and <strong>money</strong>, and created a <strong>flexible, scalable way</strong> for learners to get started with research confidently.<br/><br/>Here&rsquo;s a look at what I designed for <a href=\"https://ideaworks.thinkific.com/\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color:#990033;font-weight:600;\">Applied Research 101</a>. Stay tuned for more!",
       },
     ],
     links: [
@@ -150,118 +155,64 @@ export const projects: ProjectMeta[] = [
     slug: "ideas-to-impact",
     title: "Ideas to Impact",
     subtitle: "Event branding and design for Mohawk College's annual innovation showcase",
+    heroSubtitle: "Strengthening Community Innovation",
     label: "Event 2026",
     heroImage: "",
-    role: ["Brand Identity Designer", "Event Designer"],
-    team: "Mohawk College – IdeaWorks",
-    timeline: "2025 – 2026",
+    heroVideo: "/media/ideas-to-impact-hero.mp4",
+    role: ["Visual Designer"],
+    team: "Business Development and Project Support",
+    timeline: "Dec 2025 - Mar 2026",
     tools: ["Figma", "Illustrator", "Photoshop"],
+    platform: "In-person",
     overview:
       "Ideas to Impact is Mohawk College's annual event celebrating student and faculty innovation. I designed the complete brand identity and all event collateral including social media graphics, signage, and presentation materials.",
-    sections: [
-      {
-        type: "text",
-        heading: "Event Metrics",
-        body: "The event featured over 300 attendees, 30+ speakers, and 25+ sponsors across a full day of talks, workshops, and networking.",
-      },
-      {
-        type: "metrics",
-        metrics: [
-          { value: "300+", label: "Attendees welcomed at the event" },
-          { value: "30+", label: "Digital Speakers Confirmed" },
-          { value: "25+", label: "Sponsors & Partners" },
-        ],
-      },
-    ],
+    sections: [],
   },
   {
     slug: "fhir-north",
     title: "FHIR North",
     subtitle: "Brand and social media design for Canada's FHIR Conference",
+    heroSubtitle:
+      "Graphic and web design for Canada's leading digital health interoperability conference.",
     label: "Event 2025",
     heroImage: "",
+    heroVideo: "/media/fhir-north-hero.mp4",
     role: ["Graphic Designer", "Brand Designer"],
     team: "Mohawk College – MEDIC",
     timeline: "2024",
     tools: ["Figma", "Illustrator", "Photoshop"],
     overview:
-      "FHIR North is Canada's premier healthcare interoperability conference. I was responsible for all graphic design work including the conference website, social media campaigns, and on-site signage and displays.",
-    sections: [
-      {
-        type: "metrics",
-        metrics: [
-          { value: "300+", label: "Attendees at the conference" },
-          { value: "30+", label: "Digital Speakers" },
-          { value: "25+", label: "Digital Sponsors Confirmed" },
-        ],
-      },
-    ],
+      "For FHIR North 2025 — Canada's digital health conference for HL7 FHIR interoperability — I worked across UX, motion, web, marketing, event video, and on-site support with the Business Development team.",
+    sections: [],
   },
   {
     slug: "sweet-sunset",
     title: "Sweet Sunset",
-    subtitle: "Brand identity for a whimsical bakery and café concept",
-    label: "Freelance 2024",
-    heroImage: "",
+    subtitle: "Designed the brand identity for Sweet Sunset restaurant",
+    label: "Freelance 2023",
+    heroImage: "https://www.figma.com/api/mcp/asset/859dab28-cf1f-49e8-b203-4d818f1b5a4b",
     role: ["Brand Identity Designer"],
     team: "Solo project",
-    timeline: "2024",
-    tools: ["Figma", "Illustrator", "Photoshop"],
+    timeline: "6 months",
+    tools: ["Figma", "Illustrator", "Photoshop", "InDesign"],
     overview:
-      "Sweet Sunset is a whimsical bakery and café brand with a playful, colorful identity. I created the full brand system including logo, color palette, typography, packaging, and social media templates.",
-    sections: [
-      {
-        type: "color-palette",
-        colors: [
-          { hex: "#F4C542", label: "Sunny Yellow" },
-          { hex: "#2B4DB5", label: "Deep Blue" },
-          { hex: "#F25CA2", label: "Bubblegum Pink" },
-          { hex: "#FF7D3B", label: "Sunset Orange" },
-          { hex: "#FFFFFF", label: "White" },
-        ],
-      },
-    ],
+      "Sweet Sunset is a fresh take on the café experience in Toronto, bringing together Vietnamese coffee and Da Lat breakfast culture in a warm, modern space. The goal was a memorable brand that stands out while staying approachable.",
+    sections: [],
   },
   {
     slug: "vot-coffee",
     title: "Vot Coffee",
     subtitle: "Designed the brand identity for Vot Coffee brand",
     label: "Freelance 2023",
-    heroImage: "https://www.figma.com/api/mcp/asset/7bf57426-5ff3-45ec-888b-3d66d7224831",
+    heroImage:
+      "https://www.figma.com/api/mcp/asset/c019b0e8-ad68-48b1-b2bd-775c042c3c65",
     role: ["Brand Identity Designer"],
     team: "Solo project",
     timeline: "6 months",
     tools: ["Figma", "Illustrator", "Photoshop", "InDesign"],
     overview:
-      "Vot Coffee is a new brand coffee in Canada, specialising in Vietnamese coffee beans and 'tra da,' the national beverage of Vietnam. Made with high-quality ingredients gathered from Vietnamese farmers and traditional techniques. Vot's unique ideology is based on their desire to merge heritage with modernity.",
-    sections: [
-      {
-        type: "text",
-        heading: "Goal",
-        body: "The strategic and aesthetic objective was to authentically represent Vot's aim in order to grow. To boost product awareness, the colour scheme is based on coffee's hue. The logo is created from the image of a racket and coffee beans that are used to create a cup of Vietnamese tra da.",
-      },
-      {
-        type: "color-palette",
-        colors: [
-          { hex: "#6F1D1B", label: "#6F1D1B" },
-          { hex: "#F0EAD2", label: "#F0EAD2" },
-        ],
-      },
-      {
-        type: "images-grid",
-        images: [
-          "https://www.figma.com/api/mcp/asset/f415f91f-4eb1-4771-936b-d27ccc503ab3",
-          "https://www.figma.com/api/mcp/asset/59d4ec91-f454-4c2e-91f2-ba4bdba8a462",
-          "https://www.figma.com/api/mcp/asset/a57e7f79-9f39-4740-8f8d-ae364ac3bf2e",
-          "https://www.figma.com/api/mcp/asset/28cfe831-c3c4-49f7-82fc-5eab2a65d001",
-          "https://www.figma.com/api/mcp/asset/6fc5eaf2-a794-4f21-a896-287ec6af831f",
-          "https://www.figma.com/api/mcp/asset/ea772eab-a132-4611-b5af-9b014ed63f3b",
-          "https://www.figma.com/api/mcp/asset/c7d6a970-47d1-49cc-9cbe-65538dc93740",
-          "https://www.figma.com/api/mcp/asset/bcfa1bf8-c09d-4284-9434-a2986f34438f",
-          "https://www.figma.com/api/mcp/asset/59c5786d-18ad-40fb-b266-65b3d075f74f",
-        ],
-      },
-    ],
+      "Vot coffee is a new brand coffee in Canada. This coffee business specialises in Vietnamese coffee beans and \"tra da,\" the national beverage of Vietnam. Made with high-quality ingredients gathered from Vietnamese farmers and traditional techniques. Vot's unique ideology is based on their desire to merge heritage with modernity.",
+    sections: [],
   },
 ];
 
@@ -306,7 +257,7 @@ export const featuredProjects = [
     subtitle: "Designing visuals for AR 101 courses for students, faculty & high school.",
     label: "2024",
     labelPrefix: "Project",
-    image: "https://www.figma.com/api/mcp/asset/37cdf1c9-b57d-4e36-a33e-35ff5408f0cb",
+    image: "/media/applied-research-101-hero-laptop.png",
     size: "small",
     darkCard: false,
   },
@@ -317,9 +268,9 @@ export const eventProjects = [
     slug: "sweet-sunset",
     title: "Sweet Sunset",
     subtitle: "I was responsible for designing the visual identity for Sweet Sunset, a brand consisting of illustrations, brand guidelines, product mockups and a comprehensive brand language.",
-    label: "2024",
+    label: "2023",
     labelPrefix: "Freelance",
-    image: "",
+    image: "https://www.figma.com/api/mcp/asset/859dab28-cf1f-49e8-b203-4d818f1b5a4b",
     darkCard: false,
   },
   {
@@ -346,7 +297,7 @@ export const eventProjects = [
     subtitle: "Vietnamese coffee brand identity merging heritage with modernity.",
     label: "2023",
     labelPrefix: "Freelance",
-    image: "https://www.figma.com/api/mcp/asset/7bf57426-5ff3-45ec-888b-3d66d7224831",
+    image: "/media/vot-coffee-box-bag-mockup.png",
     darkCard: false,
   },
 ];

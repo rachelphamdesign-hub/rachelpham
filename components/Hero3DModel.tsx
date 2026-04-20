@@ -1,6 +1,6 @@
 "use client";
 
-import { Suspense, useMemo, useRef, useState } from "react";
+import { Suspense, useEffect, useMemo, useRef, useState } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { OrbitControls, useGLTF } from "@react-three/drei";
 import type { OrbitControls as OrbitControlsImpl } from "three-stdlib";
@@ -57,12 +57,14 @@ export function Hero3DModel({
   modelPath = "/models/hero-model.glb",
   className,
 }: Hero3DModelProps) {
-  const [canRender3D] = useState(
-    () => typeof window !== "undefined" && supportsWebGL(),
-  );
+  const [canRender3D, setCanRender3D] = useState(false);
   const [autoRotate, setAutoRotate] = useState(true);
   const [targetDistance, setTargetDistance] = useState(3.6);
   const controlsRef = useRef<OrbitControlsImpl | null>(null);
+
+  useEffect(() => {
+    setCanRender3D(supportsWebGL());
+  }, []);
 
   const MIN_DISTANCE = 2.8;
   const MAX_DISTANCE = 5.2;

@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { ScrollReveal } from "@/components/ScrollReveal";
 import { AboutBeyondTheScreenSection } from "@/components/about/AboutBeyondTheScreenSection";
 import { AboutPageHero } from "@/components/about/AboutPageHero";
 
@@ -81,50 +82,51 @@ export default function AboutPage() {
         {/* Journey / Experience — Figma 36:2929 */}
         <section className="px-6 py-20 sm:py-24 lg:py-28">
           <div className={`${sectionShell} grid grid-cols-1 gap-10 lg:grid-cols-12 lg:gap-x-16`}>
-            <header className="flex flex-col gap-4 lg:col-span-4 lg:pt-1">
+            <ScrollReveal className="lg:col-span-4">
+              <header className="flex flex-col gap-4 lg:pt-1">
               <span className="text-[10px] font-bold uppercase leading-[15px] tracking-[3px] text-[var(--text-secondary)]">
                 Journey
               </span>
               <h2 className="text-[30px] font-semibold leading-[36px] tracking-[-0.75px] text-[var(--text-primary)]">
                 Experience
               </h2>
-            </header>
+              </header>
+            </ScrollReveal>
 
             <div className="flex flex-col gap-0 lg:col-span-8">
-              {experiences.map((exp) => (
-                <article
-                  key={`${exp.company}-${exp.period}`}
-                  className="flex items-start justify-between border-t border-[var(--border-default)] pt-[33px] pb-[33px]"
-                >
-                  <div className="flex max-w-[560px] items-start gap-6">
-                    <div className="flex size-12 shrink-0 items-center justify-center rounded-[12px] border border-[var(--border-default)] bg-gradient-to-br from-zinc-100/90 to-zinc-300/45 p-px dark:from-zinc-700/55 dark:to-zinc-900/65">
-                      <Image
-                        src={exp.logo}
-                        alt={exp.company}
-                        width={36}
-                        height={36}
-                        className="object-contain"
-                        unoptimized
-                      />
+              {experiences.map((exp, index) => (
+                <ScrollReveal key={`${exp.company}-${exp.period}`} delay={index * 0.08}>
+                  <article className="flex items-start justify-between border-t border-[var(--border-default)] pt-[33px] pb-[33px]">
+                    <div className="flex max-w-[560px] items-start gap-6">
+                      <div className="flex size-12 shrink-0 items-center justify-center rounded-[12px] border border-[var(--border-default)] bg-gradient-to-br from-zinc-100/90 to-zinc-300/45 p-px dark:from-zinc-700/55 dark:to-zinc-900/65">
+                        <Image
+                          src={exp.logo}
+                          alt={exp.company}
+                          width={36}
+                          height={36}
+                          className="object-contain"
+                          unoptimized
+                        />
+                      </div>
+
+                      <div className="min-w-0">
+                        <h3 className="text-[20px] font-bold leading-[28px] text-[var(--text-primary)]">
+                          {exp.role}
+                        </h3>
+                        <p className="mt-1 text-[14px] font-medium leading-[21px] text-[var(--text-secondary)]">
+                          {exp.company}
+                        </p>
+                        <p className="mt-[11px] max-w-[544px] text-[15px] leading-[24.38px] text-[var(--text-secondary)]">
+                          {exp.description}
+                        </p>
+                      </div>
                     </div>
 
-                    <div className="min-w-0">
-                      <h3 className="text-[20px] font-bold leading-[28px] text-[var(--text-primary)]">
-                        {exp.role}
-                      </h3>
-                      <p className="mt-1 text-[14px] font-medium leading-[21px] text-[var(--text-secondary)]">
-                        {exp.company}
-                      </p>
-                      <p className="mt-[11px] max-w-[544px] text-[15px] leading-[24.38px] text-[var(--text-secondary)]">
-                        {exp.description}
-                      </p>
-                    </div>
-                  </div>
-
-                  <span className="pt-1 text-[11px] font-bold leading-[16.5px] tracking-[1.1px] text-[var(--text-secondary)]">
-                    {exp.period}
-                  </span>
-                </article>
+                    <span className="pt-1 text-[11px] font-bold leading-[16.5px] tracking-[1.1px] text-[var(--text-secondary)]">
+                      {exp.period}
+                    </span>
+                  </article>
+                </ScrollReveal>
               ))}
             </div>
           </div>
@@ -132,8 +134,9 @@ export default function AboutPage() {
 
         {/* Skills & Toolkit — Figma 36:3225 */}
         <section className="px-6 pb-24 pt-6 sm:pb-28 sm:pt-8 lg:pb-32">
-          <div
+          <ScrollReveal
             className={`${sectionShell} rounded-[32px] border border-[var(--border-default)] bg-[var(--pill-badge-bg)] px-6 pb-[96px] pt-[72px] sm:px-8 sm:pt-[88px] lg:px-10 lg:pb-[120px] lg:pt-[97px]`}
+            variant="media"
           >
             <header className="flex flex-col gap-4">
               <span className="text-[10px] font-bold uppercase leading-[15px] tracking-[3px] text-[var(--text-secondary)]">
@@ -182,38 +185,37 @@ export default function AboutPage() {
                   AI Toolkit
                 </p>
                 <div className="flex flex-col gap-3">
-                  {aiTools.map((tool) => (
-                    <div
-                      key={tool.name}
-                      className="flex items-center gap-4 rounded-[16px] border border-[var(--border-default)] bg-[color-mix(in_oklab,var(--bg-surface)_72%,transparent)] px-[21px] py-[13px] backdrop-blur-[6px] dark:bg-[color-mix(in_oklab,var(--bg-elevated)_55%,transparent)]"
-                    >
-                      <div
-                        className="relative flex size-8 shrink-0 items-center justify-center overflow-hidden rounded-[12px]"
-                        style={{ background: tool.iconBg }}
-                      >
-                        <Image
-                          src={tool.icon}
-                          alt={tool.name}
-                          width={22}
-                          height={22}
-                          className="object-contain"
-                          unoptimized
-                        />
+                  {aiTools.map((tool, index) => (
+                    <ScrollReveal key={tool.name} delay={index * 0.08}>
+                      <div className="flex items-center gap-4 rounded-[16px] border border-[var(--border-default)] bg-[color-mix(in_oklab,var(--bg-surface)_72%,transparent)] px-[21px] py-[13px] backdrop-blur-[6px] dark:bg-[color-mix(in_oklab,var(--bg-elevated)_55%,transparent)]">
+                        <div
+                          className="relative flex size-8 shrink-0 items-center justify-center overflow-hidden rounded-[12px]"
+                          style={{ background: tool.iconBg }}
+                        >
+                          <Image
+                            src={tool.icon}
+                            alt={tool.name}
+                            width={22}
+                            height={22}
+                            className="object-contain"
+                            unoptimized
+                          />
+                        </div>
+                        <div>
+                          <p className="text-[13px] font-bold leading-[13px] text-[var(--text-primary)]">
+                            {tool.name}
+                          </p>
+                          <p className="mt-1 text-[11px] leading-[16.5px] text-[var(--text-secondary)]">
+                            {tool.subtitle}
+                          </p>
+                        </div>
                       </div>
-                      <div>
-                        <p className="text-[13px] font-bold leading-[13px] text-[var(--text-primary)]">
-                          {tool.name}
-                        </p>
-                        <p className="mt-1 text-[11px] leading-[16.5px] text-[var(--text-secondary)]">
-                          {tool.subtitle}
-                        </p>
-                      </div>
-                    </div>
+                    </ScrollReveal>
                   ))}
                 </div>
               </div>
             </div>
-          </div>
+          </ScrollReveal>
         </section>
       </main>
       <Footer />
