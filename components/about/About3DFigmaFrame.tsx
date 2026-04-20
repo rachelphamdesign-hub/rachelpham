@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import type { RefObject } from "react";
 import type { AboutPose } from "@/components/about/aboutModelUrls";
 import { ABOUT_POSES } from "@/components/about/aboutModelUrls";
 import {
@@ -10,28 +9,27 @@ import {
   ABOUT_POSE_ICON,
   ABOUT_POSE_ICON_BOX,
 } from "@/components/about/aboutFigmaAssets";
-import { About3DStage, type About3DStageHandle } from "@/components/about/About3DStage";
 
 type About3DFigmaFrameProps = {
-  stageRef: RefObject<About3DStageHandle | null>;
-  displayedPose: AboutPose;
-  overlayPose: AboutPose | null;
-  onFadeComplete: () => void;
+  selectedPose: AboutPose;
   onSelectPose: (pose: AboutPose) => void;
+};
+
+const ABOUT_POSE_PREVIEW_IMAGE: Record<AboutPose, string> = {
+  stand: "/media/standing.png",
+  hiking: "/media/hiking.png",
+  matcha: "/media/matcha.png",
+  travel: "/media/travel.png",
 };
 
 /**
  * Left column — Figma 443:1562: macOS header, 3D viewport, pose chip, icon toolbar.
  */
 export function About3DFigmaFrame({
-  stageRef,
-  displayedPose,
-  overlayPose,
-  onFadeComplete,
+  selectedPose,
   onSelectPose,
 }: About3DFigmaFrameProps) {
-  const chipPose = overlayPose ?? displayedPose;
-  const chipLabel = ABOUT_POSE_CHIP_LABEL[chipPose];
+  const chipLabel = ABOUT_POSE_CHIP_LABEL[selectedPose];
 
   return (
     <div
@@ -58,16 +56,18 @@ export function About3DFigmaFrame({
       <div
         className="relative flex min-h-[260px] flex-1 flex-col overflow-hidden bg-[linear-gradient(to_bottom,var(--bg-surface)_0%,var(--pill-badge-bg)_100%)] sm:min-h-[300px]"
       >
-        <div className="relative box-border min-h-0 flex-1 p-3 sm:p-4 md:p-5">
-          <About3DStage
-            ref={stageRef}
-            basePose={displayedPose}
-            overlayPose={overlayPose}
-            onFadeComplete={onFadeComplete}
-            embedded
-            hideFooterHint
-            className="absolute inset-0 flex min-h-0 flex-col border-0 bg-transparent shadow-none"
-          />
+        <div className="relative box-border min-h-0 flex-1 px-10 pb-[80px] pt-[70px] sm:px-12 sm:pb-[86px] sm:pt-[80px]">
+          <div className="relative mx-auto h-full min-h-[220px] w-full max-w-[302px]">
+            <Image
+              src={ABOUT_POSE_PREVIEW_IMAGE[selectedPose]}
+              alt={`Rachel character in ${chipLabel} pose`}
+              fill
+              unoptimized
+              sizes="302px"
+              draggable={false}
+              className="pointer-events-none select-none object-contain"
+            />
+          </div>
         </div>
 
         {/* Pose chip — Figma I443:1562;87:9728 */}
@@ -87,10 +87,7 @@ export function About3DFigmaFrame({
         aria-label="Character pose"
       >
         {ABOUT_POSES.map((pose) => {
-          const active =
-            overlayPose !== null
-              ? pose === overlayPose
-              : pose === displayedPose;
+          const active = pose === selectedPose;
           const iconSrc = ABOUT_POSE_ICON[pose];
           const iconPx = ABOUT_POSE_ICON_BOX[pose];
           return (
@@ -100,8 +97,6 @@ export function About3DFigmaFrame({
               role="tab"
               aria-selected={active}
               onClick={() => onSelectPose(pose)}
-              onMouseEnter={() => stageRef.current?.prefetch(pose)}
-              onFocus={() => stageRef.current?.prefetch(pose)}
               className="relative z-10 flex flex-col items-center gap-[7.75px] px-[10px] transition-transform duration-200 hover:opacity-90 active:scale-[0.98] sm:px-[16.75px]"
             >
               <span
@@ -123,10 +118,8 @@ export function About3DFigmaFrame({
                     draggable={false}
                     className={`pointer-events-none select-none object-contain ${
                       active
-                        ? // Light: white on black chip | Dark: white on zinc-700 (brightness+invert)
-                          "brightness-0 invert dark:brightness-0 dark:invert"
-                        : // Light: dark glyph on gray | Dark: white glyph on zinc-800
-                          "opacity-90 dark:opacity-100 dark:brightness-0 dark:invert"
+                        ? "brightness-0 invert opacity-100 dark:brightness-0 dark:invert"
+                        : "brightness-0 opacity-90 dark:brightness-0 dark:invert dark:opacity-100"
                     }`}
                     unoptimized
                   />

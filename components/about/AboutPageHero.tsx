@@ -1,33 +1,15 @@
 "use client";
 
-import { useCallback, useRef, useState } from "react";
+import { useState } from "react";
 import type { AboutPose } from "@/components/about/aboutModelUrls";
 import { About3DFigmaFrame } from "@/components/about/About3DFigmaFrame";
-import type { About3DStageHandle } from "@/components/about/About3DStage";
 import { ScrollReveal } from "@/components/ScrollReveal";
 
 const linkClass =
   "underline decoration-[var(--border-subtle)] decoration-[5%] underline-offset-[3px] transition-opacity hover:opacity-80";
 
 export function AboutPageHero() {
-  const [displayedPose, setDisplayedPose] = useState<AboutPose>("stand");
-  const [overlayPose, setOverlayPose] = useState<AboutPose | null>(null);
-  const pendingRef = useRef<AboutPose | null>(null);
-  const stageRef = useRef<About3DStageHandle>(null);
-
-  const handleFadeComplete = useCallback(() => {
-    const next = pendingRef.current;
-    pendingRef.current = null;
-    if (next) setDisplayedPose(next);
-    setOverlayPose(null);
-  }, []);
-
-  const selectPose = (pose: AboutPose) => {
-    if (pendingRef.current !== null) return;
-    if (pose === displayedPose && overlayPose === null) return;
-    pendingRef.current = pose;
-    setOverlayPose(pose);
-  };
+  const [selectedPose, setSelectedPose] = useState<AboutPose>("stand");
 
   return (
     <section
@@ -42,11 +24,8 @@ export function AboutPageHero() {
         <ScrollReveal className="order-1" variant="media">
           <div className="flex min-h-[420px] w-full min-w-0 flex-col self-stretch sm:min-h-[460px] lg:min-h-[520px]">
             <About3DFigmaFrame
-              stageRef={stageRef}
-              displayedPose={displayedPose}
-              overlayPose={overlayPose}
-              onFadeComplete={handleFadeComplete}
-              onSelectPose={selectPose}
+              selectedPose={selectedPose}
+              onSelectPose={setSelectedPose}
             />
           </div>
         </ScrollReveal>
