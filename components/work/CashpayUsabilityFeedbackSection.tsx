@@ -150,7 +150,7 @@ function FeedbackEmailCard({
           </div>
         </div>
         <div className="relative h-3.5 w-[15px] shrink-0 opacity-70">
-          <Image src={starSrc} alt="" fill className="object-contain" unoptimized sizes="20px" />
+          <Image src={starSrc} alt="" fill className="object-contain"sizes="20px" />
         </div>
       </div>
 
@@ -190,7 +190,7 @@ function FeedbackEmailCard({
         style={{ borderColor: "var(--border-default)" }}
       >
         <div className="relative h-2.5 w-3 shrink-0">
-          <Image src={paperclipSrc} alt="" fill className="object-contain" unoptimized sizes="16px" />
+          <Image src={paperclipSrc} alt="" fill className="object-contain"sizes="16px" />
         </div>
         <p className="text-[8px] font-medium uppercase tracking-[0.06em] text-[var(--text-secondary)] sm:text-[9px]">
           USABILITY_FEEDBACK.pdf
@@ -217,7 +217,7 @@ export function CashpayUsabilityFeedbackSection() {
         <div className="flex min-w-0 flex-col gap-8">
           <div className="flex items-center gap-3">
             <div className="relative h-9 w-[37px] shrink-0">
-              <Image src={imgHeaderCheck} alt="" fill className="object-contain" unoptimized sizes="40px" />
+              <Image src={imgHeaderCheck} alt="" fill className="object-contain"sizes="40px" />
             </div>
             <h3 className="text-[20px] font-semibold leading-7 text-[var(--text-primary)]">What Users Loved</h3>
           </div>
@@ -235,14 +235,14 @@ export function CashpayUsabilityFeedbackSection() {
             <div className="flex items-start justify-between gap-4">
               <div className="flex items-center gap-2 rounded-xl p-2" style={{ background: "var(--pill-link-bg)" }}>
                 <div className="relative h-[15px] w-[19px] shrink-0">
-                  <Image src={imgPillEnvelope} alt="" fill className="object-contain" unoptimized sizes="20px" />
+                  <Image src={imgPillEnvelope} alt="" fill className="object-contain"sizes="20px" />
                 </div>
                 <span className="text-[9px] font-normal uppercase leading-[13.5px] tracking-[0.45px] text-[var(--link-bright)]">
                   Email Feedback
                 </span>
               </div>
               <div className="relative size-[19px] shrink-0">
-                <Image src={imgCardCheck} alt="" width={19} height={19} className="object-contain" unoptimized />
+                <Image src={imgCardCheck} alt="" width={19} height={19} className="object-contain"/>
               </div>
             </div>
             <div className={`${cashpayTitleToBody} text-[18px] font-normal leading-7 text-[var(--text-primary)]`}>

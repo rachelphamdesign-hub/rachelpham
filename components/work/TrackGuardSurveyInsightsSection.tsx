@@ -32,7 +32,7 @@ function InsightCardShell({
 function SmallIcon({ src, w, h }: { src: string; w: number; h: number }) {
   return (
     <div className="relative shrink-0" style={{ width: w, height: h }}>
-      <Image src={src} alt="" fill className="object-contain" unoptimized />
+      <Image src={src} alt="" fill className="object-contain"/>
     </div>
   );
 }

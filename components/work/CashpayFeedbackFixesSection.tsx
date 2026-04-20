@@ -97,7 +97,7 @@ function MockFrame({
         boxShadow: isOld ? "var(--shadow-sm)" : "var(--shadow-card-soft)",
       }}
     >
-      <Image src={src} alt={alt} fill className="object-contain" sizes="(min-width: 1024px) 480px, 100vw" unoptimized />
+      <Image src={src} alt={alt} fill className="object-contain" sizes="(min-width: 1024px) 480px, 100vw"/>
       <div
         className="absolute left-4 top-4 rounded-full border border-solid px-[13px] py-[5px]"
         style={{
@@ -128,7 +128,7 @@ export function CashpayFeedbackFixesSection() {
       <div className={`flex flex-col ${cashpayBlockGap}`}>
         <div className="flex items-center gap-3">
           <div className="relative size-[33px] shrink-0">
-            <Image src={imgFrictionIcon} alt="" fill className="object-contain" unoptimized sizes="33px" />
+            <Image src={imgFrictionIcon} alt="" fill className="object-contain"sizes="33px" />
           </div>
           <h3 className="text-[20px] font-normal leading-7 text-[var(--text-primary)]">Critical Friction Points</h3>
         </div>
@@ -185,7 +185,6 @@ export function CashpayFeedbackFixesSection() {
               fill
               className="object-cover"
               sizes="(min-width: 1024px) 940px, 100vw"
-              unoptimized
             />
           </div>
         </div>
@@ -208,7 +207,7 @@ export function CashpayFeedbackFixesSection() {
           >
             <div className="flex items-center gap-3">
               <div className="relative h-4 w-[22px] shrink-0">
-                <Image src={imgOutcomeTakeaways} alt="" fill className="object-contain" unoptimized sizes="24px" />
+                <Image src={imgOutcomeTakeaways} alt="" fill className="object-contain"sizes="24px" />
               </div>
               <p className="text-[20px] font-normal leading-7 text-[var(--text-primary)]">My Key Takeaways</p>
             </div>
@@ -234,7 +233,7 @@ export function CashpayFeedbackFixesSection() {
           >
             <div className="flex items-center gap-3">
               <div className="relative size-[19px] shrink-0">
-                <Image src={imgOutcomeNextSteps} alt="" fill className="object-contain" unoptimized sizes="24px" />
+                <Image src={imgOutcomeNextSteps} alt="" fill className="object-contain"sizes="24px" />
               </div>
               <p className="text-[20px] font-normal leading-7 text-[var(--text-primary)]">Next Steps</p>
             </div>
@@ -242,7 +241,7 @@ export function CashpayFeedbackFixesSection() {
               {OUTCOME_NEXT_STEPS.map((row) => (
                 <li key={row.text} className="flex gap-4">
                   <div className="relative mt-0.5 size-[19px] shrink-0">
-                    <Image src={row.icon} alt="" fill className="object-contain" unoptimized sizes="24px" />
+                    <Image src={row.icon} alt="" fill className="object-contain"sizes="24px" />
                   </div>
                   <p className="min-w-0 text-[14px] font-normal leading-[22.75px] text-[var(--text-primary)]">{row.text}</p>
                 </li>

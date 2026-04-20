@@ -177,7 +177,6 @@ export function AboutBeyondTheScreenSection() {
                   fill
                   className="object-cover"
                   sizes="(max-width: 768px) 85vw, 450px"
-                  unoptimized
                 />
               )}
             </div>

@@ -234,7 +234,6 @@ export default async function WorkPage({ params }: Props) {
                     alt={`${project.title} hero`}
                     fill
                     className="object-cover"
-                    unoptimized
                     priority
                   />
                 </div>
@@ -483,7 +482,6 @@ export default async function WorkPage({ params }: Props) {
                           width={1920}
                           height={864}
                           className="h-auto w-full object-cover"
-                          unoptimized
                         />
                       </div>
                       <div className="pt-10 pb-12 sm:pt-12 sm:pb-16 lg:pt-14 lg:pb-20">
@@ -509,7 +507,7 @@ export default async function WorkPage({ params }: Props) {
                           style={{ background: "var(--bg-footer)", borderColor: "var(--border-default)" }}
                         >
                           <div className="mb-4 flex items-center gap-3">
-                            <Image src={challengeIconFriction} alt="" width={19} height={19} unoptimized />
+                            <Image src={challengeIconFriction} alt="" width={19} height={19}/>
                             <h4 className="text-[18px] font-semibold leading-7 text-[var(--text-primary)]">Friction Points</h4>
                           </div>
                           <ul className="list-disc space-y-2 pl-5 text-[14px] leading-[22.75px] text-[var(--text-secondary)]">
@@ -524,7 +522,7 @@ export default async function WorkPage({ params }: Props) {
                           style={{ background: "var(--bg-footer)", borderColor: "var(--border-default)" }}
                         >
                           <div className="mb-4 flex items-center gap-3">
-                            <Image src={challengeIconObjective} alt="" width={19} height={19} unoptimized />
+                            <Image src={challengeIconObjective} alt="" width={19} height={19}/>
                             <h4 className="text-[18px] font-semibold leading-7 text-[var(--text-primary)]">Strategic Objective</h4>
                           </div>
                           <ul className="list-disc space-y-2 pl-5 text-[14px] leading-[22.75px] text-[var(--text-secondary)]">
@@ -592,7 +590,6 @@ export default async function WorkPage({ params }: Props) {
                         width={950}
                         height={600}
                         className={`w-full h-auto ${project.slug === "cashpay" ? "object-contain" : "object-cover"}`}
-                        unoptimized
                       />
                     </div>
                   ) : null}
@@ -689,7 +686,6 @@ export default async function WorkPage({ params }: Props) {
                         alt={`Project image ${j + 1}`}
                         fill
                         className="object-cover"
-                        unoptimized
                       />
                     </div>
                   ))}

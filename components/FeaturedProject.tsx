@@ -225,7 +225,6 @@ export function FeaturedProject({
             fill
             className="object-cover object-center"
             sizes="(min-width: 1024px) 400px, 100vw"
-            unoptimized
           />
           {/* Keep label / title / subtitle legible over the photo */}
           <div
@@ -279,7 +278,6 @@ export function FeaturedProject({
               fill
               className="object-cover object-center"
               sizes="(min-width: 1024px) 720px, 100vw"
-              unoptimized
             />
           )}
           <div

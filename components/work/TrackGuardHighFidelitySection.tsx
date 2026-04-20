@@ -32,7 +32,6 @@ export function TrackGuardHighFidelitySection() {
               width={1227}
               height={871}
               className="h-auto w-full object-cover"
-              unoptimized
             />
           </div>
         </div>

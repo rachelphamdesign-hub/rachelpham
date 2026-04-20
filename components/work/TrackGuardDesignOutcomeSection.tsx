@@ -131,7 +131,6 @@ export function TrackGuardDesignOutcomeSection() {
                   width={22}
                   height={17}
                   className="h-full w-full object-contain"
-                  unoptimized
                 />
               </div>
               <p className="text-[20px] font-normal leading-7 text-[var(--text-primary)]">My Key Takeaways</p>
@@ -155,7 +154,6 @@ export function TrackGuardDesignOutcomeSection() {
                   width={19}
                   height={19}
                   className="h-full w-full object-contain"
-                  unoptimized
                 />
               </div>
               <p className="text-[20px] font-normal leading-7 text-[var(--text-primary)]">Next Steps</p>

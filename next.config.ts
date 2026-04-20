@@ -10,7 +10,8 @@ const nextConfig: NextConfig = {
         pathname: "/api/mcp/asset/**",
       },
     ],
-    unoptimized: true,
+    formats: ["image/avif", "image/webp"],
+    minimumCacheTTL: 2592000,
   },
 };
 

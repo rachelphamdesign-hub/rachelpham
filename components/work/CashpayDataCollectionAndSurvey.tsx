@@ -31,7 +31,6 @@ export function CashpayDataCollectionAndSurvey() {
                 width={520}
                 height={420}
                 className="h-auto w-full max-w-full object-contain"
-                unoptimized
               />
             </div>
             <div className="flex min-h-0 w-full items-center justify-center">
@@ -41,7 +40,6 @@ export function CashpayDataCollectionAndSurvey() {
                 width={480}
                 height={420}
                 className="h-auto w-full max-w-full object-contain"
-                unoptimized
               />
             </div>
           </div>
@@ -67,7 +65,6 @@ export function CashpayDataCollectionAndSurvey() {
                 width={520}
                 height={340}
                 className="h-auto w-full object-cover"
-                unoptimized
               />
             </div>
 

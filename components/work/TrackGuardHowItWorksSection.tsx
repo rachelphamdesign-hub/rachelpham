@@ -61,7 +61,6 @@ export function TrackGuardHowItWorksSection() {
                   width={22}
                   height={22}
                   className="h-[22px] w-[22px] object-contain"
-                  unoptimized
                 />
               </div>
 

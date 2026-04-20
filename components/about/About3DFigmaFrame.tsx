@@ -62,7 +62,6 @@ export function About3DFigmaFrame({
               src={ABOUT_POSE_PREVIEW_IMAGE[selectedPose]}
               alt={`Rachel character in ${chipLabel} pose`}
               fill
-              unoptimized
               sizes="302px"
               draggable={false}
               className="pointer-events-none select-none object-contain"
@@ -121,7 +120,6 @@ export function About3DFigmaFrame({
                         ? "[filter:brightness(0)_invert(1)] dark:[filter:brightness(0)]"
                         : "[filter:brightness(0)] opacity-90 dark:[filter:brightness(0)_invert(1)] dark:opacity-100"
                     }`}
-                    unoptimized
                   />
                 </span>
               </span>

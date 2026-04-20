@@ -95,7 +95,7 @@ export function TrackGuardIdentifyingSection() {
             <div className="flex flex-col items-center gap-4 rounded-[40px] border border-[var(--border-subtle)] bg-[rgba(29,29,31,0.05)] px-6 pb-10 pt-8 sm:px-12 dark:border-white/10 dark:bg-white/[0.06]">
               <div className="flex size-16 items-center justify-center rounded-[40px] bg-[var(--pill-badge-bg)] dark:bg-white/10">
                 <div className="relative h-[11px] w-[23px] shrink-0">
-                  <Image src={imgWhoIcon} alt="" width={23} height={11} className="object-contain" unoptimized />
+                  <Image src={imgWhoIcon} alt="" width={23} height={11} className="object-contain"/>
                 </div>
               </div>
               <p className="pt-4 text-center text-[22px] font-normal tracking-[-0.6px] text-[var(--text-primary)] sm:text-[24px] sm:leading-8">
@@ -120,7 +120,7 @@ export function TrackGuardIdentifyingSection() {
                     className="relative mb-6 w-full shrink-0"
                     style={{ height: `${Math.max(c.iconH, 24)}px`, minHeight: `${Math.max(c.iconH, 24)}px` }}
                   >
-                    <Image src={c.icon} alt="" fill className="object-contain object-left" unoptimized />
+                    <Image src={c.icon} alt="" fill className="object-contain object-left"/>
                   </div>
                   <h3 className="mb-3 text-[14px] font-normal leading-5 text-[var(--text-primary)]">{c.title}</h3>
                   <p className="text-[13px] font-normal leading-[21.13px] text-[var(--text-secondary)]">{c.body}</p>

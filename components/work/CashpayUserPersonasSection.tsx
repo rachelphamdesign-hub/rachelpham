@@ -47,7 +47,6 @@ function PersonaCard({
             width={160}
             height={160}
             className={avatarClassName ?? "h-full w-full object-cover"}
-            unoptimized
           />
         </div>
         <div className="flex min-w-0 flex-col gap-1">

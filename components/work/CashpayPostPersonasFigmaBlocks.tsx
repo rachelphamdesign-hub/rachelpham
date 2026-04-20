@@ -68,7 +68,7 @@ function IconCell({ src, w, h, label }: { src: string; w: number; h: number; lab
       style={{ borderColor: "var(--border-default)" }}
     >
       <div className="relative shrink-0" style={{ width: w, height: h }}>
-        <Image src={src} alt="" fill sizes="32px" className="object-contain" unoptimized />
+        <Image src={src} alt="" fill sizes="32px" className="object-contain"/>
       </div>
       <p className="text-center text-[11px] leading-[17.6px] text-[var(--text-secondary)]">{label}</p>
     </div>
@@ -179,13 +179,13 @@ export function CashpayPostPersonasFigmaBlocks() {
             <div className="flex flex-col gap-4">
               <div className="flex items-center gap-3">
                 <div className="relative size-[10px] shrink-0">
-                  <Image src={imgBulletGap} alt="" width={10} height={10} className="object-contain" unoptimized />
+                  <Image src={imgBulletGap} alt="" width={10} height={10} className="object-contain"/>
                 </div>
                 <p className="text-[12px] leading-4 text-[var(--text-body-soft)]">Scattered account management</p>
               </div>
               <div className="flex items-center gap-3">
                 <div className="relative size-[10px] shrink-0">
-                  <Image src={imgBulletGap} alt="" width={10} height={10} className="object-contain" unoptimized />
+                  <Image src={imgBulletGap} alt="" width={10} height={10} className="object-contain"/>
                 </div>
                 <p className="text-[12px] leading-4 text-[var(--text-body-soft)]">Time-consuming manual tracking</p>
               </div>
@@ -221,13 +221,13 @@ export function CashpayPostPersonasFigmaBlocks() {
             <div className="flex flex-col gap-4">
               <div className="flex items-center gap-3">
                 <div className="relative size-[14px] shrink-0">
-                  <Image src={imgBulletCashpay} alt="" width={14} height={14} className="object-contain" unoptimized />
+                  <Image src={imgBulletCashpay} alt="" width={14} height={14} className="object-contain"/>
                 </div>
                 <p className="text-[12px] leading-4 text-[var(--text-primary)]">All-in-one financial overview</p>
               </div>
               <div className="flex items-center gap-3">
                 <div className="relative size-[14px] shrink-0">
-                  <Image src={imgBulletCashpay} alt="" width={14} height={14} className="object-contain" unoptimized />
+                  <Image src={imgBulletCashpay} alt="" width={14} height={14} className="object-contain"/>
                 </div>
                 <p className="text-[12px] leading-4 text-[var(--text-primary)]">Smart, automated tracking</p>
               </div>
@@ -248,7 +248,6 @@ export function CashpayPostPersonasFigmaBlocks() {
             width={1200}
             height={800}
             className="h-auto w-full object-cover"
-            unoptimized
           />
         </div>
       </div>

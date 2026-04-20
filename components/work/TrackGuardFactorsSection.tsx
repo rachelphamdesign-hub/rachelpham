@@ -111,7 +111,6 @@ export function TrackGuardFactorsSection() {
                 fill
                 className="object-cover object-center"
                 sizes="320px"
-                unoptimized
                 style={{ objectPosition: "45% center" }}
               />
             </div>
@@ -131,7 +130,7 @@ export function TrackGuardFactorsSection() {
               >
                 <div className="flex size-12 items-center justify-center rounded-[24px] bg-[rgba(29,29,31,0.05)] dark:bg-white/10">
                   <div className="relative shrink-0" style={{ width: item.iconW, height: item.iconH }}>
-                    <Image src={item.icon} alt="" fill className="object-contain" unoptimized />
+                    <Image src={item.icon} alt="" fill className="object-contain"/>
                   </div>
                 </div>
                 <h4 className="pt-2 text-[18px] font-normal leading-7 text-[var(--text-primary)] sm:text-[20px] sm:leading-[28px]">

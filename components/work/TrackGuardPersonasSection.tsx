@@ -120,7 +120,6 @@ function PersonaCard({ persona }: { persona: Persona }) {
                   fill
                   className="object-cover"
                   sizes="160px"
-                  unoptimized
                 />
               </div>
             </div>

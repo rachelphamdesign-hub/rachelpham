@@ -24,7 +24,6 @@ export function TrackGuardSurveyResultsSection() {
                 fill
                 className="object-cover object-top"
                 sizes="(max-width: 520px) 100vw, 520px"
-                unoptimized
                 priority
               />
             </div>
