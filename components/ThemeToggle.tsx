@@ -1,10 +1,24 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import { useTheme } from "next-themes";
 
 export function ThemeToggle() {
-  const { theme, setTheme } = useTheme();
-  const isDark = theme === "dark";
+  const [mounted, setMounted] = useState(false);
+  const { resolvedTheme, setTheme } = useTheme();
+
+  useEffect(() => setMounted(true), []);
+
+  if (!mounted) {
+    return (
+      <button
+        aria-label="Toggle theme"
+        className="flex items-center justify-center w-[18px] h-[18px]"
+      />
+    );
+  }
+
+  const isDark = resolvedTheme === "dark";
 
   return (
     <button

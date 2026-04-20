@@ -20,9 +20,16 @@ const PLAY_HEADER_SHELL = "mx-auto w-full max-w-[1160px] px-6";
 
 const playItems: PlayCard[] = [
   {
+    nodeId: "local-learning-together",
+    title: "Learning Together",
+    video: "/media/learning-together.mp4",
+    overlay: "soft",
+    variant: "wide",
+  },
+  {
     nodeId: "local-akira-spread",
     title: "Anime Magazine — Akira spread",
-    image: "/media/play-akira-magazine-spread.jpg",
+    image: "/media/play-akira-magazine-spread.gif",
     overlay: "soft",
     variant: "wide",
   },
@@ -61,30 +68,22 @@ function PlayCardFigure({ item }: { item: PlayCard }) {
       ? "linear-gradient(to top, rgba(0,0,0,0.92) 0%, rgba(0,0,0,0.52) 30%, rgba(0,0,0,0) 64%)"
       : "linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.4) 30%, rgba(0,0,0,0) 60%)";
 
-  const isWide = item.variant === "wide";
-  const shellMax = isWide
-    ? "max-w-[min(94vw,560px)] sm:max-w-[min(90vw,540px)] lg:max-w-[560px]"
-    : "max-w-[min(72vw,300px)] sm:max-w-[min(42vw,280px)] lg:max-w-[300px]";
-  const mediaMax = isWide
-    ? "max-h-[min(62dvh,440px)] max-w-[min(94vw,560px)] sm:max-w-[min(90vw,540px)] lg:max-w-[560px]"
-    : "max-h-[min(52dvh,520px)] max-w-[min(72vw,300px)] sm:max-w-[min(42vw,280px)] lg:max-w-[300px]";
+  const shellClass =
+    "relative h-[360px] w-auto overflow-hidden rounded-[21.615px] border border-[var(--border-default)] bg-[var(--card-bg)] sm:h-[400px] lg:h-[440px]";
+  const mediaClass = "block h-full w-auto object-contain object-center";
 
   if (item.video) {
     return (
-      <div
-        className={`relative w-fit overflow-hidden rounded-[21.615px] border border-[var(--border-default)] bg-[var(--card-bg)] ${shellMax}`}
-      >
-        <div className="flex items-center justify-center">
-          <video
-            src={item.video}
-            className={`block h-auto w-auto object-contain object-center ${mediaMax}`}
-            autoPlay
-            loop
-            muted
-            playsInline
-            preload="metadata"
-          />
-        </div>
+      <div className={shellClass}>
+        <video
+          src={item.video}
+          className={mediaClass}
+          autoPlay
+          loop
+          muted
+          playsInline
+          preload="metadata"
+        />
         <div
           className="pointer-events-none absolute inset-0 flex items-end p-5 sm:p-6"
           style={{ background: overlayGradient }}
@@ -99,20 +98,15 @@ function PlayCardFigure({ item }: { item: PlayCard }) {
 
   if (item.image) {
     return (
-      <div
-        className={`relative w-fit overflow-hidden rounded-[21.615px] border border-[var(--border-default)] bg-[var(--card-bg)] ${shellMax}`}
-      >
-        <div className="flex items-center justify-center">
-          {/* Remote Figma assets: intrinsic size keeps frames tight; object-contain avoids crop */}
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src={item.image}
-            alt={item.title}
-            className={`block h-auto w-auto object-contain object-center ${mediaMax}`}
-            loading="lazy"
-            decoding="async"
-          />
-        </div>
+      <div className={shellClass}>
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src={item.image}
+          alt={item.title}
+          className={mediaClass}
+          loading="lazy"
+          decoding="async"
+        />
         <div
           className="pointer-events-none absolute inset-0 flex items-end p-5 sm:p-6"
           style={{ background: overlayGradient }}
@@ -127,7 +121,7 @@ function PlayCardFigure({ item }: { item: PlayCard }) {
 
   return (
     <div
-      className="relative w-[min(72vw,300px)] max-h-[min(52dvh,520px)] overflow-hidden rounded-[21.615px] border border-[var(--border-default)] sm:w-[min(42vw,280px)] lg:w-[260px] dark:border-white/10"
+      className="relative h-[360px] overflow-hidden rounded-[21.615px] border border-[var(--border-default)] sm:h-[400px] lg:h-[440px] dark:border-white/10"
       style={{
         aspectRatio: "3 / 4",
         background: item.background ?? "var(--pill-badge-bg)",
@@ -150,8 +144,16 @@ const CURSOR_OFFSET_Y = -12;
 
 export default function PlayPage() {
   const playSectionRef = useRef<HTMLElement | null>(null);
+  const scrollRef = useRef<HTMLDivElement | null>(null);
   const rafRef = useRef<number | null>(null);
   const [dragCursorActive, setDragCursorActive] = useState(false);
+
+  const scrollByAmount = (dir: 1 | -1) => {
+    const el = scrollRef.current;
+    if (!el) return;
+    const amount = Math.max(el.clientWidth * 0.8, 320);
+    el.scrollBy({ left: dir * amount, behavior: "smooth" });
+  };
 
   const target = useMemo(() => ({ x: 0, y: 0 }), []);
   const pos = useMemo(() => ({ x: 0, y: 0 }), []);
@@ -255,18 +257,42 @@ export default function PlayPage() {
             </div>
           </div>
           <ScrollReveal variant="media" className="min-h-0 flex-1">
-            <div
-              className="flex min-h-0 flex-1 items-start gap-4 overflow-x-auto overflow-y-hidden overscroll-x-contain scroll-smooth px-6 pb-8 pt-2 [scrollbar-color:var(--border-default)_transparent] [scrollbar-width:thin] [scroll-padding-inline:1.5rem] snap-x snap-mandatory sm:gap-5 lg:gap-6"
-              style={{ paddingInlineEnd: "max(1.5rem, env(safe-area-inset-right))" }}
-            >
-              {playItems.map((item, i) => (
-                <article
-                  key={`${item.nodeId}-${i}`}
-                  className="flex shrink-0 snap-start snap-always flex-col items-stretch"
-                >
-                  <PlayCardFigure item={item} />
-                </article>
-              ))}
+            <div className="relative min-h-0 flex-1">
+              <div
+                ref={scrollRef}
+                className="flex min-h-0 flex-1 items-start gap-4 overflow-x-auto overflow-y-hidden overscroll-x-contain scroll-smooth px-6 pb-8 pt-2 [scrollbar-color:var(--border-default)_transparent] [scrollbar-width:thin] [scroll-padding-inline:1.5rem] snap-x snap-mandatory sm:gap-5 lg:gap-6"
+                style={{ paddingInlineEnd: "max(1.5rem, env(safe-area-inset-right))" }}
+              >
+                {playItems.map((item, i) => (
+                  <article
+                    key={`${item.nodeId}-${i}`}
+                    className="flex shrink-0 snap-start snap-always flex-col items-stretch"
+                  >
+                    <PlayCardFigure item={item} />
+                  </article>
+                ))}
+              </div>
+
+              <button
+                type="button"
+                aria-label="Previous"
+                onClick={() => scrollByAmount(-1)}
+                className="absolute left-3 top-1/2 z-10 hidden size-11 -translate-y-1/2 items-center justify-center rounded-full border border-[var(--border-default)] bg-[color-mix(in_oklab,var(--bg-surface)_88%,transparent)] text-[var(--text-primary)] shadow-[0_6px_18px_rgba(0,0,0,0.12)] backdrop-blur-[8px] transition-opacity hover:opacity-80 sm:flex dark:border-white/12 dark:bg-[color-mix(in_oklab,var(--bg-elevated)_78%,transparent)]"
+              >
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+                  <polyline points="15 18 9 12 15 6" />
+                </svg>
+              </button>
+              <button
+                type="button"
+                aria-label="Next"
+                onClick={() => scrollByAmount(1)}
+                className="absolute right-3 top-1/2 z-10 hidden size-11 -translate-y-1/2 items-center justify-center rounded-full border border-[var(--border-default)] bg-[color-mix(in_oklab,var(--bg-surface)_88%,transparent)] text-[var(--text-primary)] shadow-[0_6px_18px_rgba(0,0,0,0.12)] backdrop-blur-[8px] transition-opacity hover:opacity-80 sm:flex dark:border-white/12 dark:bg-[color-mix(in_oklab,var(--bg-elevated)_78%,transparent)]"
+              >
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+                  <polyline points="9 18 15 12 9 6" />
+                </svg>
+              </button>
             </div>
           </ScrollReveal>
         </section>
