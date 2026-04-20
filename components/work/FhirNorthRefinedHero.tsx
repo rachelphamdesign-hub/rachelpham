@@ -1,4 +1,5 @@
 import type { ProjectMeta } from "@/lib/projects";
+import { FhirNorthHeroLiveLink } from "@/components/work/FhirNorthHeroLiveLink";
 
 /** Figma 291:23782 — Refined hero (badge, title, tagline, video, Role / Team / Timeline / Tools). */
 export function FhirNorthRefinedHero({ project }: { project: ProjectMeta }) {
@@ -23,19 +24,7 @@ export function FhirNorthRefinedHero({ project }: { project: ProjectMeta }) {
         </div>
       </div>
 
-      <div className="overflow-hidden rounded-[56px] bg-[var(--bg-surface)] shadow-[0px_20px_50px_0px_rgba(0,0,0,0.1),0px_10px_30px_0px_rgba(0,0,0,0.05)] dark:shadow-[0px_20px_50px_0px_rgba(0,0,0,0.45),0px_10px_30px_0px_rgba(0,0,0,0.25)]">
-        <div className="relative aspect-[980/470] w-full">
-          <video
-            src={videoSrc}
-            className="absolute inset-0 size-full object-cover object-center"
-            autoPlay
-            loop
-            muted
-            playsInline
-            preload="metadata"
-          />
-        </div>
-      </div>
+      <FhirNorthHeroLiveLink videoSrc={videoSrc} />
 
       <div className="mx-auto flex max-w-[896px] flex-wrap justify-center gap-x-10 gap-y-8 pb-4 pt-10 sm:gap-x-16 lg:justify-between lg:gap-x-20 xl:gap-[80px]">
         <div className="flex flex-col gap-[7px]">

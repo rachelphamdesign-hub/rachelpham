@@ -158,13 +158,9 @@ export function FeaturedProject({
   );
 
   if (layout === "fhirVideo") {
-    return (
-      <Link
-        href={`/work/${slug}`}
-        {...ch}
-        className={`${cardBase} relative rounded-[16px] ${gridSizing}`}
-        style={surface}
-      >
+    const shellClass = `${cardBase} relative rounded-[16px] ${gridSizing}`;
+    const fhirVideoBody = (
+      <>
         <RevealMedia className="pointer-events-none absolute inset-0">
           <video
             src={mediaSrc}
@@ -201,6 +197,17 @@ export function FeaturedProject({
           </p>
         </RevealCopy>
         {cursor.bubble}
+      </>
+    );
+
+    return (
+      <Link
+        href={`/work/${slug}`}
+        {...ch}
+        className={shellClass}
+        style={surface}
+      >
+        {fhirVideoBody}
       </Link>
     );
   }
@@ -393,11 +400,13 @@ export function FeaturedProject({
       >
         <div className="absolute inset-0 rounded-[16px] bg-black" aria-hidden />
         <RevealMedia className="pointer-events-none absolute inset-0 overflow-hidden rounded-[inherit]">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
+          <Image
             src={mediaSrc}
-            alt=""
-            className="absolute inset-0 h-full w-full object-cover object-center"
+            alt={`${title} — branded packaging and mockups`}
+            fill
+            priority
+            sizes="(min-width: 1024px) min(420px, 34vw), 100vw"
+            className="object-cover object-center"
             draggable={false}
           />
           <div

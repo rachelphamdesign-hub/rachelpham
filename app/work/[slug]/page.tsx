@@ -9,7 +9,6 @@ import { CashpayDataCollectionAndSurvey } from "@/components/work/CashpayDataCol
 import { CashpayUserPersonasSection } from "@/components/work/CashpayUserPersonasSection";
 import { CashpayUsabilityFeedbackSection } from "@/components/work/CashpayUsabilityFeedbackSection";
 import { CashpayFeedbackFixesSection } from "@/components/work/CashpayFeedbackFixesSection";
-import { CashpaySectionSpacingDebug } from "@/components/work/CashpaySectionSpacingDebug";
 import { TrackGuardFactorsSection } from "@/components/work/TrackGuardFactorsSection";
 import { TrackGuardIdentifyingSection } from "@/components/work/TrackGuardIdentifyingSection";
 import { TrackGuardPersonasSection } from "@/components/work/TrackGuardPersonasSection";
@@ -698,8 +697,6 @@ export default async function WorkPage({ params }: Props) {
         ))}
 
         {/* ── Back to work ── */}
-        {isCashpay ? <CashpaySectionSpacingDebug /> : null}
-
         <section
           className="py-20 px-6 text-center"
           style={

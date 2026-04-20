@@ -16,11 +16,11 @@ export function Header() {
   const pathname = usePathname();
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 flex items-center justify-center px-6 pt-4 pointer-events-none">
-      <div className="w-full max-w-[1100px] flex items-center justify-between pointer-events-auto">
-        {/* Logo + Nav pill */}
+    <header className="fixed top-0 left-0 right-0 z-50 flex items-center justify-center px-4 pt-3 sm:px-6 sm:pt-4 pointer-events-none">
+      <div className="pointer-events-auto flex w-full max-w-[1100px] flex-col gap-2 sm:flex-row sm:items-center sm:justify-between sm:gap-0">
+        {/* Logo + Nav pill — full width on small screens so CTA can sit on its own row with a proper tap target */}
         <div
-          className="flex items-center gap-6 h-12 px-[25px] py-0.5 rounded-full border backdrop-blur-[6px] shadow-[0px_1px_2px_rgba(0,0,0,0.05)] transition-colors"
+          className="flex h-12 min-h-12 w-full min-w-0 items-center gap-3 overflow-x-auto rounded-full border px-3 py-0.5 backdrop-blur-[6px] shadow-[0px_1px_2px_rgba(0,0,0,0.05)] transition-colors sm:w-auto sm:gap-6 sm:overflow-visible sm:px-[25px]"
           style={{
             background: "var(--nav-bg)",
             borderColor: "var(--border-nav)",
@@ -38,7 +38,7 @@ export function Header() {
           </Link>
 
           {/* Nav links */}
-          <nav className="flex items-center gap-6" aria-label="Main navigation">
+          <nav className="flex shrink-0 items-center gap-3 sm:gap-6" aria-label="Main navigation">
             {navLinks.map((link) => {
               const isActive =
                 link.href === "/about"
@@ -75,14 +75,21 @@ export function Header() {
           <ThemeToggle />
         </div>
 
-        {/* Let's talk CTA */}
+        {/* Let's talk — mobile: fixed side bubble; sm+: inline pill in header row */}
         <a
           href="mailto:rachelphamdesign@gmail.com"
-          className="flex items-center gap-2 h-12 px-6 rounded-full font-semibold text-[14px] tracking-[-0.025em] transition-opacity hover:opacity-90 shrink-0"
+          className={clsx(
+            "flex shrink-0 touch-manipulation items-center justify-center gap-2 font-semibold tracking-[-0.025em] transition-opacity hover:opacity-90 active:opacity-90",
+            "text-[12px] sm:text-[14px]",
+            /* Side bubble — fixed on viewport right, vertically centered */
+            "fixed top-1/2 z-[60] min-h-12 -translate-y-1/2 whitespace-nowrap rounded-full px-4 py-3 shadow-[0_10px_40px_rgba(0,0,0,0.16)] dark:shadow-[0_10px_40px_rgba(0,0,0,0.45)]",
+            "right-[max(0.75rem,env(safe-area-inset-right,0px))]",
+            /* sm+: inline with nav */
+            "sm:static sm:right-auto sm:top-auto sm:z-auto sm:h-12 sm:min-h-12 sm:w-auto sm:translate-y-0 sm:px-6 sm:py-0 sm:shadow-[0px_1px_2px_rgba(0,0,0,0.05)] sm:dark:shadow-[0px_1px_2px_rgba(0,0,0,0.2)]",
+          )}
           style={{
             background: "var(--btn-primary-bg)",
             color: "var(--btn-primary-text)",
-            boxShadow: "0px 1px 2px rgba(0,0,0,0.05)",
           }}
         >
           Let&apos;s talk
@@ -91,6 +98,7 @@ export function Header() {
             height="10"
             viewBox="0 0 10 10"
             fill="none"
+            className="shrink-0 sm:h-2.5 sm:w-2.5"
             aria-hidden="true"
           >
             <path

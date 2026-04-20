@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { FeaturedProject } from "@/components/FeaturedProject";
 import { ScrollReveal } from "@/components/ScrollReveal";
+import { SWEET_SUNSET_FEATURED_CARD_IMAGE } from "@/lib/homeFeaturedAssets";
 import { testimonials } from "@/lib/projects";
 
 function FeaturedProjects() {
@@ -65,7 +66,10 @@ function FeaturedProjects() {
   ];
 
   return (
-    <section id="work" className="px-6 pb-[56px] pt-12 sm:pb-[72px] sm:pt-16 lg:pb-[88px] lg:pt-20">
+    <section
+      id="work"
+      className="scroll-mt-28 px-6 pb-[56px] pt-12 sm:scroll-mt-32 sm:pb-[72px] sm:pt-16 lg:pb-[88px] lg:pt-20"
+    >
       <div className="mx-auto w-full max-w-[1240px]">
         <div className="mb-10 flex flex-col items-center gap-4 sm:mb-12">
           <ScrollReveal>
@@ -139,7 +143,7 @@ function EventsSection() {
       subtitle:
         "A freelance project for a new Toronto coffee shop, created with a modern vibe for younger customers.",
       label: "2023 • freelance 01",
-      image: "https://www.figma.com/api/mcp/asset/41281bc3-a113-4c50-955a-f24995b9e5db",
+      image: SWEET_SUNSET_FEATURED_CARD_IMAGE,
       mediaType: "image" as const,
       area: "lg:col-span-4 lg:col-start-1 lg:row-start-1",
       height: "min-h-[320px] h-[380px] lg:h-[480px]",
@@ -406,7 +410,7 @@ function CTASection() {
         <ScrollReveal delay={0.12}>
           <a
             href="mailto:rachelphamdesign@gmail.com"
-            className="inline-flex h-[32px] items-center gap-2 rounded-full px-[16px] text-[11px] font-semibold uppercase tracking-[0.08em] transition-opacity duration-500 hover:opacity-90"
+            className="inline-flex min-h-11 items-center justify-center gap-2 rounded-full px-5 py-2.5 text-[12px] font-semibold uppercase tracking-[0.08em] touch-manipulation transition-opacity duration-500 hover:opacity-90 active:opacity-90 sm:h-8 sm:min-h-0 sm:px-4 sm:py-0 sm:text-[11px]"
             style={{
               background: "var(--btn-primary-bg)",
               color: "var(--btn-primary-text)",

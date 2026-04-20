@@ -52,8 +52,16 @@ const photos: BeyondPhoto[] = [
 
 export function AboutBeyondTheScreenSection() {
   const sectionRef = useRef<HTMLElement | null>(null);
+  const scrollRef = useRef<HTMLDivElement | null>(null);
   const rafRef = useRef<number | null>(null);
   const [active, setActive] = useState(false);
+
+  const scrollByAmount = (dir: 1 | -1) => {
+    const el = scrollRef.current;
+    if (!el) return;
+    const amount = Math.max(el.clientWidth * 0.8, 320);
+    el.scrollBy({ left: dir * amount, behavior: "smooth" });
+  };
 
   const target = useMemo(() => ({ x: 0, y: 0 }), []);
   const pos = useMemo(() => ({ x: 0, y: 0 }), []);
@@ -145,58 +153,103 @@ export function AboutBeyondTheScreenSection() {
         </h2>
       </div>
 
-      <div
-        className="flex w-full snap-x snap-mandatory gap-6 overflow-x-auto overflow-y-hidden scroll-smooth overscroll-x-contain px-6 pb-3 sm:px-10 lg:px-16 [scrollbar-width:thin]"
-        style={{
-          scrollbarColor: "var(--border-default) transparent",
-        }}
-      >
-        {photos.map((photo) => (
-          <article
-            key={photo.label}
-            className="relative h-[562px] w-[min(85vw,450px)] shrink-0 snap-start snap-always overflow-hidden rounded-[16px] border shadow-[0_1px_2px_rgba(0,0,0,0.12)] dark:shadow-[0_1px_2px_rgba(0,0,0,0.35)]"
-            style={{ borderColor: "var(--border-default)" }}
-          >
-            <div className="relative h-full w-full">
-              {photo.imageStyle ? (
-                <>
-                  {/* Figma crop for Handmade Crafts requires explicit % width/height; use absolute img, not next/image fill. */}
-                  {/* eslint-disable-next-line @next/next/no-img-element -- exact Figma crop percentages with absolute sizing */}
-                  <img
+      <div className="relative">
+        <div
+          ref={scrollRef}
+          className="flex w-full snap-x snap-mandatory gap-6 overflow-x-auto overflow-y-hidden scroll-smooth overscroll-x-contain px-6 pb-3 sm:px-10 lg:px-16 [scrollbar-width:thin]"
+          style={{
+            scrollbarColor: "var(--border-default) transparent",
+            paddingInlineEnd: "max(1.5rem, env(safe-area-inset-right))",
+          }}
+        >
+          {photos.map((photo) => (
+            <article
+              key={photo.label}
+              className="relative h-[562px] w-[min(85vw,450px)] shrink-0 snap-start snap-always overflow-hidden rounded-[16px] border shadow-[0_1px_2px_rgba(0,0,0,0.12)] dark:shadow-[0_1px_2px_rgba(0,0,0,0.35)]"
+              style={{ borderColor: "var(--border-default)" }}
+            >
+              <div className="relative h-full w-full">
+                {photo.imageStyle ? (
+                  <>
+                    {/* Figma crop for Handmade Crafts requires explicit % width/height; use absolute img, not next/image fill. */}
+                    {/* eslint-disable-next-line @next/next/no-img-element -- exact Figma crop percentages with absolute sizing */}
+                    <img
+                      src={photo.src}
+                      alt={photo.label}
+                      className="absolute max-w-none object-cover"
+                      style={photo.imageStyle}
+                      draggable={false}
+                    />
+                  </>
+                ) : (
+                  <Image
                     src={photo.src}
                     alt={photo.label}
-                    className="absolute max-w-none object-cover"
-                    style={photo.imageStyle}
-                    draggable={false}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 85vw, 450px"
                   />
-                </>
-              ) : (
-                <Image
-                  src={photo.src}
-                  alt={photo.label}
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 768px) 85vw, 450px"
-                />
-              )}
-            </div>
-            <div
-              className="pointer-events-none absolute inset-0"
-              style={{
-                background:
-                  "linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(102,102,102,0) 42.844%)",
-              }}
-            />
-            <div className="absolute inset-x-0 px-8 pb-9 pt-0" style={{ bottom: 0 }}>
-              <p className="text-[12px] font-bold uppercase leading-4 tracking-[1.2px] text-white">
-                {photo.label}
-              </p>
-              <p className="mt-2 text-[14px] leading-[21px] text-white/80">
-                {photo.sublabel}
-              </p>
-            </div>
-          </article>
-        ))}
+                )}
+              </div>
+              <div
+                className="pointer-events-none absolute inset-0"
+                style={{
+                  background:
+                    "linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(102,102,102,0) 42.844%)",
+                }}
+              />
+              <div className="absolute inset-x-0 px-8 pb-9 pt-0" style={{ bottom: 0 }}>
+                <p className="text-[12px] font-bold uppercase leading-4 tracking-[1.2px] text-white">
+                  {photo.label}
+                </p>
+                <p className="mt-2 text-[14px] leading-[21px] text-white/80">
+                  {photo.sublabel}
+                </p>
+              </div>
+            </article>
+          ))}
+        </div>
+
+        <button
+          type="button"
+          aria-label="Previous"
+          onClick={() => scrollByAmount(-1)}
+          className="absolute left-3 top-1/2 z-10 hidden size-11 -translate-y-1/2 items-center justify-center rounded-full border border-[var(--border-default)] bg-[color-mix(in_oklab,var(--bg-surface)_88%,transparent)] text-[var(--text-primary)] shadow-[0_6px_18px_rgba(0,0,0,0.12)] backdrop-blur-[8px] transition-opacity hover:opacity-80 sm:flex dark:border-white/12 dark:bg-[color-mix(in_oklab,var(--bg-elevated)_78%,transparent)]"
+        >
+          <svg
+            width="18"
+            height="18"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            aria-hidden
+          >
+            <polyline points="15 18 9 12 15 6" />
+          </svg>
+        </button>
+        <button
+          type="button"
+          aria-label="Next"
+          onClick={() => scrollByAmount(1)}
+          className="absolute right-3 top-1/2 z-10 hidden size-11 -translate-y-1/2 items-center justify-center rounded-full border border-[var(--border-default)] bg-[color-mix(in_oklab,var(--bg-surface)_88%,transparent)] text-[var(--text-primary)] shadow-[0_6px_18px_rgba(0,0,0,0.12)] backdrop-blur-[8px] transition-opacity hover:opacity-80 sm:flex dark:border-white/12 dark:bg-[color-mix(in_oklab,var(--bg-elevated)_78%,transparent)]"
+        >
+          <svg
+            width="18"
+            height="18"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            aria-hidden
+          >
+            <polyline points="9 18 15 12 9 6" />
+          </svg>
+        </button>
       </div>
     </section>
   );

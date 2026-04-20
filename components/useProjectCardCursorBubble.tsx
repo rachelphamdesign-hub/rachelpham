@@ -15,7 +15,15 @@ export type ProjectCardCursorBubbleApi = {
   bubble: React.ReactNode;
 };
 
-export function useProjectCardCursorBubble(): ProjectCardCursorBubbleApi {
+export type ProjectCardCursorBubbleOptions = {
+  /** Bubble text (default: featured-card copy). */
+  label?: string;
+};
+
+export function useProjectCardCursorBubble(
+  options?: ProjectCardCursorBubbleOptions,
+): ProjectCardCursorBubbleApi {
+  const label = options?.label ?? "View Project";
   const x = useSpring(0, POSITION_SPRING);
   const y = useSpring(0, POSITION_SPRING);
   const opacity = useSpring(0, OPACITY_SPRING);
@@ -59,7 +67,7 @@ export function useProjectCardCursorBubble(): ProjectCardCursorBubbleApi {
         color: "var(--btn-primary-text)",
       }}
     >
-      View Project
+      {label}
     </motion.span>
   );
 
