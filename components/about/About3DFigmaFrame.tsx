@@ -116,10 +116,10 @@ export function About3DFigmaFrame({
                     width={Math.round(iconPx * 2)}
                     height={Math.round(iconPx * 2)}
                     draggable={false}
-                    className={`pointer-events-none select-none object-contain ${
+                    className={`pointer-events-none select-none object-contain opacity-100 ${
                       active
-                        ? "brightness-0 invert opacity-100 dark:brightness-0 dark:invert"
-                        : "brightness-0 opacity-90 dark:brightness-0 dark:invert dark:opacity-100"
+                        ? "[filter:brightness(0)_invert(1)] dark:[filter:brightness(0)]"
+                        : "[filter:brightness(0)] opacity-90 dark:[filter:brightness(0)_invert(1)] dark:opacity-100"
                     }`}
                     unoptimized
                   />
