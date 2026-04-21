@@ -21,6 +21,10 @@ export const metadata: Metadata = {
   description:
     "Hi there! I'm Rachel Pham, a UX/UI designer based in Ontario, Canada. Graphic & Web Designer with the Business Team at the Applied Research Centre at Mohawk College.",
   keywords: ["UX design", "UI design", "product design", "Rachel Pham", "portfolio"],
+  icons: {
+    icon: "/media/favicon.png",
+    apple: "/media/favicon.png",
+  },
   openGraph: {
     title: "Rachel Pham – Product Designer",
     description: "UX/UI designer based in Ontario, Canada.",

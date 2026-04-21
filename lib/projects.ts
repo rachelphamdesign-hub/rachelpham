@@ -190,7 +190,7 @@ export const projects: ProjectMeta[] = [
     title: "Sweet Sunset",
     subtitle: "Designed the brand identity for Sweet Sunset restaurant",
     label: "Freelance 2023",
-    heroImage: "https://www.figma.com/api/mcp/asset/859dab28-cf1f-49e8-b203-4d818f1b5a4b",
+    heroImage: "/media/Mockup.jpg",
     role: ["Brand Identity Designer"],
     team: "Solo project",
     timeline: "6 months",
@@ -204,8 +204,7 @@ export const projects: ProjectMeta[] = [
     title: "Vot Coffee",
     subtitle: "Designed the brand identity for Vot Coffee brand",
     label: "Freelance 2023",
-    heroImage:
-      "https://www.figma.com/api/mcp/asset/c019b0e8-ad68-48b1-b2bd-775c042c3c65",
+    heroImage: "/media/vot-coffee-hero-final.png",
     role: ["Brand Identity Designer"],
     team: "Solo project",
     timeline: "6 months",
@@ -270,7 +269,7 @@ export const eventProjects = [
     subtitle: "I was responsible for designing the visual identity for Sweet Sunset, a brand consisting of illustrations, brand guidelines, product mockups and a comprehensive brand language.",
     label: "2023",
     labelPrefix: "Freelance",
-    image: "https://www.figma.com/api/mcp/asset/859dab28-cf1f-49e8-b203-4d818f1b5a4b",
+    image: "/media/Mockup.jpg",
     darkCard: false,
   },
   {

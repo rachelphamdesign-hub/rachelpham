@@ -1,3 +1,4 @@
+import Image from "next/image";
 import type { ProjectMeta } from "@/lib/projects";
 import { VOT_COFFEE_HERO_IMAGE } from "@/lib/votCoffeeMedia";
 
@@ -26,11 +27,13 @@ export function VotCoffeeRefinedHero({ project }: { project: ProjectMeta }) {
 
       <div className="overflow-hidden rounded-[56px] bg-[var(--bg-surface)] shadow-[0px_20px_50px_0px_rgba(0,0,0,0.1),0px_10px_30px_0px_rgba(0,0,0,0.05)] dark:shadow-[0px_20px_50px_0px_rgba(0,0,0,0.45),0px_10px_30px_0px_rgba(0,0,0,0.25)]">
         <div className="relative aspect-[980/470] w-full">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
+          <Image
             src={imgSrc}
             alt={`${project.title} — brand hero photography with Vot Coffee identity`}
-            className="absolute inset-0 size-full object-cover object-center"
+            fill
+            className="object-cover object-center"
+            priority
+            sizes="(max-width: 1024px) 100vw, 980px"
             draggable={false}
           />
         </div>

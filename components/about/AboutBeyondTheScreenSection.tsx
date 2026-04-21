@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import type { CSSProperties } from "react";
 import { useEffect, useMemo, useRef, useState } from "react";
 
 /**
@@ -13,40 +12,36 @@ type BeyondPhoto = {
   src: string;
   label: string;
   sublabel: string;
-  imageStyle?: CSSProperties;
 };
+
+/** Local assets under `public/media/about image/` (spaces URL-encoded). */
+const ABOUT_IMAGE_DIR = "/media/about%20image";
 
 const photos: BeyondPhoto[] = [
   {
-    src: "https://www.figma.com/api/mcp/asset/906119ef-bc8d-41f3-86d2-f37b7675b505",
+    src: `${ABOUT_IMAGE_DIR}/Mountain%20Walks.png`,
     label: "Mountain Walks",
     sublabel: "Garibaldi Lake — where I enjoy quiet moments and nature.",
   },
   {
-    src: "https://www.figma.com/api/mcp/asset/fa5d0eb6-b668-4163-b2ee-eddae7f094b8",
+    src: `${ABOUT_IMAGE_DIR}/global%20explore.png`,
     label: "Global Explore",
     sublabel: "Kyoto — exploring culture, details, and everyday beauty.",
   },
   {
-    src: "https://www.figma.com/api/mcp/asset/a6b57624-a3ef-45ba-b009-e3d6edc30920",
+    src: `${ABOUT_IMAGE_DIR}/Snow%20Time.png`,
     label: "Snow Time",
     sublabel: "Chicopee — a place I go to reset and stay active.",
   },
   {
-    src: "https://www.figma.com/api/mcp/asset/aae471a9-c913-4674-8680-398f38ed3d54",
+    src: `${ABOUT_IMAGE_DIR}/Matcha%20lover.png`,
     label: "Matcha Lover",
     sublabel: "Handmade matcha — I enjoy the calm, mindful process.",
   },
   {
-    src: "https://www.figma.com/api/mcp/asset/4895f408-42bc-4f13-b003-8eeff86890aa",
+    src: `${ABOUT_IMAGE_DIR}/Handmade%20Crafts.png`,
     label: "Handmade Crafts",
     sublabel: "Making keychains — small creations that bring me joy.",
-    imageStyle: {
-      width: "108.43%",
-      height: "115.83%",
-      left: "0%",
-      top: "-8.4%",
-    },
   },
 ];
 
@@ -169,27 +164,13 @@ export function AboutBeyondTheScreenSection() {
               style={{ borderColor: "var(--border-default)" }}
             >
               <div className="relative h-full w-full">
-                {photo.imageStyle ? (
-                  <>
-                    {/* Figma crop for Handmade Crafts requires explicit % width/height; use absolute img, not next/image fill. */}
-                    {/* eslint-disable-next-line @next/next/no-img-element -- exact Figma crop percentages with absolute sizing */}
-                    <img
-                      src={photo.src}
-                      alt={photo.label}
-                      className="absolute max-w-none object-cover"
-                      style={photo.imageStyle}
-                      draggable={false}
-                    />
-                  </>
-                ) : (
-                  <Image
-                    src={photo.src}
-                    alt={photo.label}
-                    fill
-                    className="object-cover"
-                    sizes="(max-width: 768px) 85vw, 450px"
-                  />
-                )}
+                <Image
+                  src={photo.src}
+                  alt={photo.label}
+                  fill
+                  className="object-cover object-center"
+                  sizes="(max-width: 768px) 85vw, 450px"
+                />
               </div>
               <div
                 className="pointer-events-none absolute inset-0"
