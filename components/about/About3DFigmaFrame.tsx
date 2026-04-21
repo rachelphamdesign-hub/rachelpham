@@ -79,9 +79,9 @@ export function About3DFigmaFrame({
         </div>
       </div>
 
-      {/* Icon toolbar — above canvas stacking; pointer-events on images none so clicks hit <button> */}
+      {/* Icon toolbar — Apple-style: inactive = light grey + black icon; active = filled dark + white icon; smooth transitions */}
       <div
-        className="relative z-20 grid shrink-0 grid-cols-4 gap-4 bg-[var(--bg-surface)] px-6 py-6 dark:bg-zinc-950 dark:ring-1 dark:ring-white/10"
+        className="relative z-20 grid shrink-0 grid-cols-4 gap-3 bg-[var(--bg-surface)] px-5 py-5 sm:gap-4 sm:px-6 sm:py-6 dark:bg-zinc-950 dark:ring-1 dark:ring-white/10"
         role="tablist"
         aria-label="Character pose"
       >
@@ -96,13 +96,13 @@ export function About3DFigmaFrame({
               role="tab"
               aria-selected={active}
               onClick={() => onSelectPose(pose)}
-              className="relative z-10 flex flex-col items-center gap-[7.75px] px-[10px] transition-transform duration-200 hover:opacity-90 active:scale-[0.98] sm:px-[16.75px]"
+              className="relative z-10 flex min-w-0 flex-col items-center gap-2 rounded-xl outline-none transition-transform duration-150 ease-out active:scale-[0.94] focus-visible:ring-2 focus-visible:ring-[var(--accent-action)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--bg-surface)] dark:focus-visible:ring-offset-zinc-950"
             >
               <span
-                className={`flex size-12 shrink-0 items-center justify-center rounded-[20px] transition-colors duration-200 ${
+                className={`flex size-[52px] shrink-0 items-center justify-center rounded-full shadow-sm transition-[background-color,box-shadow] duration-300 ease-[cubic-bezier(0.25,0.1,0.25,1)] ${
                   active
-                    ? "bg-[var(--text-primary)] dark:bg-zinc-700 dark:ring-1 dark:ring-white/25"
-                    : "bg-[var(--pill-badge-bg)] dark:bg-zinc-800"
+                    ? "bg-[var(--text-primary)] shadow-[0_2px_8px_rgba(0,0,0,0.18)] dark:bg-white dark:shadow-[0_2px_10px_rgba(0,0,0,0.35)]"
+                    : "bg-[#E8E8ED] dark:bg-zinc-800"
                 }`}
               >
                 <span
@@ -115,17 +115,19 @@ export function About3DFigmaFrame({
                     width={Math.round(iconPx * 2)}
                     height={Math.round(iconPx * 2)}
                     draggable={false}
-                    className={`pointer-events-none select-none object-contain opacity-100 ${
+                    className={`pointer-events-none select-none object-contain transition-[filter,opacity] duration-300 ease-[cubic-bezier(0.25,0.1,0.25,1)] ${
                       active
-                        ? "[filter:brightness(0)_invert(1)] dark:[filter:brightness(0)]"
-                        : "[filter:brightness(0)] opacity-90 dark:[filter:brightness(0)_invert(1)] dark:opacity-100"
+                        ? "brightness-0 invert dark:invert-0 dark:brightness-100"
+                        : "brightness-0 dark:invert"
                     }`}
                   />
                 </span>
               </span>
               <span
-                className={`text-center text-[9px] font-bold uppercase leading-[13.5px] tracking-[-0.45px] ${
-                  active ? "text-[var(--text-primary)]" : "text-[var(--text-secondary)]"
+                className={`max-w-[4.5rem] text-center text-[9px] uppercase leading-[13.5px] tracking-[0.06em] transition-[color,font-weight] duration-300 ease-[cubic-bezier(0.25,0.1,0.25,1)] sm:max-w-none sm:text-[10px] sm:tracking-[0.08em] ${
+                  active
+                    ? "font-bold text-[var(--text-primary)]"
+                    : "font-normal text-[var(--text-secondary)]"
                 }`}
               >
                 {ABOUT_POSE_FIGMA_LABEL[pose]}

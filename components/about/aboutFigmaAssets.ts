@@ -1,19 +1,21 @@
 /**
- * Figma MCP exports — pose toolbar icons (node 443:1562).
- * @see https://www.figma.com/design/3nqXahGKoQ1fzhwllD8YbP/porfolio?node-id=443-1562
+ * Pose toolbar icons — Figma SVGs under `public/media/about icon/`.
+ * Order matches `ABOUT_POSES`: stand, hike, matcha, travel.
  */
 import type { AboutPose } from "@/components/about/aboutModelUrls";
 
+const ABOUT_TOOLBAR_ICON_DIR = "/media/about%20icon";
+
 export const ABOUT_POSE_ICON: Record<AboutPose, string> = {
-  stand: "https://www.figma.com/api/mcp/asset/4cee6a0b-d6e5-48af-b19f-93fc69f3a00e",
-  hiking: "https://www.figma.com/api/mcp/asset/7f941ce0-e1c4-4570-8ad8-50b4979d8685",
-  matcha: "https://www.figma.com/api/mcp/asset/df895ebd-0d78-4fac-a87a-c924078d9cba",
-  travel: "https://www.figma.com/api/mcp/asset/af646d07-880f-4cf9-8e1c-2e8f5fcfcc28",
+  stand: `${ABOUT_TOOLBAR_ICON_DIR}/stand.svg`,
+  hiking: `${ABOUT_TOOLBAR_ICON_DIR}/hike.svg`,
+  matcha: `${ABOUT_TOOLBAR_ICON_DIR}/matcha.svg`,
+  travel: `${ABOUT_TOOLBAR_ICON_DIR}/travel.svg`,
 };
 
-/** Figma toolbar label text (exact casing per frame). */
+/** Toolbar labels — `uppercase` in UI → STAND, HIKE, MATCHA, TRAVEL. */
 export const ABOUT_POSE_FIGMA_LABEL: Record<AboutPose, string> = {
-  stand: "stand",
+  stand: "Stand",
   hiking: "Hike",
   matcha: "Matcha",
   travel: "Travel",
@@ -27,10 +29,10 @@ export const ABOUT_POSE_CHIP_LABEL: Record<AboutPose, string> = {
   travel: "Travel",
 };
 
-/** Icon slot size in px (Figma asset varies slightly per icon). */
+/** Icon glyph size inside the circular well (px); SVGs are ~19px art. */
 export const ABOUT_POSE_ICON_BOX: Record<AboutPose, number> = {
-  stand: 18.5,
-  hiking: 21.75,
-  matcha: 18.5,
-  travel: 24,
+  stand: 22,
+  hiking: 22,
+  matcha: 22,
+  travel: 22,
 };
