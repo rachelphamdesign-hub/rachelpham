@@ -9,31 +9,36 @@ import { ViewShowcaseLink } from "@/components/home/ViewShowcaseLink";
  */
 const heroTitleClass =
   "max-w-full text-[clamp(1.6875rem,1rem+4.25vw,2.9375rem)] font-extrabold leading-[1.06] tracking-[-0.035em] sm:leading-[1.04] sm:tracking-[-0.042em]";
+const heroSubtitleClass =
+  "max-w-full whitespace-nowrap text-[clamp(1.6rem,0.95rem+3.9vw,2.9rem)] font-extrabold leading-[1.06] tracking-[-0.035em] sm:leading-[1.04] sm:tracking-[-0.042em]";
 
 export function HeroSection() {
   return (
     <section className="overflow-x-clip px-4 pb-20 pt-32 sm:px-6 sm:pb-32 sm:pt-[130px] lg:pb-40">
       <div className="mx-auto w-full max-w-[1100px]">
         <div className="grid grid-cols-1 items-start gap-6 sm:gap-8 lg:grid-cols-[1fr_560px] lg:gap-[30px]">
-          <div className="relative flex min-w-0 flex-col items-stretch sm:items-start">
+          <div className="relative flex min-w-0 flex-col items-center lg:items-start">
             <ScrollReveal variant="media" className="mb-5 w-full max-w-[540px] sm:mb-7">
               <Hero3DModel className="shadow-[0_14px_46px_rgba(0,0,0,0.08)]" />
             </ScrollReveal>
             <ScrollReveal delay={0.12}>
-              <h1 className={heroTitleClass} style={{ color: "var(--text-primary)" }}>
+              <h1
+                className={`${heroTitleClass} text-center lg:text-left`}
+                style={{ color: "var(--text-primary)" }}
+              >
                 Hello, I&apos;m Rachel.
               </h1>
             </ScrollReveal>
             <ScrollReveal delay={0.24}>
               <p
-                className={`mt-0.5 sm:mt-1 ${heroTitleClass}`}
+                className={`mt-0.5 sm:mt-1 ${heroSubtitleClass} text-center lg:text-left`}
                 style={{ color: "var(--text-subtle)" }}
               >
-                A Product designer
+                Web &amp; Graphic Designer
               </p>
             </ScrollReveal>
 
-            <ScrollReveal delay={0.36} className="mt-6 w-full sm:mt-7 sm:w-auto">
+            <ScrollReveal delay={0.36} className="mt-6 w-full self-center sm:mt-7 sm:w-auto lg:self-start">
               <ViewShowcaseLink
                 className="inline-flex h-12 w-full min-h-12 touch-manipulation items-center justify-center gap-2 rounded-[24px] px-6 text-[14px] font-medium transition-opacity duration-500 hover:opacity-90 active:opacity-90 sm:w-auto sm:px-8"
                 style={{

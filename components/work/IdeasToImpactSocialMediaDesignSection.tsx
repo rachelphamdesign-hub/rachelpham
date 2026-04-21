@@ -162,7 +162,7 @@ export function IdeasToImpactSocialMediaDesignSection() {
               backdropFilter: "blur(10px)",
             }}
           >
-            drag to view more
+            Swipe for more →
           </div>
         </div>
 

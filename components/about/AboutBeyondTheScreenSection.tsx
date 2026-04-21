@@ -130,7 +130,7 @@ export function AboutBeyondTheScreenSection() {
             backdropFilter: "blur(10px)",
           }}
         >
-          drag to view more
+          Swipe for more →
         </div>
       </div>
       <div className="mx-auto mb-10 flex w-full max-w-[1240px] flex-col gap-3 px-6 sm:mb-12">

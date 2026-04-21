@@ -20,7 +20,7 @@ function FeaturedProjects() {
       area: "lg:col-span-8 lg:col-start-1 lg:row-start-1",
       height: "min-h-[320px] h-[380px] lg:h-[480px]",
       titleClass: "text-[28px] sm:text-[32px] lg:text-[36px] font-extrabold tracking-[-0.03em]",
-      subtitleClass: "text-[13px] sm:text-[14px] font-light leading-[1.5] tracking-[0.01em]",
+      subtitleClass: "text-[12px] sm:text-[13px] lg:text-[14px] font-light leading-[1.45] tracking-[0.01em]",
     },
     {
       slug: "cashpay",
@@ -34,7 +34,7 @@ function FeaturedProjects() {
       area: "lg:col-span-4 lg:col-start-9 lg:row-start-1",
       height: "min-h-[320px] h-[380px] lg:h-[480px]",
       titleClass: "text-[24px] sm:text-[26px] lg:text-[28px] font-extrabold tracking-[-0.03em]",
-      subtitleClass: "text-[13px] sm:text-[14px] font-light leading-[1.5] tracking-[0.01em]",
+      subtitleClass: "text-[12px] sm:text-[13px] lg:text-[14px] font-light leading-[1.45] tracking-[0.01em]",
     },
     {
       slug: "trackguard",

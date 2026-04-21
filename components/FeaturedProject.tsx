@@ -365,7 +365,7 @@ export function FeaturedProject({
           />
         </RevealMedia>
         <RevealCopy
-          className="absolute inset-0 flex flex-col justify-end gap-4 px-8 pb-7 pt-[48%] sm:px-9 sm:pb-8"
+          className="absolute inset-0 flex flex-col justify-end gap-3 px-6 pb-6 pt-[40%] sm:gap-4 sm:px-8 sm:pb-7 sm:pt-[44%]"
           delay={0.14}
         >
           <div className="flex flex-col gap-2">
@@ -377,7 +377,7 @@ export function FeaturedProject({
             </h3>
           </div>
           <p
-            className={`${subtitleBase} text-[13px] leading-[1.45] sm:text-[14px] ${subtitleClass}`}
+            className={`${subtitleBase} text-[12px] leading-[1.4] sm:text-[13px] lg:text-[14px] ${subtitleClass}`}
             style={{ color: "var(--featured-body)" }}
           >
             {subtitle}
@@ -414,7 +414,7 @@ export function FeaturedProject({
           />
         </RevealMedia>
         <RevealCopy
-          className="absolute inset-0 flex flex-col justify-end gap-4 px-8 pb-7 pt-[48%] sm:px-9 sm:pb-8"
+          className="absolute inset-0 flex flex-col justify-end gap-3 px-6 pb-6 pt-[40%] sm:gap-4 sm:px-8 sm:pb-7 sm:pt-[44%]"
           delay={0.14}
         >
           <div className="flex flex-col gap-2">
@@ -426,7 +426,7 @@ export function FeaturedProject({
             </h3>
           </div>
           <p
-            className={`${subtitleBase} text-[13px] leading-[1.45] sm:text-[14px] ${subtitleClass}`}
+            className={`${subtitleBase} text-[12px] leading-[1.4] sm:text-[13px] lg:text-[14px] ${subtitleClass}`}
             style={{ color: "var(--featured-body)" }}
           >
             {subtitle}

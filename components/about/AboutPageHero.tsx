@@ -47,11 +47,11 @@ export function AboutPageHero() {
             </p>
 
             <p className="text-[15px] font-normal leading-[1.65] tracking-[-0.01em] text-[var(--text-primary)] sm:text-[16px]">
-              I&apos;m a Product and Graphic Designer based in Ontario.
+              I&apos;m a Web &amp; Graphic Designer based in Ontario.
             </p>
 
             <p className="text-[15px] font-normal leading-[1.65] tracking-[-0.01em] text-[var(--text-primary)] sm:text-[16px]">
-              I currently work as a Graphic &amp; Web Designer with the Business Team at the{" "}
+              I currently work as a Web &amp; Graphic Designer with the Business Development and Project Support Team at the{" "}
               <a
                 className={linkClass}
                 href="https://ideaworks.mohawkcollege.ca/"

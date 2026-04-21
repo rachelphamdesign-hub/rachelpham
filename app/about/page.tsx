@@ -10,29 +10,66 @@ const experiences = [
     company: "Mohawk College IDEAWORKS",
     logo: "https://www.figma.com/api/mcp/asset/491f1c8d-a750-436e-84c3-77462f4cab60",
     role: "Web & Graphic Designer",
-    period: "2024 — NOW",
+    period: "November, 2024 — Present",
     description:
-      "I design websites and graphics that are easy to use and visually engaging. I’ve worked on the social robot, IDEAWORKS events, and Applied Research 101, collaborating with teams to improve usability and engagement.",
+      "Turn complex research into clear presentations and interactive H5P modules. Apply AODA, QA testing, and AI-assisted concepting. Collaborate with Healthcare Robotics on assistive tech usability.",
   },
   {
     company: "Sunrise Creative",
     logo: "https://www.figma.com/api/mcp/asset/593438bb-2620-4eb9-a4d5-23aa40d2c1b2",
     role: "Graphic Designer ",
-    period: "2025 — 2025",
+    period: "January — April, 2025",
     description:
-      "I created branding, marketing, and editorial materials, redesigned the website, and produced assets for the SYS Global Marketing Grant.",
+      "Developed branding, marketing graphics, and editorial layouts. Redesigned the company website on WordPress and produced materials for the SYS Global Marketing Grant.",
   },
   {
     company: "Websters Shape the Web Inc.",
     logo: "https://www.figma.com/api/mcp/asset/81b4085d-3dc0-46ca-84ee-deac1232b51d",
     role: "UI/UX Designer",
-    period: "2024 — 2024",
+    period: "July — September, 2024",
     description:
-      "I design screens and interactions that feel satisfying, creating consistent, responsive, and user-friendly app interfaces.",
+      "Created wireframes and high-fidelity interfaces in Figma. Designed UI components and banners, then partnered with developers to deliver responsive digital products.",
   },
 ];
 
-const designTools = ["Figma", "Framer", "Adobe Creative Suite", "HTML", "Tailwind CSS", "Miro"];
+const designTools = [
+  {
+    name: "Figma",
+    subtitle: "Interface Design",
+    icon: "/media/design%20tool/Figma.png",
+    iconBg: "#000000",
+  },
+  {
+    name: "Adobe Creative Suite",
+    subtitle: "Visual Design",
+    icon: "/media/design%20tool/Adobe%20Creative%20Suite.jpeg",
+    iconBg: "transparent",
+  },
+  {
+    name: "canva",
+    subtitle: "Content Design",
+    icon: "/media/design%20tool/Canva.png",
+    iconBg: "transparent",
+  },
+  {
+    name: "framer",
+    subtitle: "Web Prototyping",
+    icon: "/media/design%20tool/Framer.avif",
+    iconBg: "#000000",
+  },
+  {
+    name: "HTML/CSS",
+    subtitle: "Front-end Styling",
+    icon: "/media/design%20tool/HTML%3ACSS.jpg",
+    iconBg: "transparent",
+  },
+  {
+    name: "miro",
+    subtitle: "Collaboration Boards",
+    icon: "/media/design%20tool/miro.png",
+    iconBg: "#f8d91a",
+  },
+];
 const methods = [
   "Design Systems",
   "Product Strategy",
@@ -42,6 +79,12 @@ const methods = [
   "Visual Storytelling",
 ];
 const aiTools = [
+  {
+    name: "Google Gemini",
+    subtitle: "Idea Generation",
+    icon: "/media/design%20tool/gemini.jpeg",
+    iconBg: "transparent",
+  },
   {
     name: "Midjourney",
     subtitle: "Visual Exploration",
@@ -151,14 +194,32 @@ export default function AboutPage() {
                 <p className="text-[12px] font-bold uppercase leading-[18px] tracking-[1.2px] text-[var(--text-primary)]">
                   Design Tools
                 </p>
-                <div className="flex flex-wrap gap-2.5">
-                  {designTools.map((tool) => (
-                    <span
-                      key={tool}
-                      className="inline-flex rounded-full border border-[var(--border-subtle)] bg-[var(--bg-surface)] px-[17px] pb-[9.5px] pt-[8px] text-[13px] font-medium leading-[19.5px] text-[var(--text-secondary)]"
-                    >
-                      {tool}
-                    </span>
+                <div className="flex flex-col gap-3">
+                  {designTools.map((tool, index) => (
+                    <ScrollReveal key={tool.name} delay={index * 0.08}>
+                      <div className="flex items-center gap-4 rounded-[16px] border border-[var(--border-default)] bg-[color-mix(in_oklab,var(--bg-surface)_72%,transparent)] px-[21px] py-[13px] backdrop-blur-[6px] dark:bg-[color-mix(in_oklab,var(--bg-elevated)_55%,transparent)]">
+                        <div
+                          className="relative flex size-8 shrink-0 items-center justify-center overflow-hidden rounded-[12px]"
+                          style={{ background: tool.iconBg }}
+                        >
+                          <Image
+                            src={tool.icon}
+                            alt={tool.name}
+                            width={22}
+                            height={22}
+                            className="size-full object-cover"
+                          />
+                        </div>
+                        <div>
+                          <p className="text-[13px] font-bold leading-[13px] text-[var(--text-primary)]">
+                            {tool.name}
+                          </p>
+                          <p className="mt-1 text-[11px] leading-[16.5px] text-[var(--text-secondary)]">
+                            {tool.subtitle}
+                          </p>
+                        </div>
+                      </div>
+                    </ScrollReveal>
                   ))}
                 </div>
               </div>
@@ -194,9 +255,9 @@ export default function AboutPage() {
                           <Image
                             src={tool.icon}
                             alt={tool.name}
-                            width={22}
-                            height={22}
-                            className="object-contain"
+                            width={32}
+                            height={32}
+                            className="size-full object-cover"
                           />
                         </div>
                         <div>

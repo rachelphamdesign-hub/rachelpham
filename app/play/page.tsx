@@ -375,7 +375,7 @@ export default function PlayPage() {
                         aria-hidden
                     >
                         <div className="rounded-full border border-[var(--border-default)] bg-[color-mix(in_oklab,var(--bg-surface)_88%,transparent)] px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.08em] text-[var(--text-primary)] shadow-[0_10px_30px_rgba(0,0,0,0.12)] backdrop-blur-[10px] dark:border-white/12 dark:bg-[color-mix(in_oklab,var(--bg-elevated)_82%,transparent)] dark:shadow-[0_10px_30px_rgba(0,0,0,0.45)]">
-                            drag to view more
+                            Swipe for more →
                         </div>
                     </div>
                     <ScrollReveal variant="media" className="min-h-0 flex-1">
