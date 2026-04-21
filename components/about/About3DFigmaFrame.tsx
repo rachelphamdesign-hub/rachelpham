@@ -58,14 +58,21 @@ export function About3DFigmaFrame({
       >
         <div className="relative box-border min-h-0 flex-1 px-10 pb-[80px] pt-[70px] sm:px-12 sm:pb-[86px] sm:pt-[80px]">
           <div className="relative mx-auto h-full min-h-[220px] w-full max-w-[302px]">
-            <Image
-              src={ABOUT_POSE_PREVIEW_IMAGE[selectedPose]}
-              alt={`Rachel character in ${chipLabel} pose`}
-              fill
-              sizes="302px"
-              draggable={false}
-              className="pointer-events-none select-none object-contain"
-            />
+            {ABOUT_POSES.map((pose) => (
+              <Image
+                key={pose}
+                src={ABOUT_POSE_PREVIEW_IMAGE[pose]}
+                alt={pose === selectedPose ? `Rachel character in ${chipLabel} pose` : ""}
+                fill
+                sizes="302px"
+                draggable={false}
+                priority={pose === "stand"}
+                className={`pointer-events-none select-none object-contain transition-opacity duration-200 ${
+                  pose === selectedPose ? "opacity-100" : "opacity-0"
+                }`}
+                aria-hidden={pose !== selectedPose}
+              />
+            ))}
           </div>
         </div>
 
