@@ -1,7 +1,7 @@
 import Image from "next/image";
 
 /** Local storefront / social post band under Sweet Sunset hero */
-const SOCIAL_POST_IMAGE_SRC = "/media/Social-Post-Section.png";
+const SOCIAL_POST_IMAGE_SRC = "/media/Social-Post-Section.webp";
 
 /**
  * Full-bleed image band under the case study hero.

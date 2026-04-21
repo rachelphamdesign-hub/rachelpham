@@ -16,10 +16,10 @@ type About3DFigmaFrameProps = {
 };
 
 const ABOUT_POSE_PREVIEW_IMAGE: Record<AboutPose, string> = {
-  stand: "/media/standing.png",
-  hiking: "/media/hiking.png",
-  matcha: "/media/matcha.png",
-  travel: "/media/travel.png",
+  stand: "/media/standing.webp",
+  hiking: "/media/hiking.webp",
+  matcha: "/media/matcha.webp",
+  travel: "/media/travel.webp",
 };
 
 /**

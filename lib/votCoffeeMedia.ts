@@ -1,7 +1,7 @@
 /** Figma MCP assets — Vot Coffee case study (porfolio file). */
 
 /** Refined hero photography (local asset). */
-export const VOT_COFFEE_HERO_IMAGE = "/media/vot-coffee-hero-final.png";
+export const VOT_COFFEE_HERO_IMAGE = "/media/vot-coffee-hero-final.webp";
 
 /** Kraft bag + takeaway box mockup (local asset — used on case study page only). */
 export const VOT_COFFEE_BOX_BAG_MOCKUP = "/media/vot-coffee-box-bag-mockup.png";
