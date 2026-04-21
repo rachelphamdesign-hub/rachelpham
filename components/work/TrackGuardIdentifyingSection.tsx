@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { LazyVideo } from "@/components/LazyVideo";
 
 /** Figma 226:11886 — “Who does it affect” icon */
 const imgWhoIcon = "https://www.figma.com/api/mcp/asset/cc5b2796-aad7-40d5-8710-b31e7f8f9a89";
@@ -56,14 +57,13 @@ export function TrackGuardIdentifyingSection() {
             style={{ background: "#1d1d1f" }}
           >
             <div className="relative aspect-[651/344] w-full">
-              <video
+              <LazyVideo
                 src={TRACKGUARD_PROCESS_VIDEO}
                 className="absolute inset-0 h-full w-full object-cover object-center opacity-90"
                 autoPlay
                 loop
                 muted
                 playsInline
-                preload="metadata"
               />
             </div>
           </div>

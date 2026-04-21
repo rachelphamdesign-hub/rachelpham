@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import type { CSSProperties } from "react";
 import { FeaturedIdeasVideoCard } from "@/components/FeaturedIdeasVideoCard";
+import { LazyVideo } from "@/components/LazyVideo";
 import { RevealCopy, RevealMedia } from "@/components/ProjectCardScrollReveal";
 import { useProjectCardCursorBubble } from "@/components/useProjectCardCursorBubble";
 
@@ -162,14 +163,13 @@ export function FeaturedProject({
     const fhirVideoBody = (
       <>
         <RevealMedia className="pointer-events-none absolute inset-0">
-          <video
+          <LazyVideo
             src={mediaSrc}
             className="h-full w-full object-cover"
             autoPlay
             muted
             loop
             playsInline
-            preload="metadata"
             aria-label={`${title} background video`}
           />
           <div
@@ -268,14 +268,13 @@ export function FeaturedProject({
       >
         <RevealMedia className="pointer-events-none absolute inset-0 relative overflow-hidden rounded-[inherit]">
           {mediaType === "video" ? (
-            <video
+            <LazyVideo
               src={mediaSrc}
               className="h-full w-full object-cover object-center"
               autoPlay
               muted
               loop
               playsInline
-              preload="metadata"
               aria-label={`${title} preview video`}
             />
           ) : (

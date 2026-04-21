@@ -4,6 +4,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { ScrollReveal } from "@/components/ScrollReveal";
+import { LazyVideo } from "@/components/LazyVideo";
 
 type PlayCard = {
     nodeId: string;
@@ -193,14 +194,13 @@ function PlayCardFigure({ item }: { item: PlayCard }) {
     if (item.video) {
         return (
             <div className={shellClass}>
-                <video
+                <LazyVideo
                     src={item.video}
                     className={mediaClass}
                     autoPlay
                     loop
                     muted
                     playsInline
-                    preload="metadata"
                 />
                 <div
                     className="pointer-events-none absolute inset-0 flex items-end p-5 sm:p-6"

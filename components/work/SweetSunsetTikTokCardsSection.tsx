@@ -1,3 +1,5 @@
+import { LazyVideo } from "@/components/LazyVideo";
+
 const TIKTOK_VIDEOS = [
   "/media/sweet-sunset/5536485244504.mp4",
   "/media/sweet-sunset/5536485260554.mp4",
@@ -25,14 +27,13 @@ export function SweetSunsetTikTokCardsSection() {
             key={src}
             className="relative mx-auto aspect-[9/16] w-full max-w-[320px] overflow-hidden rounded-[40px] border border-[rgba(29,29,31,0.05)] bg-[#183a8c] shadow-[0px_20px_40px_0px_rgba(0,0,0,0.04),0px_1px_4px_0px_rgba(0,0,0,0.02)] sm:max-w-[274px]"
           >
-            <video
+            <LazyVideo
               src={src}
               className="absolute inset-0 size-full object-cover object-center"
               autoPlay
               loop
               muted
               playsInline
-              preload="metadata"
               aria-label={TIKTOK_LABELS[i]}
             />
           </div>

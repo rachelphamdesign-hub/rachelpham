@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useRef, useState } from "react";
+import { LazyVideo } from "@/components/LazyVideo";
 
 /** Figma 275:21145 — Social Media Design header + carousel + full-bleed media (local final video) */
 const FINAL_VIDEO_SRC = "/media/ideas-to-impact-final.mp4";
@@ -196,7 +197,7 @@ export function IdeasToImpactSocialMediaDesignSection() {
         <p className="sr-only">
           Closing video for Ideas to Impact — plays automatically without sound; move the pointer over the video to hear audio.
         </p>
-        <video
+        <LazyVideo
           ref={finalVideoRef}
           src={FINAL_VIDEO_SRC}
           className="mx-auto block h-auto max-h-[85vh] w-full max-w-[min(100%,1920px)] object-contain object-center"
@@ -204,7 +205,6 @@ export function IdeasToImpactSocialMediaDesignSection() {
           loop
           muted={!hoverAudio}
           playsInline
-          preload="metadata"
           aria-hidden
         />
         <span

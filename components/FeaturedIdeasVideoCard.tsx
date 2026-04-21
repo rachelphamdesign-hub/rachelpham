@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import { RevealCopy, RevealMedia } from "@/components/ProjectCardScrollReveal";
+import { LazyVideo } from "@/components/LazyVideo";
 import type { ProjectCardCursorBubbleApi } from "@/components/useProjectCardCursorBubble";
 
 type Props = {
@@ -58,14 +59,13 @@ export function FeaturedIdeasVideoCard({
     >
       <RevealMedia className="pointer-events-none absolute inset-0">
         <div className="absolute inset-0 bg-black" aria-hidden />
-        <video
+        <LazyVideo
           src={mediaSrc}
           className="absolute inset-0 z-[1] h-full w-full object-cover"
           autoPlay
           muted={muted}
           loop
           playsInline
-          preload="metadata"
           aria-label={`${title} background video`}
         />
         <div

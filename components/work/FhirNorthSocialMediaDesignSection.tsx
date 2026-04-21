@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useRef, useState } from "react";
+import { LazyVideo } from "@/components/LazyVideo";
 
 /** Figma 291:23888 — Social Media Design + carousel + full-bleed finale (local After Effects export). */
 const FINAL_VIDEO_SRC = "/media/fhir-north-social-finale.mp4";
@@ -208,7 +209,7 @@ export function FhirNorthSocialMediaDesignSection() {
         <p className="sr-only">
           Closing motion piece for FHIR North social — plays automatically without sound; move the pointer over the video to hear audio.
         </p>
-        <video
+        <LazyVideo
           ref={finalVideoRef}
           src={FINAL_VIDEO_SRC}
           className="mx-auto block h-auto max-h-[85vh] w-full max-w-[min(100%,1920px)] object-contain object-center"
@@ -216,7 +217,6 @@ export function FhirNorthSocialMediaDesignSection() {
           loop
           muted={!hoverAudio}
           playsInline
-          preload="metadata"
           aria-hidden
         />
         <span
