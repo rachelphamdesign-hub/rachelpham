@@ -15,7 +15,7 @@ function FeaturedProjects() {
       subtitle:
         "Design a UI/UX concept for an AI robot–based solution to loneliness, developed by the MEDIC team at Mohawk IDEAWORKS.",
       label: "2025 • PROJECT 01",
-      image: "/media/social-robots.mp4",
+      image: "/media/social-robots-hero.mp4",
       mediaType: "video" as const,
       area: "lg:col-span-8 lg:col-start-1 lg:row-start-1",
       height: "min-h-[320px] h-[380px] lg:h-[480px]",

@@ -29,7 +29,7 @@ const playItems: PlayCard[] = [
     {
         nodeId: "local-akira-spread",
         title: "Anime Magazine — Akira spread",
-        image: "/media/play-akira-magazine-spread.gif",
+        video: "/media/play-akira-magazine-spread.mp4",
         overlay: "soft",
         variant: "wide",
     },
