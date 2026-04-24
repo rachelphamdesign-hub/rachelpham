@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { cashpayInsetX } from "@/lib/cashpaySpacing";
+import { trackguardIcon } from "@/lib/trackguardIcons";
 
 type HowItWorksCard = {
   title: string;
@@ -14,19 +15,19 @@ const HOW_IT_WORKS_CARDS: HowItWorksCard[] = [
   {
     title: "Smart Theft Alerts",
     items: ["Smart Theft Alerts", "Location-Based Notifications", "Automatic Picture Capture"],
-    iconSrc: "https://www.figma.com/api/mcp/asset/a21f0631-f8c2-44ef-a7ea-a7ca19bba965",
+    iconSrc: trackguardIcon.howSmartAlerts,
     iconAlt: "Location pin icon",
   },
   {
     title: "Automatic Theft Defense",
     items: ["Automatic Theft Defense", "Secure Ownership with Blockchain", "Community Alerts"],
-    iconSrc: "https://www.figma.com/api/mcp/asset/53a20658-ec34-4fb7-8026-08969d90d648",
+    iconSrc: trackguardIcon.howAutoDefense,
     iconAlt: "Shield icon",
   },
   {
     title: "Prevention & Monitoring",
     items: ["Biometric Car Locking", "Interior Monitoring", "Theft Prevention Tips"],
-    iconSrc: "https://www.figma.com/api/mcp/asset/f83e076e-aa8d-416a-8603-9bf7282107a6",
+    iconSrc: trackguardIcon.howPrevention,
     iconAlt: "Eye icon",
   },
 ];

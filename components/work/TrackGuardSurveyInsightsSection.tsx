@@ -1,13 +1,6 @@
 import type { ReactNode } from "react";
 import Image from "next/image";
-
-/** Figma 244:16395 — card header / row icons */
-const iconConcerns = "https://www.figma.com/api/mcp/asset/5a1c9a52-ddbf-457b-a9db-24f797f093cd";
-const iconPrevention = "https://www.figma.com/api/mcp/asset/c6200946-0de5-4d2f-8a91-ac9abe374177";
-const iconAlarm = "https://www.figma.com/api/mcp/asset/cde94ce3-105e-4059-a3d5-0ec0cd29348f";
-const iconGps = "https://www.figma.com/api/mcp/asset/9a958f81-780b-4333-8214-34f7fd7166cb";
-const iconLock = "https://www.figma.com/api/mcp/asset/eccf388a-cb52-4e07-a376-91d0cbc2f6cd";
-const iconFeature = "https://www.figma.com/api/mcp/asset/b7d2eb08-867c-43e3-b97e-cede1c260e0a";
+import { trackguardIcon } from "@/lib/trackguardIcons";
 
 function InsightCardShell({
   children,
@@ -32,7 +25,7 @@ function InsightCardShell({
 function SmallIcon({ src, w, h }: { src: string; w: number; h: number }) {
   return (
     <div className="relative shrink-0" style={{ width: w, height: h }}>
-      <Image src={src} alt="" fill className="object-contain"/>
+      <Image src={src} alt="" fill className="object-contain" />
     </div>
   );
 }
@@ -67,7 +60,7 @@ export function TrackGuardSurveyInsightsSection() {
                   User perception of theft risk in urban environments.
                 </p>
               </div>
-              <SmallIcon src={iconConcerns} w={18} h={17} />
+              <SmallIcon src={trackguardIcon.surveyConcerns} w={18} h={17} />
             </div>
 
             <div className="grid grid-cols-3 gap-6 sm:gap-8">
@@ -138,14 +131,14 @@ export function TrackGuardSurveyInsightsSection() {
                   Currently utilized anti-theft measures among participants.
                 </p>
               </div>
-              <SmallIcon src={iconPrevention} w={15} h={19} />
+              <SmallIcon src={trackguardIcon.surveyPrevention} w={15} h={19} />
             </div>
 
             <div className="flex flex-col gap-10">
               {[
-                { icon: iconAlarm, label: "Alarms", pct: 66.7, w: 19, h: 19 },
-                { icon: iconGps, label: "GPS Trackers", pct: 33.3, w: 15, h: 19 },
-                { icon: iconLock, label: "Steering Locks", pct: 16.7, w: 15, h: 20 },
+                { icon: trackguardIcon.surveyAlarm, label: "Alarms", pct: 66.7, w: 19, h: 19 },
+                { icon: trackguardIcon.surveyGps, label: "GPS Trackers", pct: 33.3, w: 15, h: 19 },
+                { icon: trackguardIcon.surveyLock, label: "Steering Locks", pct: 16.7, w: 15, h: 20 },
               ].map((row) => (
                 <div key={row.label} className="flex flex-col gap-3">
                   <div className="flex items-center justify-between gap-4">
@@ -229,7 +222,7 @@ export function TrackGuardSurveyInsightsSection() {
                   Stack-ranking functional requirements.
                 </p>
               </div>
-              <SmallIcon src={iconFeature} w={3} h={16} />
+              <SmallIcon src={trackguardIcon.surveyFeature} w={3} h={16} />
             </div>
 
             <div className="grid gap-10 sm:grid-cols-2 sm:gap-16">

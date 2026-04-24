@@ -1,11 +1,5 @@
 import Image from "next/image";
-
-/** Figma 214:9523 — My Key Takeaways header icon */
-const imgKeyTakeawaysIcon =
-  "https://www.figma.com/api/mcp/asset/15c0ea9f-debf-4f18-8e4b-b7da2f7d8a5f";
-/** Figma 214:9546 — Next Steps header icon */
-const imgNextStepsIcon =
-  "https://www.figma.com/api/mcp/asset/64b8226e-cf88-4f2d-987f-d32dc5c42ea9";
+import { trackguardIcon } from "@/lib/trackguardIcons";
 
 const STAT_CARDS = [
   {
@@ -126,7 +120,7 @@ export function TrackGuardDesignOutcomeSection() {
             <div className="flex items-center gap-3">
               <div className="relative h-[17px] w-[22px] shrink-0">
                 <Image
-                  src={imgKeyTakeawaysIcon}
+                  src={trackguardIcon.designTakeaways}
                   alt=""
                   width={22}
                   height={17}
@@ -149,7 +143,7 @@ export function TrackGuardDesignOutcomeSection() {
             <div className="flex items-center gap-3">
               <div className="relative size-[19px] shrink-0">
                 <Image
-                  src={imgNextStepsIcon}
+                  src={trackguardIcon.designNextSteps}
                   alt=""
                   width={19}
                   height={19}

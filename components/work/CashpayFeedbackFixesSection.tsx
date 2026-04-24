@@ -1,17 +1,9 @@
 import Image from "next/image";
 import { cashpayBlockGap, cashpayBlockGapL, cashpayInsetX } from "@/lib/cashpaySpacing";
-
-/** Figma 186:6812 — header icon */
-const imgFrictionIcon = "https://www.figma.com/api/mcp/asset/60d3c9ad-b8c8-43c5-8646-f865ff71aff0";
+import { cashpayIcon } from "@/lib/cashpayIcons";
 
 /** Figma 193:7025 — design system board (paired with 193:7024 heading) */
 const imgDesignProcessBoard = "https://www.figma.com/api/mcp/asset/bfc61564-cc1a-4386-ad33-f5413a9ead98";
-
-/** Figma 50:7948 — Design Outcome */
-const imgOutcomeTakeaways = "https://www.figma.com/api/mcp/asset/6e0c4fd3-c259-405f-b4df-7d8f06993980";
-const imgOutcomeNextSteps = "https://www.figma.com/api/mcp/asset/b182c832-994a-4778-b929-39904618b030";
-const imgOutcomeStep1 = "https://www.figma.com/api/mcp/asset/f9f042a1-23e8-45fe-86b3-ebf07592dde3";
-const imgOutcomeStep2 = "https://www.figma.com/api/mcp/asset/ad858fe4-9d31-4bd0-87cf-d55b9c582187";
 
 const OUTCOME_TAKEAWAYS = [
   "Different age groups use tech differently—design must bridge those gaps.",
@@ -20,8 +12,8 @@ const OUTCOME_TAKEAWAYS = [
 ] as const;
 
 const OUTCOME_NEXT_STEPS = [
-  { icon: imgOutcomeStep1, text: "Learn how to integrate AI to offer smart tips and personalized insights." },
-  { icon: imgOutcomeStep2, text: "Test with a broader age range to refine usability across generations." },
+  { icon: cashpayIcon.designOutcomeStep1, text: "Learn how to integrate AI to offer smart tips and personalized insights." },
+  { icon: cashpayIcon.designOutcomeStep2, text: "Test with a broader age range to refine usability across generations." },
 ] as const;
 
 const outcomeCardClass =
@@ -128,7 +120,7 @@ export function CashpayFeedbackFixesSection() {
       <div className={`flex flex-col ${cashpayBlockGap}`}>
         <div className="flex items-center gap-3">
           <div className="relative size-[33px] shrink-0">
-            <Image src={imgFrictionIcon} alt="" fill className="object-contain"sizes="33px" />
+            <Image src={cashpayIcon.criticalFriction} alt="" fill className="object-contain" sizes="33px" />
           </div>
           <h3 className="text-[20px] font-normal leading-7 text-[var(--text-primary)]">Critical Friction Points</h3>
         </div>
@@ -207,7 +199,7 @@ export function CashpayFeedbackFixesSection() {
           >
             <div className="flex items-center gap-3">
               <div className="relative h-4 w-[22px] shrink-0">
-                <Image src={imgOutcomeTakeaways} alt="" fill className="object-contain"sizes="24px" />
+                <Image src={cashpayIcon.designOutcomeTakeaways} alt="" fill className="object-contain" sizes="24px" />
               </div>
               <p className="text-[20px] font-normal leading-7 text-[var(--text-primary)]">My Key Takeaways</p>
             </div>
@@ -233,7 +225,7 @@ export function CashpayFeedbackFixesSection() {
           >
             <div className="flex items-center gap-3">
               <div className="relative size-[19px] shrink-0">
-                <Image src={imgOutcomeNextSteps} alt="" fill className="object-contain"sizes="24px" />
+                <Image src={cashpayIcon.designOutcomeNextSteps} alt="" fill className="object-contain" sizes="24px" />
               </div>
               <p className="text-[20px] font-normal leading-7 text-[var(--text-primary)]">Next Steps</p>
             </div>
@@ -241,7 +233,7 @@ export function CashpayFeedbackFixesSection() {
               {OUTCOME_NEXT_STEPS.map((row) => (
                 <li key={row.text} className="flex gap-4">
                   <div className="relative mt-0.5 size-[19px] shrink-0">
-                    <Image src={row.icon} alt="" fill className="object-contain"sizes="24px" />
+                    <Image src={row.icon} alt="" fill className="object-contain" sizes="24px" />
                   </div>
                   <p className="min-w-0 text-[14px] font-normal leading-[22.75px] text-[var(--text-primary)]">{row.text}</p>
                 </li>

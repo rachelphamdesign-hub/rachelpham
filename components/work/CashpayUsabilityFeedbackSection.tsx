@@ -1,10 +1,6 @@
 import Image from "next/image";
 import { cashpayBlockGap, cashpayBlockGapL, cashpayInsetX, cashpayTitleToBody } from "@/lib/cashpaySpacing";
-
-/** 183:5056 — left column */
-const imgHeaderCheck = "https://www.figma.com/api/mcp/asset/dc8b7ba7-ec6f-47c0-9ab5-034e0a4b84c1";
-const imgPillEnvelope = "https://www.figma.com/api/mcp/asset/9f8cbacd-e454-4a91-a0d0-9b7574e31a93";
-const imgCardCheck = "https://www.figma.com/api/mcp/asset/1d69d1d4-304f-4b95-91e2-234c912d4920";
+import { cashpayIcon } from "@/lib/cashpayIcons";
 
 /** Narrow stack — visually aligned with positive-feedback card scale (~content width) */
 const STACK_MAX = "max-w-[340px]";
@@ -19,8 +15,8 @@ const EMAIL_CARDS = [
     initials: "KL",
     name: "Kyle Li",
     meta: "to me • 7:17 PM",
-    star: "https://www.figma.com/api/mcp/asset/c62a46be-6410-4240-810d-9a9892ce6c45",
-    paperclip: "https://www.figma.com/api/mcp/asset/5accdd0a-34e9-4d0e-ab61-a83555db5de1",
+    star: cashpayIcon.emailCardStar,
+    paperclip: cashpayIcon.emailCardAttachment,
     greeting: "Hi Nhi,",
     paragraphs: [
       "Thanks for the prototype — flows felt smooth and the hierarchy was easy to follow.",
@@ -38,8 +34,8 @@ const EMAIL_CARDS = [
     initials: "KC",
     name: "Kyven Chan",
     meta: "to me • 3:34 PM",
-    star: "https://www.figma.com/api/mcp/asset/4c496efb-5d4a-414b-83c3-c423f0b774eb",
-    paperclip: "https://www.figma.com/api/mcp/asset/49852c83-f831-454d-9c20-298bb0c95308",
+    star: cashpayIcon.emailCardStar,
+    paperclip: cashpayIcon.emailCardAttachment,
     greeting: "Hi Nhi,",
     paragraphs: [
       "Finished the tasks today — navigation felt straightforward and cohesive.",
@@ -57,8 +53,8 @@ const EMAIL_CARDS = [
     initials: "AL",
     name: "Alan Le",
     meta: "to me • 7:17 PM",
-    star: "https://www.figma.com/api/mcp/asset/e032c69d-cff6-4006-a9f4-c9931d1f8b56",
-    paperclip: "https://www.figma.com/api/mcp/asset/01d2ddb8-6ec8-4eff-8905-3559165254ed",
+    star: cashpayIcon.emailCardStar,
+    paperclip: cashpayIcon.emailCardAttachment,
     greeting: "Hi Nhi,",
     paragraphs: [
       "Liked how cash flow summarizes weekly and monthly spend — matches how I budget.",
@@ -76,8 +72,8 @@ const EMAIL_CARDS = [
     initials: "HV",
     name: "Han Vo",
     meta: "to me • 3:34 PM",
-    star: "https://www.figma.com/api/mcp/asset/a0717f60-e90f-4bd6-b0e9-738b6026b01a",
-    paperclip: "https://www.figma.com/api/mcp/asset/b34d9469-2dc1-48e5-aa58-d10493357323",
+    star: cashpayIcon.emailCardStar,
+    paperclip: cashpayIcon.emailCardAttachment,
     greeting: "Hi Nhi,",
     paragraphs: [
       "As a newer user, tasks were quick to pick up; labels and icons felt consistent.",
@@ -150,7 +146,7 @@ function FeedbackEmailCard({
           </div>
         </div>
         <div className="relative h-3.5 w-[15px] shrink-0 opacity-70">
-          <Image src={starSrc} alt="" fill className="object-contain"sizes="20px" />
+          <Image src={starSrc} alt="" fill className="object-contain" sizes="20px" />
         </div>
       </div>
 
@@ -190,7 +186,7 @@ function FeedbackEmailCard({
         style={{ borderColor: "var(--border-default)" }}
       >
         <div className="relative h-2.5 w-3 shrink-0">
-          <Image src={paperclipSrc} alt="" fill className="object-contain"sizes="16px" />
+          <Image src={paperclipSrc} alt="" fill className="object-contain" sizes="16px" />
         </div>
         <p className="text-[8px] font-medium uppercase tracking-[0.06em] text-[var(--text-secondary)] sm:text-[9px]">
           USABILITY_FEEDBACK.pdf
@@ -217,7 +213,7 @@ export function CashpayUsabilityFeedbackSection() {
         <div className="flex min-w-0 flex-col gap-8">
           <div className="flex items-center gap-3">
             <div className="relative h-9 w-[37px] shrink-0">
-              <Image src={imgHeaderCheck} alt="" fill className="object-contain"sizes="40px" />
+              <Image src={cashpayIcon.whatUsersLoved} alt="" fill className="object-contain" sizes="40px" />
             </div>
             <h3 className="text-[20px] font-semibold leading-7 text-[var(--text-primary)]">What Users Loved</h3>
           </div>
@@ -235,14 +231,14 @@ export function CashpayUsabilityFeedbackSection() {
             <div className="flex items-start justify-between gap-4">
               <div className="flex items-center gap-2 rounded-xl p-2" style={{ background: "var(--pill-link-bg)" }}>
                 <div className="relative h-[15px] w-[19px] shrink-0">
-                  <Image src={imgPillEnvelope} alt="" fill className="object-contain"sizes="20px" />
+                  <Image src={cashpayIcon.whatUsersMail} alt="" fill className="object-contain" sizes="20px" />
                 </div>
                 <span className="text-[9px] font-normal uppercase leading-[13.5px] tracking-[0.45px] text-[var(--link-bright)]">
                   Email Feedback
                 </span>
               </div>
               <div className="relative size-[19px] shrink-0">
-                <Image src={imgCardCheck} alt="" width={19} height={19} className="object-contain"/>
+                <Image src={cashpayIcon.whatUsersLoved} alt="" width={19} height={19} className="object-contain" />
               </div>
             </div>
             <div className={`${cashpayTitleToBody} text-[18px] font-normal leading-7 text-[var(--text-primary)]`}>

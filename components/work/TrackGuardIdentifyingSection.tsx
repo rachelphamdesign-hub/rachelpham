@@ -1,38 +1,31 @@
 import Image from "next/image";
 import { LazyVideo } from "@/components/LazyVideo";
-
-/** Figma 226:11886 — “Who does it affect” icon */
-const imgWhoIcon = "https://www.figma.com/api/mcp/asset/cc5b2796-aad7-40d5-8710-b31e7f8f9a89";
-/** Key challenges row (L→R) */
-const imgChallenge1 = "https://www.figma.com/api/mcp/asset/2dfa6600-acc6-4433-9b8a-b08058347d41";
-const imgChallenge2 = "https://www.figma.com/api/mcp/asset/d74888b1-ef9d-4411-af63-0b8dc1a7980f";
-const imgChallenge3 = "https://www.figma.com/api/mcp/asset/450bbe65-ea2e-4550-8835-71300cb8375e";
-const imgChallenge4 = "https://www.figma.com/api/mcp/asset/267d95b2-4158-4ed7-afc0-cb6f79a98a77";
+import { trackguardIcon } from "@/lib/trackguardIcons";
 
 /** User-provided process video shown under TrackGuard process section */
 const TRACKGUARD_PROCESS_VIDEO = "/media/trackguard-process.mp4";
 
 const KEY_CHALLENGES = [
   {
-    icon: imgChallenge1,
+    icon: trackguardIcon.challengeRising,
     title: "Rising Theft Rates",
     body: "Increasing prevalence of vehicle theft across major urban centers in Canada.",
     iconH: 11,
   },
   {
-    icon: imgChallenge2,
+    icon: trackguardIcon.challengeLimited,
     title: "Limited Access",
     body: "Ineffective and limited access to current professional anti-theft measures.",
     iconH: 19.5,
   },
   {
-    icon: imgChallenge3,
+    icon: trackguardIcon.challengeDelayed,
     title: "Delayed Recovery",
     body: "Persistently delayed or unsuccessful vehicle recovery efforts after a theft occurs.",
     iconH: 20.735,
   },
   {
-    icon: imgChallenge4,
+    icon: trackguardIcon.challengeAwareness,
     title: "Lack of Awareness",
     body: "Minimal knowledge among car owners about simple, effective preventive steps.",
     iconH: 19,
@@ -95,7 +88,7 @@ export function TrackGuardIdentifyingSection() {
             <div className="flex flex-col items-center gap-4 rounded-[40px] border border-[var(--border-subtle)] bg-[rgba(29,29,31,0.05)] px-6 pb-10 pt-8 sm:px-12 dark:border-white/10 dark:bg-white/[0.06]">
               <div className="flex size-16 items-center justify-center rounded-[40px] bg-[var(--pill-badge-bg)] dark:bg-white/10">
                 <div className="relative h-[11px] w-[23px] shrink-0">
-                  <Image src={imgWhoIcon} alt="" width={23} height={11} className="object-contain"/>
+                  <Image src={trackguardIcon.everyone} alt="" width={23} height={11} className="object-contain" />
                 </div>
               </div>
               <p className="pt-4 text-center text-[22px] font-normal tracking-[-0.6px] text-[var(--text-primary)] sm:text-[24px] sm:leading-8">

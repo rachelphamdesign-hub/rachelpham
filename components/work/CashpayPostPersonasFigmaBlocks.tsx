@@ -1,16 +1,6 @@
 import Image from "next/image";
 import { cashpayBlockGap, cashpayBlockGapL, cashpayCardPad } from "@/lib/cashpaySpacing";
-
-/** 165:3428 — Competitive Analysis */
-const imgIcon = "https://www.figma.com/api/mcp/asset/65b149f2-eef3-4290-b354-8ba9901e1a7f";
-const imgIcon1 = "https://www.figma.com/api/mcp/asset/801eb8ed-45d4-494e-b605-f0f3caa45da3";
-const imgIcon2 = "https://www.figma.com/api/mcp/asset/ecee3245-7ab0-492a-b902-bdd7675d90e9";
-const imgIcon3 = "https://www.figma.com/api/mcp/asset/e98a62da-da02-49fc-bdb3-461342b92b46";
-const imgIcon4 = "https://www.figma.com/api/mcp/asset/834d4ad0-96c2-4f9f-a125-dd5e09404c51";
-const imgIcon5 = "https://www.figma.com/api/mcp/asset/d554d8bb-68d0-46aa-bb8c-000c229b69e6";
-const imgIcon6 = "https://www.figma.com/api/mcp/asset/61da6ae2-f964-423a-bf2c-b756b7998495";
-const imgBulletGap = "https://www.figma.com/api/mcp/asset/aba407b8-65bd-450b-929c-1e4aecf724e3";
-const imgBulletCashpay = "https://www.figma.com/api/mcp/asset/72394324-7f7b-453f-96a5-52441a9c9faf";
+import { cashpayIcon } from "@/lib/cashpayIcons";
 
 /** 165:4404 — Information Architecture diagram */
 const imgIaDiagram = "https://www.figma.com/api/mcp/asset/6a1025ee-9772-4c6b-8b28-e94476f43ed3";
@@ -129,18 +119,18 @@ export function CashpayPostPersonasFigmaBlocks() {
 
             <div className="flex w-full">
               <DimCell title="Onboarding" subtitle="User friction" />
-              <IconCell src={imgIcon} w={17} h={15} label="Steep curve" />
-              <IconCell src={imgIcon1} w={16} h={16} label="Moderate" />
-              <IconCell src={imgIcon2} w={17} h={16} label="Fluid" />
-              <IconCell src={imgIcon1} w={16} h={16} label="Instant" />
+              <IconCell src={cashpayIcon.competitiveSteepCurve} w={17} h={15} label="Steep curve" />
+              <IconCell src={cashpayIcon.competitiveModerate} w={16} h={16} label="Moderate" />
+              <IconCell src={cashpayIcon.competitiveFluid} w={17} h={16} label="Fluid" />
+              <IconCell src={cashpayIcon.competitiveInstant} w={16} h={16} label="Instant" />
             </div>
 
             <div className="flex w-full">
               <DimCell title="Automation" subtitle="Connectivity" />
-              <IconCell src={imgIcon3} w={13} h={13} label="Full Sync" />
-              <IconCell src={imgIcon4} w={14} h={14} label="Manual Focus" />
-              <IconCell src={imgIcon5} w={17} h={17} label="Aggressive" />
-              <IconCell src={imgIcon6} w={11} h={11} label="None" />
+              <IconCell src={cashpayIcon.competitiveFullSync} w={13} h={13} label="Full Sync" />
+              <IconCell src={cashpayIcon.competitiveManualFocus} w={14} h={14} label="Manual Focus" />
+              <IconCell src={cashpayIcon.competitiveAggressive} w={17} h={17} label="Aggressive" />
+              <IconCell src={cashpayIcon.competitiveNone} w={11} h={11} label="None" />
             </div>
 
             <div className="flex w-full">
@@ -179,13 +169,13 @@ export function CashpayPostPersonasFigmaBlocks() {
             <div className="flex flex-col gap-4">
               <div className="flex items-center gap-3">
                 <div className="relative size-[10px] shrink-0">
-                  <Image src={imgBulletGap} alt="" width={10} height={10} className="object-contain"/>
+                  <Image src={cashpayIcon.gapTechnical} alt="" width={10} height={10} className="object-contain"/>
                 </div>
                 <p className="text-[12px] leading-4 text-[var(--text-body-soft)]">Scattered account management</p>
               </div>
               <div className="flex items-center gap-3">
                 <div className="relative size-[10px] shrink-0">
-                  <Image src={imgBulletGap} alt="" width={10} height={10} className="object-contain"/>
+                  <Image src={cashpayIcon.gapTechnical} alt="" width={10} height={10} className="object-contain"/>
                 </div>
                 <p className="text-[12px] leading-4 text-[var(--text-body-soft)]">Time-consuming manual tracking</p>
               </div>
@@ -221,13 +211,13 @@ export function CashpayPostPersonasFigmaBlocks() {
             <div className="flex flex-col gap-4">
               <div className="flex items-center gap-3">
                 <div className="relative size-[14px] shrink-0">
-                  <Image src={imgBulletCashpay} alt="" width={14} height={14} className="object-contain"/>
+                  <Image src={cashpayIcon.gapAdvantage} alt="" width={14} height={14} className="object-contain"/>
                 </div>
                 <p className="text-[12px] leading-4 text-[var(--text-primary)]">All-in-one financial overview</p>
               </div>
               <div className="flex items-center gap-3">
                 <div className="relative size-[14px] shrink-0">
-                  <Image src={imgBulletCashpay} alt="" width={14} height={14} className="object-contain"/>
+                  <Image src={cashpayIcon.gapAdvantage} alt="" width={14} height={14} className="object-contain"/>
                 </div>
                 <p className="text-[12px] leading-4 text-[var(--text-primary)]">Smart, automated tracking</p>
               </div>

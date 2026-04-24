@@ -5,12 +5,11 @@ import { CashpayUserPersonasSection } from "@/components/work/CashpayUserPersona
 import { CashpayUsabilityFeedbackSection } from "@/components/work/CashpayUsabilityFeedbackSection";
 import { CashpayFeedbackFixesSection } from "@/components/work/CashpayFeedbackFixesSection";
 import { cashpayInsetX } from "@/lib/cashpaySpacing";
+import { cashpayIcon } from "@/lib/cashpayIcons";
 import type { ProjectMeta } from "@/lib/projects";
 
 const CASHPAY_PROCESS_PREVIEW =
   "https://www.figma.com/api/mcp/asset/8e4be111-0116-401d-b8b8-4d9ae97ffad5" as const;
-const CHALLENGE_ICON_FRICTION = "https://www.figma.com/api/mcp/asset/61fd4f3a-6836-473a-925b-1a65b21d2aa3" as const;
-const CHALLENGE_ICON_OBJECTIVE = "https://www.figma.com/api/mcp/asset/8898d8f6-c8c5-458e-a546-d9261f6c9277" as const;
 
 function isLightColor(hex: string): boolean {
   const h = hex.replace("#", "");
@@ -160,7 +159,7 @@ export function WorkProjectSections({ project }: { project: ProjectMeta }) {
                             style={{ background: "var(--bg-footer)", borderColor: "var(--border-default)" }}
                           >
                             <div className="mb-4 flex items-center gap-3">
-                              <Image src={CHALLENGE_ICON_FRICTION} alt="" width={19} height={19} />
+                              <Image src={cashpayIcon.challengeFriction} alt="" width={19} height={19} />
                               <h4 className="text-[18px] font-semibold leading-7 text-[var(--text-primary)]">
                                 Friction Points
                               </h4>
@@ -177,7 +176,7 @@ export function WorkProjectSections({ project }: { project: ProjectMeta }) {
                             style={{ background: "var(--bg-footer)", borderColor: "var(--border-default)" }}
                           >
                             <div className="mb-4 flex items-center gap-3">
-                              <Image src={CHALLENGE_ICON_OBJECTIVE} alt="" width={19} height={19} />
+                              <Image src={cashpayIcon.challengeObjective} alt="" width={19} height={19} />
                               <h4 className="text-[18px] font-semibold leading-7 text-[var(--text-primary)]">
                                 Strategic Objective
                               </h4>

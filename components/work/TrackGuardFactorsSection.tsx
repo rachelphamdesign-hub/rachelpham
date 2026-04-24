@@ -1,39 +1,27 @@
 import Image from "next/image";
+import { trackguardIcon } from "@/lib/trackguardIcons";
 
 /** Figma 229:13487 — primary card photo */
 const imgPrimary = "https://www.figma.com/api/mcp/asset/3219df1a-3eb5-427d-af1f-5047d95a8c0a";
-/** Supporting factor icons (TL → BR) */
-const imgFactorEmotional = "https://www.figma.com/api/mcp/asset/64462d6e-c175-4baa-9e97-f42d86a70f3d";
-const imgFactorLogistical = "https://www.figma.com/api/mcp/asset/733b4e58-879e-4d1b-986f-bc0336a06666";
-const imgFactorInsurance = "https://www.figma.com/api/mcp/asset/88960415-5ad1-4b6e-b817-7de33388b142";
-const imgFactorCommunity = "https://www.figma.com/api/mcp/asset/44f27f42-7ceb-4d73-8e31-0dc65334f7af";
 
 const SUPPORTING = [
   {
-    icon: imgFactorEmotional,
-    iconW: 18,
-    iconH: 19,
+    icon: trackguardIcon.factorEmotional,
     title: "Emotional Distress",
     body: "Causes stress and disrupts daily life and mobility, as cars symbolize freedom and convenience.",
   },
   {
-    icon: imgFactorLogistical,
-    iconW: 19,
-    iconH: 16,
+    icon: trackguardIcon.factorLogistical,
     title: "Logistical Disruption",
     body: "Makes commuting and errands harder, adding delays and extra transportation costs.",
   },
   {
-    icon: imgFactorCommunity,
-    iconW: 15,
-    iconH: 19,
+    icon: trackguardIcon.factorCommunity,
     title: "Community Security",
     body: "Makes neighborhoods feel unsafe and can fuel more criminal activity, affecting community trust.",
   },
   {
-    icon: imgFactorInsurance,
-    iconW: 19,
-    iconH: 11,
+    icon: trackguardIcon.factorInsurance,
     title: "Insurance Volatility",
     body: "Persistent local car theft leads to higher insurance rates for everyone in the area.",
   },
@@ -129,8 +117,8 @@ export function TrackGuardFactorsSection() {
                 }}
               >
                 <div className="flex size-12 items-center justify-center rounded-[24px] bg-[rgba(29,29,31,0.05)] dark:bg-white/10">
-                  <div className="relative shrink-0" style={{ width: item.iconW, height: item.iconH }}>
-                    <Image src={item.icon} alt="" fill className="object-contain"/>
+                  <div className="relative size-5 shrink-0 sm:size-[22px]">
+                    <Image src={item.icon} alt="" fill className="object-contain" sizes="24px" />
                   </div>
                 </div>
                 <h4 className="pt-2 text-[18px] font-normal leading-7 text-[var(--text-primary)] sm:text-[20px] sm:leading-[28px]">
