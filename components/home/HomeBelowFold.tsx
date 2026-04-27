@@ -29,7 +29,7 @@ function FeaturedProjects() {
       subtitle:
         "CashPay is a summer project — a financial app that makes managing money simple and effortless",
       label: "2023 • PROJECT 02",
-      image: "https://www.figma.com/api/mcp/asset/641a1932-7c35-409b-8c87-9bf660231f42",
+      image: "/media/image/cashpay.png",
       mediaType: "image" as const,
       area: "lg:col-span-4 lg:col-start-9 lg:row-start-1",
       height: "min-h-[320px] h-[380px] lg:h-[480px]",
@@ -42,7 +42,7 @@ function FeaturedProjects() {
       title: "TrackGuard",
       subtitle: "A UI/UX class project — real-time protection for your vehicle.",
       label: "2024 • PROJECT 03",
-      image: "https://www.figma.com/api/mcp/asset/50896fc0-8b2f-4dd2-beed-a98af826b809",
+      image: "/media/image/trackguard.png",
       mediaType: "image" as const,
       area: "lg:col-span-4 lg:col-start-1 lg:row-start-2",
       height: "min-h-[240px] h-[260px] lg:h-[260px]",
@@ -56,7 +56,7 @@ function FeaturedProjects() {
       subtitle:
         "UX-focused visuals and course graphics that help students grasp applied research faster—with clear templates and practical tools.",
       label: "2024 • PROJECT 04",
-      image: "https://www.figma.com/api/mcp/asset/3222ce83-4692-44e7-9aa1-c15a6ed7ff35",
+      image: "/media/applied-research-101-hero-laptop.webp",
       mediaType: "image" as const,
       area: "lg:col-span-8 lg:col-start-5 lg:row-start-2",
       height: "min-h-[240px] h-[260px] lg:h-[260px]",

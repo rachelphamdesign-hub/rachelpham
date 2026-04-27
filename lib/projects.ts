@@ -54,7 +54,7 @@ export const projects: ProjectMeta[] = [
       {
         type: "image",
         heading: "Interconnected Magazine Feature",
-        image: "https://www.figma.com/api/mcp/asset/e115d9f2-e037-432e-ae71-caa8da99c63b",
+        image: "/media/image/temi%20image.png",
       },
     ],
     links: [

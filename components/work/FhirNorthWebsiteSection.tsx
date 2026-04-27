@@ -2,7 +2,7 @@ import { FhirNorthWebsiteMockupLiveLink } from "@/components/work/FhirNorthWebsi
 
 /** Figma 312:24052 — Conference website (MacBook mockup). */
 const WEBSITE_MOCKUP_SRC =
-  "https://www.figma.com/api/mcp/asset/3c600aee-168b-4187-b078-d01ce7798a38";
+  "/media/image/fhir/MacBook-Pro-16.png";
 
 const WEBSITE_MOCKUP_ALT =
   "FHIR North conference website mockup on a laptop — homepage with navigation and hero";

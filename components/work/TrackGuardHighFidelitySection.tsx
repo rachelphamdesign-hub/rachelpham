@@ -5,7 +5,7 @@ import { cashpayInsetX } from "@/lib/cashpaySpacing";
 
 /** Figma 255:19548 — High Fidelity (heading, intro, presentation prototype board) */
 const HIGH_FIDELITY_IMAGE_SRC =
-  "https://www.figma.com/api/mcp/asset/ce86280c-936d-44bc-824b-0053ac52707b";
+  "/media/image/trackguard/Screenshot%202024-06-20%20173954%205.png";
 
 export function TrackGuardHighFidelitySection() {
   return (

@@ -1,10 +1,10 @@
 /** Figma 279:21826 — Talk Theaters imagery (primary + two-up grid) */
 const PRIMARY_SRC =
-  "https://www.figma.com/api/mcp/asset/ab2ee18b-597f-4b18-8f81-d3dc0824fd5f";
+  "/media/image/i2i/1774969859650.jpeg";
 const THEATER_A_SRC =
-  "https://www.figma.com/api/mcp/asset/46e9ab75-a481-4a4c-bc58-2fb89f8cf926";
+  "/media/image/i2i/mockup.png";
 const THEATER_B_SRC =
-  "https://www.figma.com/api/mcp/asset/130bfc91-8a2a-470c-bf94-3c3c7a840b5a";
+  "/media/image/i2i/Untitled%20design%20%281%29%20copy.png";
 
 const cardShadow =
   "shadow-[0px_4px_24px_-1px_rgba(0,0,0,0.04),0px_2px_8px_-1px_rgba(0,0,0,0.02)]";

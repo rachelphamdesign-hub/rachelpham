@@ -1,6 +1,6 @@
 /** Figma 495:1989 — dual portrait lifestyle strip (same crop recipe as coffee spread) */
 const TWIN_PORTRAIT_SRC =
-  "https://www.figma.com/api/mcp/asset/29a76f7f-5b8a-46ef-8702-e3e31e61ad96";
+  "/media/image/sweet%20sunset/Container%20copy%202.png";
 
 /**
  * Figma 495:1989 — full-bleed lifestyle photography with Dev Mode crop.

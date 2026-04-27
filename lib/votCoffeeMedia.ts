@@ -11,42 +11,42 @@ export const VOT_COFFEE_BOX_BAG_MOCKUP = "/media/vot-coffee-box-bag-mockup.png";
 export const VOT_COFFEE_FULL_BLEEDS = [
   {
     node: "401:773",
-    src: "https://www.figma.com/api/mcp/asset/952586a7-78d6-4b5e-ba6d-be030170ed82",
+    src: "/media/image/vot%20coffee/FINAL3.png",
     alt: "Vot Coffee wordmark on cream background",
   },
   {
     node: "401:784",
-    src: "https://www.figma.com/api/mcp/asset/e3364718-81bd-4848-bce1-47d4dec89f3c",
+    src: "/media/image/vot%20coffee/FINAL4.png",
     alt: "Vot Coffee business cards — front and back on deep maroon",
   },
   {
     node: "401:1018",
-    src: "https://www.figma.com/api/mcp/asset/0701cc00-7a62-4975-9d1f-fe8688ff7199",
+    src: "/media/image/vot%20coffee/FINAL5.png",
     alt: "Branded paper cups — cream and maroon variants",
   },
   {
     node: "401:1020",
-    src: "https://www.figma.com/api/mcp/asset/742d7637-4430-4beb-a28b-b5be5f25e6c8",
+    src: "/media/image/vot%20coffee/FINAL6.png",
     alt: "Pour-over coffee scene — kettle and Chemex",
   },
   {
     node: "401:1024",
-    src: "https://www.figma.com/api/mcp/asset/40100e7b-1b44-42bf-af45-23a65da3db82",
+    src: "/media/image/vot%20coffee/FINAL8%20low.png",
     alt: "Canvas tote bag with Vot Coffee branding on stone steps",
   },
   {
     node: "401:1026",
-    src: "https://www.figma.com/api/mcp/asset/b4a051a0-b595-42c7-8eb9-f45c28acfd7e",
+    src: "/media/image/vot%20coffee/FINAL9%20low.png",
     alt: "Branded napkin and café tabletop detail",
   },
   {
     node: "401:1028",
-    src: "https://www.figma.com/api/mcp/asset/e70368ff-aac2-4b7f-a041-97f1e2382f81",
+    src: "/media/image/vot%20coffee/FINAL10%20low.png",
     alt: "Maroon tote bag with line-art coffee pattern",
   },
   {
     node: "401:816",
-    src: "https://www.figma.com/api/mcp/asset/9c529820-4a60-43f3-adc2-0a5caa31a576",
+    src: "/media/image/vot%20coffee/FINAL11%20low.png",
     alt: "Robustas Honey coffee bean packaging — two bag designs",
   },
 ] as const;

@@ -1,10 +1,9 @@
 import Image from "next/image";
 import { cashpayBlockGap, cashpayBlockGapL, cashpayCardPad, cashpayInsetX } from "@/lib/cashpaySpacing";
 
-const imgFinancialAnxietyChart =
-  "https://www.figma.com/api/mcp/asset/bee1d544-e08e-4104-a765-5471827d243e";
-const imgWishTheyKnewMore = "https://www.figma.com/api/mcp/asset/c98042b9-8b66-414f-a426-daa26fb31ab6";
-const imgSurveyResponses = "https://www.figma.com/api/mcp/asset/f3c40f12-acde-4366-bbba-b2ab2360c16d";
+const imgFinancialAnxietyChart = "/media/image/cashpay%20image/Frame%2031%20%281%29%202.png";
+const imgWishTheyKnewMore = "/media/image/cashpay%20image/Frame%2031%20%281%29%203.png";
+const imgSurveyResponses = "/media/image/cashpay%20image/survey%202.png";
 
 const cardShellClass = `relative rounded-[40px] ${cashpayCardPad}`;
 
@@ -64,7 +63,7 @@ export function CashpayDataCollectionAndSurvey() {
                 alt="Survey responses summary"
                 width={520}
                 height={340}
-                className="h-auto w-full object-cover"
+                className="h-auto w-full object-contain object-center"
               />
             </div>
 

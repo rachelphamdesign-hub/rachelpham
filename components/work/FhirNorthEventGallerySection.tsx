@@ -1,10 +1,10 @@
 /** Figma 291:23819 — Event photography grid (primary + two-up). */
 const PRIMARY_SRC =
-  "https://www.figma.com/api/mcp/asset/e31b426f-adb4-46bb-978d-46a4887b9c19";
+  "/media/image/fhir/4.png";
 const FACTOR_2_SRC =
-  "https://www.figma.com/api/mcp/asset/f75bde00-fb73-4a78-98f9-78b1f8f83d09";
+  "/media/image/fhir/5.png";
 const FACTOR_3_SRC =
-  "https://www.figma.com/api/mcp/asset/5da8e0a0-0906-4d9e-a0ec-e97f6946d80d";
+  "/media/image/fhir/6.png";
 
 const cardShadow =
   "shadow-[0px_4px_24px_-1px_rgba(0,0,0,0.04),0px_2px_8px_-1px_rgba(0,0,0,0.02)] dark:shadow-[0px_4px_24px_-1px_rgba(0,0,0,0.35),0px_2px_8px_-1px_rgba(0,0,0,0.2)]";

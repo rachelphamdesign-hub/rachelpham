@@ -8,29 +8,31 @@ import { LazyVideo } from "@/components/LazyVideo";
 import { RevealCopy, RevealMedia } from "@/components/ProjectCardScrollReveal";
 import { useProjectCardCursorBubble } from "@/components/useProjectCardCursorBubble";
 
-/** Figma 11:199 — image positions inside overflow-hidden frame (percent of container) */
+/** Featured card placements for local transparent PNG cutouts (percent of container). */
 const FIGMA_IMAGE: Record<
   "trackguard" | "cashpay" | "applied",
   Pick<CSSProperties, "left" | "top" | "width" | "height">
 > = {
-  /** Figma 11:200 — TrackGuard phones (composition anchored bottom, centered) */
+  /** TrackGuard phones — anchor lower center so all devices are visible. */
   trackguard: {
-    left: "-9.06%",
-    top: "58.21%",
-    width: "110.69%",
-    height: "181.94%",
+    left: "4%",
+    top: "50%",
+    width: "94%",
+    height: "102%",
   },
+  /** CashPay phone — push right, keep top content visible. */
   cashpay: {
-    left: "26.72%",
-    top: "-10.03%",
-    width: "108.92%",
-    height: "137.47%",
+    left: "33%",
+    top: "-40%",
+    width: "92%",
+    height: "128%",
   },
+  /** AR101 laptop — show full device with slight right bias. */
   applied: {
-    left: "27.86%",
-    top: "7.69%",
-    width: "95.49%",
-    height: "142.27%",
+    left: "24%",
+    top: "10%",
+    width: "96%",
+    height: "120%",
   },
 };
 
@@ -70,11 +72,7 @@ function FigmaPlacedImage({
   placement: keyof typeof FIGMA_IMAGE;
 }) {
   const s = FIGMA_IMAGE[placement];
-  /* TrackGuard: tall placement box + object-cover defaults to vertical center crop — clips phone tops */
-  const objectClass =
-    placement === "trackguard"
-      ? "absolute max-w-none object-cover object-[center_top]"
-      : "absolute max-w-none object-cover";
+  const objectClass = "absolute max-w-none object-contain";
   return (
     <div className="pointer-events-none absolute inset-0 overflow-hidden rounded-[inherit]">
       {/* eslint-disable-next-line @next/next/no-img-element -- Figma-exact % positioning */}

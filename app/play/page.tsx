@@ -20,168 +20,73 @@ type PlayCard = {
 const PLAY_HEADER_SHELL = "mx-auto w-full max-w-[1160px] px-6";
 
 const playItems: PlayCard[] = [
+    { nodeId: "playground-0", title: "", video: "/media/image/playground/Scene%20copy.mp4" },
+    { nodeId: "playground-1", title: "", image: "/media/image/playground/4-3.gif" },
+    { nodeId: "playground-2", title: "", image: "/media/image/playground/download.gif" },
+    { nodeId: "playground-3", title: "", video: "/media/image/playground/Hello.mp4" },
+    { nodeId: "playground-4", title: "", image: "/media/image/playground/Menu%20Mock%20Up.jpg" },
+    { nodeId: "playground-5", title: "", image: "/media/image/playground/Notebook%20Mockup.png" },
+    { nodeId: "playground-6", title: "", image: "/media/image/playground/Poster%20Mockup%20%283%29.jpg" },
+    { nodeId: "playground-7", title: "", image: "/media/image/playground/Scene.gif" },
+    { nodeId: "playground-8", title: "", video: "/media/image/playground/Scene.mp4" },
+    { nodeId: "playground-9", title: "", image: "/media/image/playground/Untitled%20design%20copy%202.gif" },
+    { nodeId: "playground-10", title: "", image: "/media/image/playground/Untitled%20design%20copy%203.gif" },
+    { nodeId: "playground-11", title: "", image: "/media/image/playground/Untitled%20design%20copy%204.gif" },
+    { nodeId: "playground-12", title: "", image: "/media/image/playground/Untitled%20design%20copy%205.gif" },
+    { nodeId: "playground-13", title: "", image: "/media/image/playground/Untitled%20design%20copy.gif" },
+    { nodeId: "playground-14", title: "", image: "/media/image/playground/Untitled%20design.gif" },
     {
-        nodeId: "local-learning-together",
-        title: "Learning 2gether",
-        video: "/media/learning-together.mp4",
-        overlay: "soft",
-        variant: "wide",
-    },
-    {
-        nodeId: "local-akira-spread",
-        title: "Anime Magazine — Akira spread",
-        video: "/media/play-akira-magazine-spread.mp4",
-        overlay: "soft",
-        variant: "wide",
-    },
-    {
-        nodeId: "107:255",
-        title: "BeatSync App",
-        overlay: "soft",
-        video: "/media/showreel-mobile-screens-remix-copy.mp4",
-    },
-    {
-        nodeId: "107:396",
-        title: "Uynique Studio",
-        image: "https://www.figma.com/api/mcp/asset/b8f2cac7-de7a-4ac3-8a24-a14cd028d79b",
-    },
-    {
-        nodeId: "107:297",
-        title: "Sports News Website",
-        image: "https://www.figma.com/api/mcp/asset/a7ca40d1-6ed7-4225-a95b-b8e79033391b",
-    },
-    {
-        nodeId: "107:285",
-        title: "Weather or Not",
-        image: "https://www.figma.com/api/mcp/asset/6c074106-3fba-4b2e-9639-9a09506879a8",
-    },
-    {
-        nodeId: "107:279",
-        title: "Kicks App",
-        image: "https://www.figma.com/api/mcp/asset/364d23a4-92d6-4b85-9979-cf2c4b981c15",
-    },
-    {
-        nodeId: "107:273",
-        title: "LoveLink - Dating App",
-        image: "https://www.figma.com/api/mcp/asset/c197658e-7d34-4b73-8de9-072e382ffa36",
-    },
-    {
-        nodeId: "150:686",
+        nodeId: "playground-15",
         title: "",
-        image: "https://www.figma.com/api/mcp/asset/9c140bc8-2925-46f3-a12d-0db62ee40dec",
-        overlay: "dark",
+        image: "/media/image/playground/z3768104784095_461f13f138df485be339f141df2d0ce9.jpg",
     },
     {
-        nodeId: "150:662",
+        nodeId: "playground-16",
         title: "",
-        image: "https://www.figma.com/api/mcp/asset/9e116780-c77f-4dd8-8314-53fbc0f31d9d",
-        overlay: "dark",
+        image: "/media/image/playground/z3768104816973_621fecce3595a2f0173160d7f805fb5d.jpg",
     },
     {
-        nodeId: "150:486",
+        nodeId: "playground-17",
         title: "",
-        image: "https://www.figma.com/api/mcp/asset/0ec5878d-ac5f-40ef-9c22-e053f1230f70",
-        overlay: "dark",
+        image: "/media/image/playground/z3768104817761_2bc831c8e5d37bb50e4a2fda629ac8d4.jpg",
     },
     {
-        nodeId: "150:674",
+        nodeId: "playground-18",
         title: "",
-        image: "https://www.figma.com/api/mcp/asset/7a46b024-9d82-4bce-899f-2404adcad54a",
-        overlay: "dark",
+        image: "/media/image/playground/z3768104842834_20bea8c1e654d637b5bf7bee6048ed56.jpg",
     },
     {
-        nodeId: "141:450",
-        title: "BeatSync App",
-        image: "https://www.figma.com/api/mcp/asset/2132ba5e-a00f-417a-8de9-8d2340b202b0",
-    },
-    {
-        nodeId: "107:414",
-        title: "BeatSync App",
-        image: "https://www.figma.com/api/mcp/asset/f1e724a7-e7cf-442e-a4d3-895b5dc9c85e",
-    },
-    {
-        nodeId: "150:668",
+        nodeId: "playground-19",
         title: "",
-        image: "https://www.figma.com/api/mcp/asset/af506eda-6d34-4dbd-9cee-cd10c412ba50",
-        overlay: "dark",
+        image: "/media/image/playground/z3768104855699_344ddcdcb075d0da0ee4e4d16f1a3157.jpg",
     },
     {
-        nodeId: "141:468",
-        title: "Icon Magazine",
-        image: "https://www.figma.com/api/mcp/asset/b7c6241c-adfc-45ae-80ce-342aff4b7dea",
-    },
-    {
-        nodeId: "150:504",
+        nodeId: "playground-20",
         title: "",
-        image: "https://www.figma.com/api/mcp/asset/9c1153f3-368b-4e23-b4eb-5d29d649446f",
-        overlay: "dark",
+        image: "/media/image/playground/z3768104871399_08764d0a516a4438b98de9c8df887f79.jpg",
     },
     {
-        nodeId: "107:291",
-        title: "City Housing Hamilton – Ad Campaign",
-        image: "https://www.figma.com/api/mcp/asset/2c15e025-c2d2-4db6-84ff-b83bf27f8916",
-    },
-    {
-        nodeId: "107:402",
-        title: "541 Eatery & Exchange - Case For Support",
-        image: "https://www.figma.com/api/mcp/asset/cd07e9bb-d915-4bdc-8394-4090b68a254c",
-    },
-    {
-        nodeId: "107:261",
-        title: "City Housing Hamilton – Annual Report 2024",
-        image: "https://www.figma.com/api/mcp/asset/c197658e-7d34-4b73-8de9-072e382ffa36",
-    },
-    {
-        nodeId: "150:492",
+        nodeId: "playground-21",
         title: "",
-        image: "https://www.figma.com/api/mcp/asset/08d6bb01-88df-4f04-bd69-50074a1e9d83",
-        overlay: "dark",
+        image: "/media/image/playground/z3768104888280_171d38b30c66c1301152a74aa4954c07.jpg",
     },
     {
-        nodeId: "141:438",
-        title: "Ideaworks - Social Posts",
-        image: "https://www.figma.com/api/mcp/asset/a783b397-0356-44b7-bdb2-d3d593d32c3f",
-    },
-    {
-        nodeId: "107:408",
-        title: "Zara App - Redesign",
-        image: "https://www.figma.com/api/mcp/asset/82626467-08d4-478b-bab3-a2a30de45072",
-    },
-    {
-        nodeId: "129:420",
-        title: "Font Poster",
-        image: "https://www.figma.com/api/mcp/asset/ec6146d9-6f45-4b29-9ad5-c67b282548ba",
-    },
-    {
-        nodeId: "141:462",
-        title: "RoJo Restaurant - Menu",
-        image: "https://www.figma.com/api/mcp/asset/38ab1b00-943d-4034-963e-76c2a93d1dc7",
-    },
-    {
-        nodeId: "150:680",
+        nodeId: "playground-22",
         title: "",
-        image: "https://www.figma.com/api/mcp/asset/6ba403a9-721a-4110-92f4-74b31c0e4eb6",
-        overlay: "dark",
+        image: "/media/image/playground/z3768104902410_bd9552178546357194544f1d8bfa2371.jpg",
     },
     {
-        nodeId: "150:498",
+        nodeId: "playground-23",
         title: "",
-        image: "https://www.figma.com/api/mcp/asset/b72322eb-6829-4144-b507-051fe087dadd",
-        overlay: "dark",
+        image: "/media/image/playground/z3768112632770_b31a2486347710edd448725a47df8584.jpg",
     },
-    {
-        nodeId: "107:267",
-        title: "Ideaworks - Notebook",
-        image: "https://www.figma.com/api/mcp/asset/737e1051-afa1-4796-b19e-89415a55adf5",
-    },
-    {
-        nodeId: "141:444",
-        title: "Uynique Studio - Poster",
-        image: "https://www.figma.com/api/mcp/asset/142a1650-aa13-4127-b426-d3d669d971e6",
-    },
+    { nodeId: "playground-24", title: "", image: "/media/image/playground/Untitled%20design%20copy%206.gif" },
+    { nodeId: "playground-25", title: "", image: "/media/image/playground/Untitled%20design%20copy%207.gif" },
+    { nodeId: "playground-26", title: "", image: "/media/image/playground/Untitled%20design%20copy%208.gif" },
 ];
 
 function PlayCardFigure({ item }: { item: PlayCard }) {
+    const hasTitle = item.title.trim().length > 0;
     const overlayGradient =
         item.overlay === "dark"
             ? "linear-gradient(to top, rgba(0,0,0,0.92) 0%, rgba(0,0,0,0.52) 30%, rgba(0,0,0,0) 64%)"
@@ -202,14 +107,16 @@ function PlayCardFigure({ item }: { item: PlayCard }) {
                     muted
                     playsInline
                 />
-                <div
-                    className="pointer-events-none absolute inset-0 flex items-end p-5 sm:p-6"
-                    style={{ background: overlayGradient }}
-                >
-                    <p className="line-clamp-2 text-left text-[14px] font-semibold leading-[18px] text-white sm:text-[15px]">
-                        {item.title}
-                    </p>
-                </div>
+                {hasTitle ? (
+                    <div
+                        className="pointer-events-none absolute inset-0 flex items-end p-5 sm:p-6"
+                        style={{ background: overlayGradient }}
+                    >
+                        <p className="line-clamp-2 text-left text-[14px] font-semibold leading-[18px] text-white sm:text-[15px]">
+                            {item.title}
+                        </p>
+                    </div>
+                ) : null}
             </div>
         );
     }
@@ -225,14 +132,16 @@ function PlayCardFigure({ item }: { item: PlayCard }) {
                     loading="lazy"
                     decoding="async"
                 />
-                <div
-                    className="pointer-events-none absolute inset-0 flex items-end p-5 sm:p-6"
-                    style={{ background: overlayGradient }}
-                >
-                    <p className="line-clamp-2 text-left text-[14px] font-semibold leading-[18px] text-white sm:text-[15px]">
-                        {item.title}
-                    </p>
-                </div>
+                {hasTitle ? (
+                    <div
+                        className="pointer-events-none absolute inset-0 flex items-end p-5 sm:p-6"
+                        style={{ background: overlayGradient }}
+                    >
+                        <p className="line-clamp-2 text-left text-[14px] font-semibold leading-[18px] text-white sm:text-[15px]">
+                            {item.title}
+                        </p>
+                    </div>
+                ) : null}
             </div>
         );
     }
@@ -245,14 +154,16 @@ function PlayCardFigure({ item }: { item: PlayCard }) {
                 background: item.background ?? "var(--pill-badge-bg)",
             }}
         >
-            <div
-                className="pointer-events-none absolute inset-0 flex items-end p-5 sm:p-6"
-                style={{ background: overlayGradient }}
-            >
-                <p className="line-clamp-2 text-left text-[14px] font-semibold leading-[18px] text-white sm:text-[15px]">
-                    {item.title}
-                </p>
-            </div>
+            {hasTitle ? (
+                <div
+                    className="pointer-events-none absolute inset-0 flex items-end p-5 sm:p-6"
+                    style={{ background: overlayGradient }}
+                >
+                    <p className="line-clamp-2 text-left text-[14px] font-semibold leading-[18px] text-white sm:text-[15px]">
+                        {item.title}
+                    </p>
+                </div>
+            ) : null}
         </div>
     );
 }

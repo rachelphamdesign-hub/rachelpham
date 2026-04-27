@@ -9,7 +9,7 @@ import { cashpayIcon } from "@/lib/cashpayIcons";
 import type { ProjectMeta } from "@/lib/projects";
 
 const CASHPAY_PROCESS_PREVIEW =
-  "https://www.figma.com/api/mcp/asset/8e4be111-0116-401d-b8b8-4d9ae97ffad5" as const;
+  "/media/image/cashpay%20image/Section%20-%20Process%20Bento%20Grid.png" as const;
 
 function isLightColor(hex: string): boolean {
   const h = hex.replace("#", "");
@@ -129,7 +129,7 @@ export function WorkProjectSections({ project }: { project: ProjectMeta }) {
                           alt="CashPay process preview"
                           width={1920}
                           height={864}
-                          className="h-auto w-full object-cover"
+                          className="h-auto w-full object-cover object-center lg:object-[center_42%]"
                         />
                       </div>
                       <div className="pb-12 pt-10 sm:pb-16 sm:pt-12 lg:pb-20 lg:pt-14">

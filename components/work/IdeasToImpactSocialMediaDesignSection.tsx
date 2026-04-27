@@ -13,23 +13,23 @@ const CHEVRON_RIGHT =
 
 const CAROUSEL_IMGS = [
   {
-    src: "https://www.figma.com/api/mcp/asset/eaa4900a-0c11-4696-8e01-331fe7bb2687",
+    src: "/media/image/i2i/Comms%20Kit%20Images%20-%20Ideas%20to%20Impact%202026/3.png",
     alt: "Ideas to Impact 2026 social graphic — registration and event details",
   },
   {
-    src: "https://www.figma.com/api/mcp/asset/26ba2d7d-71d8-411b-a1bd-815b4c48cc48",
+    src: "/media/image/i2i/Comms%20Kit%20Images%20-%20Ideas%20to%20Impact%202026/Panel%20-%20I2I%202026.png",
     alt: "Speaker lineup social card for applied research session",
   },
   {
-    src: "https://www.figma.com/api/mcp/asset/eb429601-461f-4ba3-8115-3c38f3a62aae",
+    src: "/media/image/i2i/Comms%20Kit%20Images%20-%20Ideas%20to%20Impact%202026/Sponsors%20-%20Ideas%20to%20Impact%202026.png",
     alt: "Ideas to Impact social post — sponsors and partners",
   },
   {
-    src: "https://www.figma.com/api/mcp/asset/f34e635c-51d0-433b-ad88-72406c142083",
+    src: "/media/image/i2i/Comms%20Kit%20Images%20-%20Ideas%20to%20Impact%202026/20.png",
     alt: "Ideas to Impact social graphic variant",
   },
   {
-    src: "https://www.figma.com/api/mcp/asset/2b0da256-1993-4c15-85ee-20ea6c3e02ec",
+    src: "/media/image/i2i/Comms%20Kit%20Images%20-%20Ideas%20to%20Impact%202026/22.png",
     alt: "Ideas to Impact social graphic variant",
   },
 ] as const;

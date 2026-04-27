@@ -1,12 +1,12 @@
 /** Figma 287:22712 — Robot photobooth feature + frame trio */
 const PHOTOBOOTH_HERO_SRC =
-  "https://www.figma.com/api/mcp/asset/eb73fda7-e7ef-4f6f-8b03-a45b47a31af5";
+  "/media/image/i2i/1775045053640.jpeg";
 const FRAME_STACK_1_SRC =
-  "https://www.figma.com/api/mcp/asset/9c578a34-f600-4f83-8838-5a462d796200";
+  "/media/image/i2i/Untitled-14_Artboard%203%20copy%202.png";
 const FRAME_STACK_2_SRC =
-  "https://www.figma.com/api/mcp/asset/504e7578-82c7-4040-b0df-f68d9a2a0ed7";
+  "/media/image/i2i/Untitled-14_Artboard%203%20copy%207.png";
 const FRAME_STACK_3_SRC =
-  "https://www.figma.com/api/mcp/asset/8f52c253-e960-490e-aa30-c4edde469126";
+  "/media/image/i2i/Untitled-14.png";
 
 const heroShadow =
   "shadow-[0px_20px_40px_0px_rgba(0,0,0,0.04),0px_1px_4px_0px_rgba(0,0,0,0.02)]";

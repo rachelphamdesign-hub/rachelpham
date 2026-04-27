@@ -1,7 +1,7 @@
 import Image from "next/image";
 
 /** Figma 244:16575 — Google Forms “Responses” mockup */
-const imgSurveyResponses = "https://www.figma.com/api/mcp/asset/79040f48-c549-4c5d-bb01-cebdb2c6ceb7";
+const imgSurveyResponses = "/media/image/trackguard/survey%203.png";
 
 /** Figma 244:16570 — Survey Results heading + responses mockup */
 export function TrackGuardSurveyResultsSection() {
@@ -22,7 +22,7 @@ export function TrackGuardSurveyResultsSection() {
                 src={imgSurveyResponses}
                 alt=""
                 fill
-                className="object-cover object-top"
+                className="object-contain object-center"
                 sizes="(max-width: 520px) 100vw, 520px"
                 priority
               />

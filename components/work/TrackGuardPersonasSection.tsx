@@ -1,7 +1,7 @@
 import Image from "next/image";
 
-const imgZainy = "https://www.figma.com/api/mcp/asset/b9549995-0109-46e2-96f9-d91a3e92dd3d";
-const imgEric = "https://www.figma.com/api/mcp/asset/3bee738d-e8a3-4cc0-ae57-afec4b76761d";
+const imgZainy = "/media/image/trackguard/Overlay+Shadow-1.png";
+const imgEric = "/media/image/trackguard/Overlay+Shadow.png";
 
 type Motivation = { label: string; fillPct: number };
 

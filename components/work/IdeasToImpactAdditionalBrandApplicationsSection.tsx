@@ -1,10 +1,10 @@
 /** Figma 291:23732 — Additional Brand Applications (3-up) */
 const IMG_CAKE =
-  "https://www.figma.com/api/mcp/asset/780e144a-8e62-452e-b1cc-96bd041816e5";
+  "/media/image/i2i/IMG_3849.JPG";
 const IMG_THANK_YOU =
-  "https://www.figma.com/api/mcp/asset/d70fa288-0c68-4ca7-962e-a4599427ee3a";
+  "/media/image/i2i/IMG_8808.jpg";
 const IMG_PRESENTATION =
-  "https://www.figma.com/api/mcp/asset/dee9824c-fb79-414d-90a7-43e7d02a1588";
+  "/media/image/i2i/1775045052921.jpeg";
 
 const cardSurface =
   "rounded-[40px] border border-[var(--border-default)] shadow-[0px_20px_40px_0px_rgba(0,0,0,0.04),0px_1px_4px_0px_rgba(0,0,0,0.02)] dark:shadow-[0px_20px_40px_0px_rgba(0,0,0,0.35),0px_1px_4px_0px_rgba(0,0,0,0.15)]";

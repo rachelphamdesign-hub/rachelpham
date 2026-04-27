@@ -1,8 +1,8 @@
 /** Figma 291:23879 — Roll-up banner artwork and on-site photography. */
 const ROLLUP_ART_SRC =
-  "https://www.figma.com/api/mcp/asset/ab7d358e-4e77-4ebd-bc0e-3d0bb14ec1d5";
+  "/media/image/fhir/1.png";
 const VENUE_PHOTO_SRC =
-  "https://www.figma.com/api/mcp/asset/b16be7bf-9cfd-400c-9d7e-d1c308723d62";
+  "/media/image/fhir/2.png";
 
 export function FhirNorthEventSignageSection() {
   return (

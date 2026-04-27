@@ -1,6 +1,6 @@
 /** Figma 347:24709 — food photography + illustrated sun characters */
 const FOOD_COLLAGE_SRC =
-  "https://www.figma.com/api/mcp/asset/bc59f64b-b927-4950-b1f3-f287793c4518";
+  "/media/image/sweet%20sunset/Untitled%20design%20%281%29.gif";
 
 /**
  * Figma 347:24709 — full-bleed hero-style food collage (object-cover).

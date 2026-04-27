@@ -3,7 +3,7 @@ import { cashpayBlockGap, cashpayBlockGapL, cashpayCardPad } from "@/lib/cashpay
 import { cashpayIcon } from "@/lib/cashpayIcons";
 
 /** 165:4404 — Information Architecture diagram */
-const imgIaDiagram = "https://www.figma.com/api/mcp/asset/6a1025ee-9772-4c6b-8b28-e94476f43ed3";
+const imgIaDiagram = "/media/image/cashpay%20image/Screenshot%202024-06-20%20173954%201.png";
 
 function TableHeaderCell({ children, align = "left" }: { children: React.ReactNode; align?: "left" | "center" }) {
   return (
@@ -237,7 +237,7 @@ export function CashpayPostPersonasFigmaBlocks() {
             alt="CashPay information architecture diagram"
             width={1200}
             height={800}
-            className="h-auto w-full object-cover"
+            className="h-auto w-full object-contain object-center"
           />
         </div>
       </div>

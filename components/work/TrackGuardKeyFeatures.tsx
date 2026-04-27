@@ -16,21 +16,21 @@ const FEATURE_ITEMS: FeatureItem[] = [
     title: "01. Location-Based Notifications",
     description:
       "TrackGuard sends alerts based on the location of the car and its owner to keep you informed of any suspicious activity.",
-    imageSrc: "https://www.figma.com/api/mcp/asset/9578fd4a-f8b3-4558-940e-8c1a1a00f98c",
+    imageSrc: "/media/image/trackguard/High%20Fidelity%20Iterations-1.png",
     imageAlt: "TrackGuard app showing location-based notifications",
   },
   {
     title: "02. Emergency Alert Activation",
     description:
       "When you receive a notification, you can activate an alert with a unique TrackGuard sound. This loud sound ensures people nearby can hear it, helping to alert authorities like the police.",
-    imageSrc: "https://www.figma.com/api/mcp/asset/234c47a9-312c-46ad-82e8-7b1ccf4b1046",
+    imageSrc: "/media/image/trackguard/High%20Fidelity%20Iterations-2.png",
     imageAlt: "TrackGuard app showing emergency alert activation",
   },
   {
     title: "03. Automatic Picture Capture",
     description:
       "If a thief moves the car, TrackGuard automatically takes pictures of the surroundings. These images can help identify the car's location, even if the GPS has been disabled by the thief.",
-    imageSrc: "https://www.figma.com/api/mcp/asset/02502760-5c66-486a-b2f0-e04875b39d94",
+    imageSrc: "/media/image/trackguard/High%20Fidelity%20Iterations.png",
     imageAlt: "TrackGuard app showing automatic picture capture",
   },
 ];

@@ -1,8 +1,8 @@
 /** Figma 279:21894 — Agenda document (left) + title / venue photo (right) */
 const POSTER_SRC =
-  "https://www.figma.com/api/mcp/asset/f7b464c9-eca9-4158-b9a0-1a2d4801b87a";
+  "/media/image/i2i/Untitled%20design%20%281%29%20copy%202.png";
 const VENUE_SRC =
-  "https://www.figma.com/api/mcp/asset/c5dcf640-8015-4b0f-b105-9bacef256233";
+  "/media/image/i2i/IMG_8833.jpg";
 
 export function IdeasToImpactAgendaSection() {
   return (

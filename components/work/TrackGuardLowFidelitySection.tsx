@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { cashpayInsetX } from "@/lib/cashpaySpacing";
 
-const LOW_FIDELITY_IMAGE_SRC = "https://www.figma.com/api/mcp/asset/8cbb1eac-6e5b-436b-940d-f8d104ea845c";
+const LOW_FIDELITY_IMAGE_SRC = "/media/image/trackguard/Screenshot%202024-06-20%20173954%204.png";
 
 export function TrackGuardLowFidelitySection() {
   return (

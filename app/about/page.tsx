@@ -8,7 +8,7 @@ import { AboutPageHero } from "@/components/about/AboutPageHero";
 const experiences = [
   {
     company: "Mohawk College IDEAWORKS",
-    logo: "https://www.figma.com/api/mcp/asset/491f1c8d-a750-436e-84c3-77462f4cab60",
+    logo: "/media/image/about%20logo/Untitled%20design%20%281%29%201.png",
     role: "Web & Graphic Designer",
     period: "November, 2024 — Present",
     description:
@@ -16,7 +16,7 @@ const experiences = [
   },
   {
     company: "Sunrise Creative",
-    logo: "https://www.figma.com/api/mcp/asset/593438bb-2620-4eb9-a4d5-23aa40d2c1b2",
+    logo: "/media/image/about%20logo/image%201.png",
     role: "Graphic Designer ",
     period: "January — April, 2025",
     description:
@@ -24,7 +24,7 @@ const experiences = [
   },
   {
     company: "Websters Shape the Web Inc.",
-    logo: "https://www.figma.com/api/mcp/asset/81b4085d-3dc0-46ca-84ee-deac1232b51d",
+    logo: "/media/image/about%20logo/Container.png",
     role: "UI/UX Designer",
     period: "July — September, 2024",
     description:
@@ -88,25 +88,25 @@ const aiTools = [
   {
     name: "Midjourney",
     subtitle: "Visual Exploration",
-    icon: "https://www.figma.com/api/mcp/asset/70eed263-d259-41c8-bcc0-42f9e4bf3074",
+    icon: "/media/image/about%20logo/Background.png",
     iconBg: "#000000",
   },
   {
     name: "ChatGPT",
     subtitle: "Strategic Thinking",
-    icon: "https://www.figma.com/api/mcp/asset/af704df8-6348-4e80-855a-0dbb94540401",
+    icon: "/media/image/about%20logo/Background-1.png",
     iconBg: "transparent",
   },
   {
     name: "Claude",
     subtitle: "Creative Writing",
-    icon: "https://www.figma.com/api/mcp/asset/ed9a1a87-dded-41ff-9b0a-d3e18ffeca1c",
+    icon: "/media/image/about%20logo/Background-2.png",
     iconBg: "transparent",
   },
   {
     name: "Cursor",
     subtitle: "Code editing",
-    icon: "https://www.figma.com/api/mcp/asset/095abf3f-3060-4ad9-8020-cfe0ff879d88",
+    icon: "/media/image/about%20logo/Background-3.png",
     iconBg: "#000000",
   },
 ];

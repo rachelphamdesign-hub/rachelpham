@@ -2,8 +2,8 @@ import Image from "next/image";
 import { CashpayPostPersonasFigmaBlocks } from "@/components/work/CashpayPostPersonasFigmaBlocks";
 import { cashpayBlockGap, cashpayBlockGapL, cashpayCardPad, cashpayInsetX } from "@/lib/cashpaySpacing";
 
-const imgEmily = "https://www.figma.com/api/mcp/asset/507d58af-bfaa-4c09-b60e-74a16be4fe9d";
-const imgDavid = "https://www.figma.com/api/mcp/asset/c13a41b6-96b7-4554-b8e4-4520968a864a";
+const imgEmily = "/media/image/cashpay%20image/Elena-1.png";
+const imgDavid = "/media/image/cashpay%20image/Elena.png";
 
 function PersonaCard({
   avatarSrc,

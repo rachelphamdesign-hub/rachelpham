@@ -1,6 +1,6 @@
 /** Figma 376:25245 — slogan lockup on orange */
 const SLOGAN_IMAGE_SRC =
-  "https://www.figma.com/api/mcp/asset/e0fb7489-daf0-4a1d-acab-28be60b5e549";
+  "/media/image/sweet%20sunset/slogan.png";
 
 /**
  * Figma 376:25240 — #FBB040 band, centered slogan graphic (592×174).

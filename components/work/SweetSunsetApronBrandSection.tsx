@@ -1,6 +1,6 @@
 /** Figma 342:24694 — apron / wordmark lockup */
 const APRON_IMAGE_SRC =
-  "https://www.figma.com/api/mcp/asset/474a6534-2a0e-4e2d-a535-c4ac9324ad72";
+  "/media/image/sweet%20sunset/apron.png";
 
 /**
  * Figma 342:24694 — cream band with centered brand graphic (628×252).

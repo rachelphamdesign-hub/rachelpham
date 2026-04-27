@@ -1,6 +1,6 @@
 /** Figma 366:25150 — three tote bags hero art */
 const TOTE_BAGS_IMAGE_SRC =
-  "https://www.figma.com/api/mcp/asset/fa9077d2-7902-4b75-9605-6df63103fe09";
+  "/media/image/sweet%20sunset/Untitled%20design%20%281%29.png";
 
 /**
  * Figma 366:25150 — white band, centered wide tote lineup, aspect 3095:1241.

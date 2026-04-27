@@ -13,35 +13,35 @@ const CHEVRON_RIGHT =
 
 const CAROUSEL_IMGS = [
   {
-    src: "https://www.figma.com/api/mcp/asset/99188ec9-8a03-4869-a354-9ef96f033755",
+    src: "/media/image/fhir/FHIR%20North%202025%20SM%20Posts/FINAL%20-%20save%20the%20date%20-%20May%2027th%20Post.jpg",
     alt: "FHIR North 2025 social graphic — Automating interoperability with event dates",
   },
   {
-    src: "https://www.figma.com/api/mcp/asset/c2580b59-d910-49aa-bdf1-7aca3d83b1d1",
+    src: "/media/image/fhir/FHIR%20North%202025%20SM%20Posts/FHIR%20North%202025%20by%20the%20Numbers%20%281%29.png",
     alt: "FHIR North 2025 social post — attendees, speakers, and sessions metrics",
   },
   {
-    src: "https://www.figma.com/api/mcp/asset/912a1c10-55e6-458a-8791-8f9a66e775e0",
+    src: "/media/image/fhir/FHIR%20North%202025%20SM%20Posts/Call%20For%20Speakers.jpg",
     alt: "FHIR North 2025 — call for speakers announcement",
   },
   {
-    src: "https://www.figma.com/api/mcp/asset/e49cabc4-6f86-4c43-88a5-1a2d4bf09c03",
+    src: "/media/image/fhir/FHIR%20North%202025%20SM%20Posts/Call%20for%20Sponsors.jpg",
     alt: "FHIR North conference social graphic",
   },
   {
-    src: "https://www.figma.com/api/mcp/asset/b7d63cc2-b5d3-4aa0-896c-a0c577cd43a1",
+    src: "/media/image/fhir/FHIR%20North%202025%20SM%20Posts/FHIR%20Community%20Panel%20%20Personal%20SM%20%20FN25.png",
     alt: "FHIR North 2025 social campaign asset",
   },
   {
-    src: "https://www.figma.com/api/mcp/asset/30b4119f-7962-47d6-bae1-c360e9b8c4ff",
+    src: "/media/image/fhir/FHIR%20North%202025%20SM%20Posts/Panelists%20-%20FHIR%20and%20AI.jpg",
     alt: "FHIR North digital health conference social graphic",
   },
   {
-    src: "https://www.figma.com/api/mcp/asset/38059f03-668b-45c8-b71e-e1854a20d014",
+    src: "/media/image/fhir/FHIR%20North%202025%20SM%20Posts/Speaker%20Announcement.jpg",
     alt: "FHIR North marketing social graphic",
   },
   {
-    src: "https://www.figma.com/api/mcp/asset/561ef102-01b9-4822-8cd8-016c469345b6",
+    src: "/media/image/fhir/FHIR%20North%202025%20SM%20Posts/Sponsor%20Announcement%20v3.jpg",
     alt: "FHIR North Mohawk IDEAWORKS social graphic",
   },
 ] as const;

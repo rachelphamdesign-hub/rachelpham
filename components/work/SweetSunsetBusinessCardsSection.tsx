@@ -1,6 +1,6 @@
 /** Figma 357:25139 — business card mockup (wide art + soft shadow) */
 const BUSINESS_CARDS_IMAGE_SRC =
-  "https://www.figma.com/api/mcp/asset/7021474b-1f20-4228-a94d-1d50efc72713";
+  "/media/image/sweet%20sunset/Untitled%20design%20%282%29.png";
 
 /**
  * Figma 357:25139 — white band, centered wide mockup, aspect 3095:1241, drop shadow + backdrop blur on image.

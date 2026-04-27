@@ -3,7 +3,7 @@ import { cashpayBlockGap, cashpayBlockGapL, cashpayInsetX } from "@/lib/cashpayS
 import { cashpayIcon } from "@/lib/cashpayIcons";
 
 /** Figma 193:7025 — design system board (paired with 193:7024 heading) */
-const imgDesignProcessBoard = "https://www.figma.com/api/mcp/asset/bfc61564-cc1a-4386-ad33-f5413a9ead98";
+const imgDesignProcessBoard = "/media/image/cashpay%20image/Screenshot%202024-06-20%20173954%202.png";
 
 const OUTCOME_TAKEAWAYS = [
   "Different age groups use tech differently—design must bridge those gaps.",
@@ -23,8 +23,8 @@ const ISSUES = [
   {
     issueLabel: "Issue 01:",
     title: "Sign-Up Location",
-    oldImage: "https://www.figma.com/api/mcp/asset/86b377fb-00a6-4569-b7f4-1592336a7eda",
-    newImage: "https://www.figma.com/api/mcp/asset/3313a0ec-1c58-4aba-a445-c7fd3d878c54",
+    oldImage: "/media/image/cashpay%20image/Background+Border+Shadow-4.png",
+    newImage: "/media/image/cashpay%20image/Background+Border+Shadow-5.png",
     quotes: [
       `"It took a few seconds to find the sign-up because I was looking near the sign-in section, which is small."`,
       `"The password box on the sign-in page should be empty, with clear white text for the email."`,
@@ -37,8 +37,8 @@ const ISSUES = [
   {
     issueLabel: "Issue 02:",
     title: "Viewing All Cards and Transactions",
-    oldImage: "https://www.figma.com/api/mcp/asset/5d79a28d-3986-49b0-84dc-c9a78281ea12",
-    newImage: "https://www.figma.com/api/mcp/asset/3d97db63-eb53-4fb0-8460-4dd7a19567d1",
+    oldImage: "/media/image/cashpay%20image/Background+Border+Shadow-2.png",
+    newImage: "/media/image/cashpay%20image/Background+Border+Shadow-3.png",
     quotes: [
       `"Adding a new card was confusing. It was hard to figure out which section was for cards; a 'Card' title might help."`,
       `"When viewing all cards, it opens a new component which can be complicated."`,
@@ -55,8 +55,8 @@ const ISSUES = [
   {
     issueLabel: "Issue 03:",
     title: "Yearly Cash Flow Page",
-    oldImage: "https://www.figma.com/api/mcp/asset/1cd03b44-38eb-4939-8386-9766295dc50f",
-    newImage: "https://www.figma.com/api/mcp/asset/37a1ff53-6863-4327-8a0d-435b787aa484",
+    oldImage: "/media/image/cashpay%20image/Background+Border+Shadow-1.png",
+    newImage: "/media/image/cashpay%20image/Background+Border+Shadow.png",
     quotes: [
       `"The yearly cash flow page is hard to read "`,
       `"The yearly cash flow page should showcase only the current year with a filter to change the year."`,
@@ -89,7 +89,7 @@ function MockFrame({
         boxShadow: isOld ? "var(--shadow-sm)" : "var(--shadow-card-soft)",
       }}
     >
-      <Image src={src} alt={alt} fill className="object-contain" sizes="(min-width: 1024px) 480px, 100vw"/>
+      <Image src={src} alt={alt} fill className="object-contain object-center scale-[1.02]" sizes="(min-width: 1024px) 480px, 100vw"/>
       <div
         className="absolute left-4 top-4 rounded-full border border-solid px-[13px] py-[5px]"
         style={{

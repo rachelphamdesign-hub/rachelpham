@@ -1,6 +1,6 @@
 /** Figma 271:20657 — event key art / social poster (full-bleed). */
 const SOCIAL_POST_SRC =
-  "https://www.figma.com/api/mcp/asset/d09be256-e1d3-452d-94dc-b3ab97a7e95b";
+  "/media/image/i2i/Untitled%20design%20%281%29.png";
 
 /**
  * Figma 271:20657 — Ideas to Impact 2026 typography art on white.

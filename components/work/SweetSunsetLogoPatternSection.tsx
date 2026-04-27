@@ -1,6 +1,6 @@
 /** Figma 495:1987 — circular logo pattern + large sticker mockup */
 const LOGO_PATTERN_SRC =
-  "https://www.figma.com/api/mcp/asset/81aa60a7-01e3-4864-8fb5-d4eed74626bf";
+  "/media/image/sweet%20sunset/Container%20copy.png";
 
 /**
  * Figma 495:1987 — full-bleed brand art (same crop recipe as 495:1974).

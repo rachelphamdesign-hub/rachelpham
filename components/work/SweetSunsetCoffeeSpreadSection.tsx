@@ -1,6 +1,6 @@
 /** Figma 495:1974 — espresso + phin composite (single full-bleed crop) */
 const COFFEE_SPREAD_SRC =
-  "https://www.figma.com/api/mcp/asset/5b541adb-5265-4895-8ab0-9c16ecde9a78";
+  "/media/image/sweet%20sunset/Container.png";
 
 /**
  * Figma 495:1974 — wide lifestyle strip with Dev Mode crop.

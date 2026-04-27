@@ -1,6 +1,6 @@
 /** Figma 495:1983 — packaging and merch tabletop mockup */
 const PACKAGING_HERO_SRC =
-  "https://www.figma.com/api/mcp/asset/fac3cdd3-af9d-4670-a5f4-6c0fdc31d553";
+  "/media/image/sweet%20sunset/Mockup.png";
 
 /**
  * Figma 495:1983 — full-bleed photographic hero (object-cover).

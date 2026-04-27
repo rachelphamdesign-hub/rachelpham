@@ -1,6 +1,6 @@
 /** Figma 495:2108 — Instagram profile + tiles collage */
 const SOCIAL_CAMPAIGN_SRC =
-  "https://www.figma.com/api/mcp/asset/22d52852-4c6b-4a47-9799-a4bad0693f15";
+  "/media/image/sweet%20sunset/Frame%2053.png";
 
 /**
  * Figma 495:2108 — Instagram profile + tile grid. Intrinsic aspect ratio (no cover crop / no stretch).

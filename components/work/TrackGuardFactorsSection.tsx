@@ -2,7 +2,7 @@ import Image from "next/image";
 import { trackguardIcon } from "@/lib/trackguardIcons";
 
 /** Figma 229:13487 — primary card photo */
-const imgPrimary = "https://www.figma.com/api/mcp/asset/3219df1a-3eb5-427d-af1f-5047d95a8c0a";
+const imgPrimary = "/media/image/trackguard/Background.png";
 
 const SUPPORTING = [
   {
