@@ -25,6 +25,8 @@ const ISSUES = [
     title: "Sign-Up Location",
     oldImage: "/media/image/cashpay%20image/Background+Border+Shadow-4.png",
     newImage: "/media/image/cashpay%20image/Background+Border+Shadow-5.png",
+    oldImageClassName: "object-contain object-top scale-[1.08]",
+    newImageClassName: "object-contain object-top scale-[1.08]",
     quotes: [
       `"It took a few seconds to find the sign-up because I was looking near the sign-in section, which is small."`,
       `"The password box on the sign-in page should be empty, with clear white text for the email."`,
@@ -39,6 +41,8 @@ const ISSUES = [
     title: "Viewing All Cards and Transactions",
     oldImage: "/media/image/cashpay%20image/Background+Border+Shadow-2.png",
     newImage: "/media/image/cashpay%20image/Background+Border+Shadow-3.png",
+    oldImageClassName: "object-contain object-top scale-[1.07]",
+    newImageClassName: "object-contain object-top scale-[1.07]",
     quotes: [
       `"Adding a new card was confusing. It was hard to figure out which section was for cards; a 'Card' title might help."`,
       `"When viewing all cards, it opens a new component which can be complicated."`,
@@ -57,6 +61,8 @@ const ISSUES = [
     title: "Yearly Cash Flow Page",
     oldImage: "/media/image/cashpay%20image/Background+Border+Shadow-1.png",
     newImage: "/media/image/cashpay%20image/Background+Border+Shadow.png",
+    oldImageClassName: "object-contain object-top scale-[1.09]",
+    newImageClassName: "object-contain object-top scale-[1.09]",
     quotes: [
       `"The yearly cash flow page is hard to read "`,
       `"The yearly cash flow page should showcase only the current year with a filter to change the year."`,
@@ -74,10 +80,12 @@ function MockFrame({
   variant,
   src,
   alt,
+  imageClassName,
 }: {
   variant: "old" | "new";
   src: string;
   alt: string;
+  imageClassName?: string;
 }) {
   const isOld = variant === "old";
   return (
@@ -89,7 +97,13 @@ function MockFrame({
         boxShadow: isOld ? "var(--shadow-sm)" : "var(--shadow-card-soft)",
       }}
     >
-      <Image src={src} alt={alt} fill className="object-contain object-center scale-[1.02]" sizes="(min-width: 1024px) 480px, 100vw"/>
+      <Image
+        src={src}
+        alt={alt}
+        fill
+        className={imageClassName ?? "object-contain object-center scale-[1.02]"}
+        sizes="(min-width: 1024px) 480px, 100vw"
+      />
       <div
         className="absolute left-4 top-4 rounded-full border border-solid px-[13px] py-[5px]"
         style={{
@@ -141,7 +155,12 @@ export function CashpayFeedbackFixesSection() {
 
             <div className="grid grid-cols-1 gap-10 lg:grid-cols-2 lg:gap-10">
               <div className="flex flex-col gap-10">
-                <MockFrame variant="old" src={issue.oldImage} alt={`${issue.title} — previous design`} />
+                <MockFrame
+                  variant="old"
+                  src={issue.oldImage}
+                  alt={`${issue.title} — previous design`}
+                  imageClassName={issue.oldImageClassName}
+                />
                 <div className="flex flex-col gap-4 text-[12px] italic leading-[19.2px] text-[var(--text-secondary)]">
                   {issue.quotes.map((q, i) => (
                     <p key={i}>{q}</p>
@@ -150,7 +169,12 @@ export function CashpayFeedbackFixesSection() {
               </div>
 
               <div className="flex flex-col gap-10">
-                <MockFrame variant="new" src={issue.newImage} alt={`${issue.title} — revised design`} />
+                <MockFrame
+                  variant="new"
+                  src={issue.newImage}
+                  alt={`${issue.title} — revised design`}
+                  imageClassName={issue.newImageClassName}
+                />
                 <ul className="list-disc space-y-3 pl-[18px] text-[12px] leading-[19.2px] text-[var(--text-primary)] marker:text-[var(--text-primary)]">
                   {issue.fixes.map((item) => (
                     <li key={item} className="ps-1">
