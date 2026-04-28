@@ -23,10 +23,10 @@ const ISSUES = [
   {
     issueLabel: "Issue 01:",
     title: "Sign-Up Location",
-    oldImage: "/media/image/cashpay%20image/Background+Border+Shadow-4.png",
-    newImage: "/media/image/cashpay%20image/Background+Border+Shadow-5.png",
-    oldImageClassName: "object-contain object-top scale-[1.08]",
-    newImageClassName: "object-contain object-top scale-[1.08]",
+    oldImage: "/media/image/cashpay%20image/new/1.png",
+    newImage: "/media/image/cashpay%20image/new/2.png",
+    oldImageClassName: "object-contain object-center",
+    newImageClassName: "object-contain object-center",
     quotes: [
       `"It took a few seconds to find the sign-up because I was looking near the sign-in section, which is small."`,
       `"The password box on the sign-in page should be empty, with clear white text for the email."`,
@@ -39,10 +39,10 @@ const ISSUES = [
   {
     issueLabel: "Issue 02:",
     title: "Viewing All Cards and Transactions",
-    oldImage: "/media/image/cashpay%20image/Background+Border+Shadow-2.png",
-    newImage: "/media/image/cashpay%20image/Background+Border+Shadow-3.png",
-    oldImageClassName: "object-contain object-top scale-[1.07]",
-    newImageClassName: "object-contain object-top scale-[1.07]",
+    oldImage: "/media/image/cashpay%20image/new/3.png",
+    newImage: "/media/image/cashpay%20image/new/4.png",
+    oldImageClassName: "object-contain object-center",
+    newImageClassName: "object-contain object-center",
     quotes: [
       `"Adding a new card was confusing. It was hard to figure out which section was for cards; a 'Card' title might help."`,
       `"When viewing all cards, it opens a new component which can be complicated."`,
@@ -59,10 +59,10 @@ const ISSUES = [
   {
     issueLabel: "Issue 03:",
     title: "Yearly Cash Flow Page",
-    oldImage: "/media/image/cashpay%20image/Background+Border+Shadow-1.png",
-    newImage: "/media/image/cashpay%20image/Background+Border+Shadow.png",
-    oldImageClassName: "object-contain object-top scale-[1.09]",
-    newImageClassName: "object-contain object-top scale-[1.09]",
+    oldImage: "/media/image/cashpay%20image/new/5.png",
+    newImage: "/media/image/cashpay%20image/new/6.png",
+    oldImageClassName: "object-contain object-center",
+    newImageClassName: "object-contain object-center",
     quotes: [
       `"The yearly cash flow page is hard to read "`,
       `"The yearly cash flow page should showcase only the current year with a filter to change the year."`,
