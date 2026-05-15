@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { MediaStackSection } from "@/components/work/MediaStackSection";
 import { CashpayKeyFeatures } from "@/components/work/CashpayKeyFeatures";
 import { CashpayDataCollectionAndSurvey } from "@/components/work/CashpayDataCollectionAndSurvey";
 import { CashpayUserPersonasSection } from "@/components/work/CashpayUserPersonasSection";
@@ -35,6 +36,14 @@ export function WorkProjectSections({ project }: { project: ProjectMeta }) {
           section.type === "text" &&
           section.heading === "Experience & Impact";
 
+        const isAppliedResearchMediaStack =
+          slug === "applied-research-101" && section.type === "media-stack";
+
+        const isAr101FullBleedMediaStack =
+          slug === "applied-research-101" &&
+          section.type === "media-stack" &&
+          Boolean(section.mediaStack?.length);
+
         const cashpayVerticalPadding = (() => {
           if (!isCashpay) return "";
           if (i === 0) return "pt-0 sm:pt-1 pb-12 sm:pb-16";
@@ -44,7 +53,9 @@ export function WorkProjectSections({ project }: { project: ProjectMeta }) {
           return "py-12 sm:py-16";
         })();
 
-        const sectionSpacingClass = isSocialExperience
+        const sectionSpacingClass = isAppliedResearchMediaStack
+          ? `py-10 sm:py-14 px-0 ${i % 2 === 0 ? "border-t border-b" : ""} transition-colors`
+          : isSocialExperience
           ? `py-10 sm:py-12 px-4 sm:px-5 ${i % 2 === 0 ? "border-t border-b" : ""} transition-colors`
           : isCashpay
             ? `${cashpayVerticalPadding} ${cashpayInsetX} ${i % 2 === 0 ? "border-t border-b" : ""} transition-colors`
@@ -81,7 +92,25 @@ export function WorkProjectSections({ project }: { project: ProjectMeta }) {
                 }
               : {})}
           >
+            {isAr101FullBleedMediaStack ? (
+              <MediaStackSection
+                fullBleed
+                heading={section.heading}
+                subheading={section.subheading}
+                headingLink={section.headingLink}
+                items={section.mediaStack!}
+              />
+            ) : (
             <div className="mx-auto max-w-[1080px]">
+              {section.type === "media-stack" && section.mediaStack?.length && !isAr101FullBleedMediaStack ? (
+                <MediaStackSection
+                  heading={section.heading}
+                  subheading={section.subheading}
+                  headingLink={section.headingLink}
+                  items={section.mediaStack}
+                />
+              ) : null}
+
               {section.type === "text" && (
                 <div className={textBlockWrapClass}>
                   {section.heading && (
@@ -340,6 +369,7 @@ export function WorkProjectSections({ project }: { project: ProjectMeta }) {
                 </div>
               )}
             </div>
+            )}
           </section>
         );
       })}

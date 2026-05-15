@@ -6,11 +6,6 @@ import { LazyVideo } from "@/components/LazyVideo";
 /** Figma 291:23888 — Social Media Design + carousel + full-bleed finale (local After Effects export). */
 const FINAL_VIDEO_SRC = "/media/fhir-north-social-finale.mp4";
 
-const CHEVRON_LEFT =
-  "https://www.figma.com/api/mcp/asset/1c9478f3-d561-4af9-9d29-922239d7b182";
-const CHEVRON_RIGHT =
-  "https://www.figma.com/api/mcp/asset/e7819ba2-b6e1-479a-a670-106c6d5a23ee";
-
 const CAROUSEL_IMGS = [
   {
     src: "/media/image/fhir/FHIR%20North%202025%20SM%20Posts/FINAL%20-%20save%20the%20date%20-%20May%2027th%20Post.jpg",
@@ -135,20 +130,42 @@ export function FhirNorthSocialMediaDesignSection() {
             <button
               type="button"
               aria-label="Previous slides"
-              className="flex size-12 items-center justify-center rounded-full bg-[var(--pill-badge-bg)] shadow-[0px_20px_40px_0px_rgba(0,0,0,0.04),0px_1px_4px_0px_rgba(0,0,0,0.02)] transition-opacity hover:opacity-90 dark:shadow-[0px_20px_40px_0px_rgba(0,0,0,0.35),0px_1px_4px_0px_rgba(0,0,0,0.15)]"
+              className="flex size-12 items-center justify-center rounded-full bg-[var(--pill-badge-bg)] text-[var(--text-primary)] shadow-[0px_20px_40px_0px_rgba(0,0,0,0.04),0px_1px_4px_0px_rgba(0,0,0,0.02)] transition-opacity hover:opacity-90 dark:shadow-[0px_20px_40px_0px_rgba(0,0,0,0.35),0px_1px_4px_0px_rgba(0,0,0,0.15)]"
               onClick={() => scrollByDir(-1)}
             >
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img alt="" src={CHEVRON_LEFT} className="size-[10px]" />
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                aria-hidden
+              >
+                <polyline points="15 18 9 12 15 6" />
+              </svg>
             </button>
             <button
               type="button"
               aria-label="Next slides"
-              className="flex size-12 items-center justify-center rounded-full bg-[var(--pill-badge-bg)] shadow-[0px_20px_40px_0px_rgba(0,0,0,0.04),0px_1px_4px_0px_rgba(0,0,0,0.02)] transition-opacity hover:opacity-90 dark:shadow-[0px_20px_40px_0px_rgba(0,0,0,0.35),0px_1px_4px_0px_rgba(0,0,0,0.15)]"
+              className="flex size-12 items-center justify-center rounded-full bg-[var(--pill-badge-bg)] text-[var(--text-primary)] shadow-[0px_20px_40px_0px_rgba(0,0,0,0.04),0px_1px_4px_0px_rgba(0,0,0,0.02)] transition-opacity hover:opacity-90 dark:shadow-[0px_20px_40px_0px_rgba(0,0,0,0.35),0px_1px_4px_0px_rgba(0,0,0,0.15)]"
               onClick={() => scrollByDir(1)}
             >
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img alt="" src={CHEVRON_RIGHT} className="size-[10px]" />
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                aria-hidden
+              >
+                <polyline points="9 18 15 12 9 6" />
+              </svg>
             </button>
           </div>
         </div>

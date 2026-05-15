@@ -20,12 +20,18 @@ export interface ProjectMeta {
 }
 
 export interface ProjectSection {
-  type: "text" | "image" | "color-palette" | "metrics" | "images-grid";
+  type: "text" | "image" | "color-palette" | "metrics" | "images-grid" | "media-stack";
   heading?: string;
+  /** Optional line under the heading (e.g. media-stack galleries). */
+  subheading?: string;
   body?: string;
   bodyHtml?: string;
   image?: string;
   images?: string[];
+  /** Ordered images for a centered vertical stack (see MediaStackSection). */
+  mediaStack?: { src: string; alt: string }[];
+  /** Wrap this exact substring in the heading with a link (e.g. organization name). */
+  headingLink?: { label: string; href: string };
   colors?: { hex: string; label?: string }[];
   metrics?: { value: string; label: string }[];
 }
@@ -82,6 +88,35 @@ export const projects: ProjectMeta[] = [
         heading: "Experience & Impact",
         bodyHtml:
           "I redesigned <a href=\"https://ideaworks.thinkific.com/\" target=\"_blank\" rel=\"noopener noreferrer\">Applied Research 101</a> with <strong>visuals</strong> and <strong>interactive elements</strong> tailored to <strong>students, faculty,</strong> and <strong>high school learners</strong>. Using <strong>HTML, CSS,</strong> and <strong>H5P in Thinkific</strong>, I transformed the course into an <strong>engaging, easy-to-navigate learning experience</strong> that makes <strong>complex research concepts clear</strong> and <strong>approachable</strong>. I worked closely with the <a href=\"https://ideaworks.mohawkcollege.ca/research-centre/centre-for-emerging-research-initiatives-ceri/\" target=\"_blank\" rel=\"noopener noreferrer\">CERI team</a> to understand <strong>applied research</strong> and how they wanted the <strong>course delivered</strong>, ensuring the <strong>design aligned with their goals</strong>.<br/><br/>I made sure the course met <strong>AODA accessibility standards</strong> so everyone could <strong>participate fully</strong>. The redesign made <strong>learning easier</strong> and <strong>more engaging</strong>, helping <strong>course completion rates jump by 20%</strong> and keeping learners <strong>more motivated</strong> throughout.<br/><br/><strong>Moving the course online made a real difference,</strong> it gave <strong>more people access</strong> to applied research, <strong>saved time</strong> and <strong>money</strong>, and created a <strong>flexible, scalable way</strong> for learners to get started with research confidently.<br/><br/>Here&rsquo;s a look at what I designed for <a href=\"https://ideaworks.thinkific.com/\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color:#990033;font-weight:600;\">Applied Research 101</a>. Stay tuned for more!",
+      },
+      {
+        type: "media-stack",
+        heading: "Applied Research 101 at CiCan",
+        headingLink: { label: "CiCan", href: "https://www.collegesinstitutes.ca/" },
+        subheading:
+          "Building visual designs for activities focused on applied research readiness.",
+        mediaStack: [
+          {
+            src: "/media/ar101/video.gif",
+            alt: "Applied Research 101 on robot display — watch video and open activity",
+          },
+          {
+            src: "/media/ar101/box.png",
+            alt: "What Would You Do scenario boxes and Applied Research 101 cards",
+          },
+          {
+            src: "/media/ar101/poster.png",
+            alt: "Research-ready poster and tabletop signage",
+          },
+          {
+            src: "/media/ar101/check.png",
+            alt: "Research readiness heatmap worksheet",
+          },
+          {
+            src: "/media/ar101/booth.png",
+            alt: "Mohawk IDEAWORKS booth at CiCan with materials, robot display, and research readiness board",
+          },
+        ],
       },
     ],
     links: [

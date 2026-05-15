@@ -14,7 +14,7 @@ type Suggestion = (typeof suggestions)[number];
 
 const responses: Record<Suggestion, string> = {
   "Tell me about Rachel":
-    "I’m a Product and Graphic Designer based in Ontario, currently working at IDEAWORKS at Mohawk College, with experience in UI/UX, branding, and web design through both internships and real projects. Outside of work, I’m into hiking, traveling, and exploring new places, and I’m a big fan of matcha 🍵",
+    "I’m a Web & Graphic Designer based in Ontario, currently working at IDEAWORKS at Mohawk College, with experience in UI/UX, branding, and web design through both internships and real projects. Outside of work, I’m into hiking, traveling, and exploring new places, and I’m a big fan of matcha 🍵",
   "What’s your favorite project?":
     "My favorite project is Social Robot 🤖. It focuses on helping patients feel less lonely through interactive and emotional support. I believe this kind of product represents the future and can make a real impact.",
   "What tools do you use?":
