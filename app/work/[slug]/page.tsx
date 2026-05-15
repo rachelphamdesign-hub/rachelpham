@@ -29,7 +29,11 @@ export default async function WorkPage({ params }: Props) {
   if (!project) notFound();
 
   const hideFooterTopBorder =
-    slug === "ideas-to-impact" || slug === "fhir-north" || slug === "vot-coffee";
+    slug === "ideas-to-impact" ||
+    slug === "fhir-north" ||
+    slug === "research-infosource-rankings" ||
+    slug === "learning-2gether" ||
+    slug === "vot-coffee";
 
   return (
     <>

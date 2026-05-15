@@ -192,6 +192,34 @@ function EventsSection() {
       titleClass: "text-[20px] sm:text-[22px] font-extrabold tracking-[-0.03em]",
       subtitleClass: "text-[13px] sm:text-[14px] font-light leading-[1.5] tracking-[0.01em]",
     },
+    {
+      slug: "research-infosource-rankings",
+      layout: "rankingImage" as const,
+      title: "Research Infosource Rankings Celebration",
+      subtitle:
+        "Designed visuals for Mohawk IDEAWORKS’ celebration of ranking 1st in Large College Research Income, including presentations, social posts, and event graphics.",
+      label: "2025 • EVENT 03",
+      image: "/media/ranking_event_port/titleimage.png",
+      mediaType: "image" as const,
+      area: "lg:col-span-6 lg:col-start-1 lg:row-start-3",
+      height: "min-h-[240px] h-[260px] lg:h-[260px]",
+      titleClass: "text-[20px] sm:text-[22px] font-extrabold tracking-[-0.03em]",
+      subtitleClass: "text-[13px] sm:text-[14px] font-light leading-[1.5] tracking-[0.01em]",
+    },
+    {
+      slug: "learning-2gether",
+      layout: "fhirVideo" as const,
+      title: "Learning 2Gether",
+      subtitle:
+        "Designed promotional materials for Mohawk College’s caregiver student support program, including digital prints and social posts.",
+      label: "2025 • PROJECT 05",
+      image: "/media/l2t_port/Scene%20copy.mp4",
+      mediaType: "video" as const,
+      area: "lg:col-span-6 lg:col-start-7 lg:row-start-3",
+      height: "min-h-[240px] h-[260px] lg:h-[260px]",
+      titleClass: "text-[20px] sm:text-[22px] font-extrabold tracking-[-0.03em]",
+      subtitleClass: "text-[13px] sm:text-[14px] font-light leading-[1.5] tracking-[0.01em]",
+    },
   ];
 
   return (
@@ -216,7 +244,7 @@ function EventsSection() {
           </ScrollReveal>
         </div>
 
-        <div className="grid grid-cols-1 gap-5 lg:grid-cols-12 lg:gap-6 lg:grid-rows-[minmax(0,480px)_minmax(0,260px)]">
+        <div className="grid grid-cols-1 gap-5 lg:grid-cols-12 lg:gap-6 lg:grid-rows-[minmax(0,480px)_minmax(0,260px)_minmax(0,260px)]">
           {eventCards.map((card) => (
             <FeaturedProject
               key={card.slug}

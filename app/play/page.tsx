@@ -20,12 +20,10 @@ type PlayCard = {
 const PLAY_HEADER_SHELL = "mx-auto w-full max-w-[1160px] px-6";
 
 const playItems: PlayCard[] = [
-    { nodeId: "playground-0", title: "", video: "/media/image/playground/Scene%20copy.mp4" },
     { nodeId: "playground-1", title: "", image: "/media/image/playground/4-3.gif" },
     { nodeId: "playground-2", title: "", image: "/media/image/playground/download.gif" },
     { nodeId: "playground-3", title: "", video: "/media/image/playground/Hello.mp4" },
     { nodeId: "playground-4", title: "", image: "/media/image/playground/Menu%20Mock%20Up.jpg" },
-    { nodeId: "playground-5", title: "", image: "/media/image/playground/Notebook%20Mockup.png" },
     { nodeId: "playground-6", title: "", image: "/media/image/playground/Poster%20Mockup%20%283%29.jpg" },
     { nodeId: "playground-7", title: "", image: "/media/image/playground/Scene.gif" },
     { nodeId: "playground-8", title: "", video: "/media/image/playground/Scene.mp4" },

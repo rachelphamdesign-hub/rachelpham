@@ -32,7 +32,7 @@ export function WorkProjectSections({ project }: { project: ProjectMeta }) {
     <>
       {project.sections.map((section, i) => {
         const isSocialExperience =
-          (slug === "social-robots" || slug === "applied-research-101") &&
+          (slug === "social-robots" || slug === "applied-research-101" || slug === "learning-2gether") &&
           section.type === "text" &&
           section.heading === "Experience & Impact";
 

@@ -44,7 +44,8 @@ type FeaturedLayout =
   | "applied"
   | "ideasVideo"
   | "fhirVideo"
-  | "votPhoto";
+  | "votPhoto"
+  | "rankingImage";
 
 export type FeaturedProjectProps = {
   slug: string;
@@ -206,6 +207,54 @@ export function FeaturedProject({
         style={surface}
       >
         {fhirVideoBody}
+      </Link>
+    );
+  }
+
+  /** Research Infosource — light hero graphic, full-bleed contain, copy at bottom. */
+  if (layout === "rankingImage") {
+    const rankingCardShell =
+      "group relative block min-h-0 min-w-0 overflow-hidden rounded-[16px] border shadow-[var(--shadow-hero-media)] transition-[box-shadow] duration-300 hover:shadow-[0_24px_56px_-8px_rgba(0,0,0,0.14),0_12px_32px_-6px_rgba(0,0,0,0.1)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--accent-action)]";
+
+    return (
+      <Link
+        href={`/work/${slug}`}
+        {...ch}
+        className={`${rankingCardShell} ${gridSizing}`}
+        style={{
+          background: "#e9e9e9",
+          borderColor: "rgba(0, 0, 0, 0.08)",
+        }}
+      >
+        <RevealMedia className="pointer-events-none absolute inset-0">
+          <Image
+            src={mediaSrc}
+            alt={`${title} — Mohawk IDEAWORKS #1 applied research colleges graphic`}
+            fill
+            className="object-contain object-center"
+            sizes="(min-width: 1024px) 720px, 100vw"
+          />
+          <div
+            className="absolute inset-0 bg-gradient-to-b from-black/5 via-transparent to-[rgba(0,0,0,0.82)]"
+            aria-hidden
+          />
+        </RevealMedia>
+        <RevealCopy
+          className="absolute inset-0 flex flex-col justify-end gap-5 px-8 pb-10 pt-[26%] sm:gap-6 sm:px-10 sm:pb-11"
+          delay={0.14}
+        >
+          <div className="flex flex-col gap-2">
+            {meta}
+            <h3 className={`text-white ${titleShade} ${titleClass}`}>{title}</h3>
+          </div>
+          <p
+            className={`${subtitleBase} text-[13px] leading-[1.45] sm:text-[14px] ${subtitleClass}`}
+            style={{ color: "var(--featured-body)" }}
+          >
+            {subtitle}
+          </p>
+        </RevealCopy>
+        {cursor.bubble}
       </Link>
     );
   }

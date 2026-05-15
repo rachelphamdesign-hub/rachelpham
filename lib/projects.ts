@@ -248,6 +248,45 @@ export const projects: ProjectMeta[] = [
       "Vot coffee is a new brand coffee in Canada. This coffee business specialises in Vietnamese coffee beans and \"tra da,\" the national beverage of Vietnam. Made with high-quality ingredients gathered from Vietnamese farmers and traditional techniques. Vot's unique ideology is based on their desire to merge heritage with modernity.",
     sections: [],
   },
+  {
+    slug: "research-infosource-rankings",
+    title: "Research Infosource Rankings Celebration",
+    subtitle:
+      "Designed visuals for Mohawk IDEAWORKS’ celebration of ranking 1st in Large College Research Income.",
+    label: "Event 2025",
+    heroImage: "/media/ranking_event_port/title.png",
+    role: ["Visual Designer", "Event Coordinator"],
+    team: "Business Development and Project Support",
+    timeline: "Nov - Dec 2025",
+    platform: "In-person",
+    tools: ["Figma", "Illustrator", "InDesign"],
+    overview:
+      "I supported the rebranding and visual design for a celebratory event recognizing Mohawk College IDEAWORKS’ achievement of ranking 2nd nationally and 1st provincially in applied research.",
+    sections: [],
+  },
+  {
+    slug: "learning-2gether",
+    title: "Learning 2Gether",
+    subtitle:
+      "Designed promotional materials for Mohawk College’s caregiver student support program.",
+    label: "Project 2025",
+    heroImage: "/media/l2t_port/Frame%201.png",
+    heroVideo: "/media/l2t_port/Scene%20copy.mp4",
+    role: ["Graphic design"],
+    team: "Centre for Emerging Research Initiatives (CERI)",
+    timeline: "Start Nov 2025",
+    tools: ["Figma", "Illustrator", "Indesign"],
+    overview:
+      "Designed promotional materials for Mohawk College’s caregiver student support program, including digital prints and social posts.",
+    sections: [
+      {
+        type: "text",
+        heading: "Experience & Impact",
+        bodyHtml:
+          "I designed <strong>promotional materials</strong> for <strong>Mohawk College&rsquo;s Learning 2Gether program</strong>, which <strong>supports student-caregivers and their children/dependents by providing dedicated study time, academic support, and childminding services.</strong><br/><br/>The program is part of a research initiative funded by <strong>the Community College Social Innovation Fund</strong>, in collaboration with the <strong>Learning Support Centre</strong>, <strong>Hamilton Public Library</strong>, and <strong>Neighbour to Neighbour</strong>, aiming to improve <strong>learning opportunities</strong> and <strong>strengthen support for families</strong> through a community-based approach.<br/><br/>I designed <strong>branding materials</strong> for the program and <strong>created digital, print, and social media assets</strong> to help <strong>communicate it clearly</strong> and make it more <strong>accessible to students</strong>. I&rsquo;m especially grateful to have contributed to <strong>a project that supports student-caregivers and helps remove barriers to education.</strong>",
+      },
+    ],
+  },
 ];
 
 export function getProject(slug: string): ProjectMeta | undefined {
@@ -334,6 +373,26 @@ export const eventProjects = [
     image: "/media/vot-coffee-box-bag-mockup.png",
     darkCard: false,
   },
+  {
+    slug: "research-infosource-rankings",
+    title: "Research Infosource Rankings Celebration",
+    subtitle:
+      "Designed visuals for Mohawk IDEAWORKS’ celebration of ranking 1st in Large College Research Income, including presentations, social posts, and event graphics.",
+    label: "2025",
+    labelPrefix: "Event",
+    image: "/media/ranking_event_port/titleimage.png",
+    darkCard: false,
+  },
+  {
+    slug: "learning-2gether",
+    title: "Learning 2Gether",
+    subtitle:
+      "Designed promotional materials for Mohawk College’s caregiver student support program, including digital prints and social posts.",
+    label: "2025",
+    labelPrefix: "Project",
+    image: "",
+    darkCard: true,
+  },
 ];
 
 export const testimonials = [
@@ -345,16 +404,16 @@ export const testimonials = [
     color: "#000000",
   },
   {
-    name: "Kyven. C",
+    name: "Daniel. K",
     role: "",
     text: "Rachel is incredibly creative and easy to work with. She listened carefully to what I wanted and turned my ideas into something even better than I imagined.",
     rating: 5,
     color: "#8B85F9",
   },
   {
-    name: "Mykul. A",
+    name: "Olivia. B",
     role: "",
-    text: "Just wanted to give you a shout-out for getting 100% in VWD5! A very rare occurrence in this class! Amazing work this semester!!!",
+    text: "She has a strong eye for branding and presentation design. Rachel helped bring the event experience together visually across both digital and print materials.",
     rating: 5,
     color: "#F1F3F7",
   },

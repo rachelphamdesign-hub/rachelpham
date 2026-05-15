@@ -7,6 +7,10 @@ const TrackguardCaseStudy = dynamic(() => import("@/components/work/cases/trackg
 const SweetSunsetCaseStudy = dynamic(() => import("@/components/work/cases/sweetSunsetCaseStudy"));
 const IdeasToImpactCaseStudy = dynamic(() => import("@/components/work/cases/ideasToImpactCaseStudy"));
 const FhirNorthCaseStudy = dynamic(() => import("@/components/work/cases/fhirNorthCaseStudy"));
+const ResearchInfosourceCaseStudy = dynamic(
+  () => import("@/components/work/cases/researchInfosourceCaseStudy"),
+);
+const Learning2GetherCaseStudy = dynamic(() => import("@/components/work/cases/learning2GetherCaseStudy"));
 const VotCoffeeCaseStudy = dynamic(() => import("@/components/work/cases/votCoffeeCaseStudy"));
 
 export function WorkCaseStudyBody({ slug, project }: { slug: string; project: ProjectMeta }) {
@@ -23,6 +27,10 @@ export function WorkCaseStudyBody({ slug, project }: { slug: string; project: Pr
       return <IdeasToImpactCaseStudy project={project} />;
     case "fhir-north":
       return <FhirNorthCaseStudy project={project} />;
+    case "research-infosource-rankings":
+      return <ResearchInfosourceCaseStudy project={project} />;
+    case "learning-2gether":
+      return <Learning2GetherCaseStudy project={project} />;
     case "vot-coffee":
       return <VotCoffeeCaseStudy project={project} />;
     default:
